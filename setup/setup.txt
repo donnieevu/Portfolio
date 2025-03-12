@@ -1,0 +1,5 @@
+-download python (when downloading, ensure to check install with file path is marked)
+-download vscode (install python extension)(python interpreter, choose file path matching the one you downloaded)
+-download tableau public
+-download gitbash
+-clone repository to vscode through git
