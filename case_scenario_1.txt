@@ -1,4 +1,4 @@
-Case Scenario:Hospital readmissions are a major issue in healthcare. High readmission rates can indicate problems with patient care, poor discharge planning, or ineffective treatment plans. Hospitals are penalized for excessive readmissions, making this a critical issue for healthcare administrators and policymakers.
+Case Scenario: Hospital readmissions are a major issue in healthcare. High readmission rates can indicate problems with patient care, poor discharge planning, or ineffective treatment plans. Hospitals are penalized for excessive readmissions, making this a critical issue for healthcare administrators and policymakers.
 
 Key Questions That Need Answers:
 1.Which patients are most likely to be readmitted?
