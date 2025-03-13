@@ -1,5 +1,7 @@
--download python (when downloading, ensure to check install with file path is marked)
--download vscode (install python extension)(python interpreter, choose file path matching the one you downloaded)
--download tableau public
--download gitbash
--clone repository to vscode through git
+-download python (when downloading, ensure to check install with file path is marked) (https://www.python.org/downloads/)
+-download vscode (install python extension)(python interpreter, choose file path matching the one you downloaded) (https://code.visualstudio.com/)
+-download tableau public (https://www.tableau.com/products/public)
+-download gitbash (https://git-scm.com/downloads)
+-clone repository to vscode through github 
+-download dbvisualizer (https://www.dbvis.com/download/)
+-download odbc driver (https://cloud.google.com/bigquery/docs/reference/odbc-jdbc-drivers)
