@@ -4,4 +4,4 @@
 -download gitbash (https://git-scm.com/downloads)
 -clone repository to vscode through github 
 -download dbvisualizer (https://www.dbvis.com/download/)
--download odbc driver (https://cloud.google.com/bigquery/docs/reference/odbc-jdbc-drivers)
+-download jdbc driver (https://cloud.google.com/bigquery/docs/reference/odbc-jdbc-drivers)
