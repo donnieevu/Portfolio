@@ -1,0 +1,94 @@
+🛠 Step 1: Understand Business Objectives & Define KPIs
+Before jumping into the data, we need to understand the end goal—who will use this dashboard and why?
+✔ Who are the users?
+•	Hospital Administrators & Doctors who need insights on patient readmissions and hospital efficiency.
+•	Operations Teams who want to reduce costs, improve resource allocation, and lower readmissions.
+✔ What questions do they need answered?
+•	Which patients are most likely to be readmitted?
+•	How long do patients typically stay in the hospital?
+•	Which medical conditions are most associated with readmissions?
+•	Does diabetes medication impact readmissions?
+•	How efficient are hospitals in handling patient care?
+💡 Best Practice: We define measurable KPIs that align with these questions before touching the data. This keeps our analysis focused and impactful.
+📌 Selected KPIs:
+1.	Readmission Rate (%) → % of patients who were readmitted.
+2.	Average Length of Stay → How long patients typically stay in the hospital.
+3.	Most Common Diagnoses for Readmitted Patients → Which conditions lead to higher readmissions.
+4.	Impact of Diabetes Medication on Readmissions → Do diabetes patients have higher readmission rates?
+5.	Hospital Workload Analysis → Average number of procedures, medications, and lab tests per patient.
+________________________________________
+🛠 Step 2: Data Exploration & Cleaning (SQL in BigQuery)
+Now that we have our KPIs, we need to explore the dataset and clean the data so it’s accurate and usable.
+✔ Exploring the Data
+•	We run a SELECT * query to preview the data.
+•	We use INFORMATION_SCHEMA.COLUMNS to inspect column names & data types.
+•	We check for missing values (NULL) and outliers.
+✔ Data Cleaning Steps
+•	Convert readmitted from 'yes'/'no' to Boolean (TRUE/FALSE) for easier analysis.
+•	Standardize categorical variables (e.g., medical specialties, diagnoses).
+•	Handle missing values using data imputation or removal if necessary.
+•	Check for duplicate records and remove them if needed.
+💡 Best Practice: Cleaning is an iterative process. We run an initial analysis, find issues, clean them, and repeat until the dataset is in great shape.
+________________________________________
+🛠 Step 3: Feature Engineering & KPI Calculations (SQL in BigQuery)
+Once the dataset is clean, we transform it to make our KPIs easier to calculate.
+✔ Transformations We Apply:
+1.	Create a new column for Readmission Bool:
+sql
+CopyEdit
+SELECT *,
+       CASE WHEN readmitted = 'yes' THEN TRUE ELSE FALSE END AS readmitted_bool
+FROM `semiotic-timer-453600-j7.healthcare_kpis.hospital_readmissions`;
+➡ Why? This makes it easier to calculate readmission rates.
+2.	Group data by hospital metrics (procedures, medications, and length of stay).
+3.	Aggregate readmission rates by age group & diagnosis to identify patterns.
+💡 Best Practice: This is where we reshape the data for visualization. We optimize queries for fast aggregations so the Tableau dashboard loads quickly.
+________________________________________
+🛠 Step 4: Export Data for Visualization (CSV or Direct BigQuery Connection to Tableau)
+Once our KPIs are ready, we export the transformed data into Tableau.
+✔ Best Options for Data Export:
+1️⃣ Export as a CSV file
+•	We run queries, save results as CSV, and import into Tableau.
+•	Best for static analysis & small datasets.
+2️⃣ Connect Tableau directly to BigQuery
+•	This allows real-time updates and is best for large datasets.
+•	Tableau queries BigQuery dynamically instead of relying on pre-saved CSVs.
+💡 Best Practice: If we expect frequent data updates, we use a live connection to BigQuery. If data is static, we use CSV exports to avoid excessive BigQuery costs.
+________________________________________
+🛠 Step 5: Build Tableau Dashboard (Data Storytelling)
+With clean and structured data in Tableau, we focus on effective data visualization.
+✔ Designing a Dashboard for Impact:
+•	Simple & Actionable → No unnecessary charts; focus on key insights.
+•	Easy to Read → Use clear labeling & interactive filters.
+•	Storytelling Approach → Guide users from problem to insight to action.
+✔ Planned Visualizations:
+1.	Hospital Readmission Rates (Bar Chart)
+o	X-axis: Hospitals
+o	Y-axis: Readmission Rate (%)
+o	Why? Quickly identifies underperforming hospitals.
+2.	Average Length of Stay vs. Readmission (Scatter Plot)
+o	X-axis: Time in Hospital
+o	Y-axis: Readmission Likelihood
+o	Why? Helps see if longer hospital stays reduce readmissions.
+3.	Most Common Diagnoses for Readmitted Patients (Pie Chart)
+o	Why? Shows which medical conditions lead to higher readmission rates.
+4.	Impact of Diabetes Medication on Readmissions (Grouped Bar Chart)
+o	Groups: Patients taking vs. not taking diabetes meds
+o	Why? Helps hospitals decide if diabetes management needs improvement.
+5.	Hospital Workload Analysis (Heatmap)
+o	X-axis: Hospitals
+o	Y-axis: Average number of procedures, medications, & lab tests
+o	Why? Identifies hospitals handling high patient loads.
+💡 Best Practice: The dashboard should answer key business questions in under 5 seconds. Users shouldn’t have to “dig” for insights.
+________________________________________
+🔄 Project Workflow & Best Practices
+1️⃣ Define KPIs → Align business goals with measurable metrics.
+2️⃣ Explore & Clean Data (SQL in BigQuery) → Ensure data is accurate & structured.
+3️⃣ Feature Engineering (SQL in BigQuery) → Prepare KPIs for fast analysis.
+4️⃣ Export Data (CSV or Direct Connection) → Get data into Tableau efficiently.
+5️⃣ Build Dashboard (Tableau) → Tell a clear, actionable data story.
+💡 Why this workflow?
+•	Prevents wasted effort. We plan first instead of running random SQL queries.
+•	Follows best practices. We clean & structure data first, avoiding messy dashboards.
+•	Optimizes performance. We aggregate KPIs in SQL so Tableau loads fast.
+
