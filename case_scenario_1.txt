@@ -1,8 +1,8 @@
 Case Scenario: Hospital readmissions are a major issue in healthcare. High readmission rates can indicate problems with patient care, poor discharge planning, or ineffective treatment plans. Hospitals are penalized for excessive readmissions, making this a critical issue for healthcare administrators and policymakers.
 
 Key Questions That Need Answers:
-1.Which patients are most likely to be readmitted?
-2️.How does hospital stay length impact readmission rates?
+1. Which patients are most likely to be readmitted?
+2️. How does hospital stay length impact readmission rates?
 3️. Which medical conditions contribute most to readmissions?
 4️. Does diabetes medication usage affect readmission rates?
 5️. What trends exist across age groups and treatment types?
