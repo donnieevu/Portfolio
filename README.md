@@ -3,5 +3,5 @@ End goal is to practice analytical skills by learning the process of data explor
 Test data provided from Kaggle.
 Utilzing Google Cloud Platform for Big Query as the data warehouse to store test data from Kaggle.
 Utilizing Dbvisualizer as the tool for data exploration.
-Visual Studio Code python data cleaning/data transformation. 
+Visual Studio Code for python to data clean/data transformation. 
 Tableau for data visualization creations.
