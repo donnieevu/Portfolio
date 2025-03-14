@@ -1,0 +1,7 @@
+🚀 Summary: How to Think Like a Data Analyst
+Step	What to Do
+1. Break Down the Business Question	Identify the numerator (subset) and denominator (total population).
+2. Convert to SQL Components	Use COUNT(*) for total rows and COUNTIF(condition) for subsets.
+3. Apply Math Logic	Divide subset by total, then multiply by 100 for percentages.
+4. Format for Readability	Use ROUND() and AS alias for clear reporting.
+5. Generalize for Other KPIs	Reuse the structure for different metrics like age, medication, and hospital stays.
