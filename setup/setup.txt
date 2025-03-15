@@ -4,4 +4,12 @@
 -download gitbash (https://git-scm.com/downloads)
 -clone repository to vscode through github 
 -download dbvisualizer (https://www.dbvis.com/download/)
--download jdbc driver (https://cloud.google.com/bigquery/docs/reference/odbc-jdbc-drivers)
+    - download jdbc driver (https://cloud.google.com/bigquery/docs/reference/odbc-jdbc-drivers)
+    - extract .zip file after downloading jdbc and put it into dedicated folder for easy access (SIMBA GBQ JDBC)
+    - go into dbvisualizer and edit driver manager, add .jar file
+    - create new database connection for GBQ and ensure settings format = database url
+    - paste database url in (jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;ProjectId=semiotic-timer-453600-j7;OAuthType=1;)
+    - paste project id in (semiotic-timer-453600-j7)
+    - go to properties next to connection and edit driver properties and enter email for OAuthServiceAcctEmail
+    - apply changes
+    - Connect to Database
