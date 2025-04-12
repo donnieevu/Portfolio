@@ -1,0 +1,1662 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20243.25.0208.0338                               -->
+<workbook original-version='18.1' source-build='2024.3.4 (20243.25.0208.0338)' source-platform='win' version='18.1' xml:base='https://public.tableau.com' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AccessibleZoneTabOrder />
+    <AnimationOnByDefault />
+    <AutoCreateAndUpdateDSDPhoneLayouts />
+    <IntuitiveSorting />
+    <IntuitiveSorting_SP2 />
+    <MarkAnimation />
+    <ObjectModelEncapsulateLegacy />
+    <ObjectModelExtractV2 />
+    <ObjectModelTableType />
+    <SavingAnalyticObjects />
+    <SchemaViewerObjectModel />
+    <SetMembershipControl />
+    <SheetIdentifierTracking />
+    <_.fcp.VConnDownstreamExtractsWithWarnings.true...VConnDownstreamExtractsWithWarnings />
+    <WindowsPersistSimpleIdentifiers />
+    <WorksheetBackgroundTransparency />
+    <ZoneBackgroundTransparency />
+  </document-format-change-manifest>
+  <repository-location derived-from='https://haproxy-traffic-splitter/workbooks/Healthcare_readmissions_dashboard?rev=1.0' id='Healthcare_readmissions_dashboard' path='/workbooks' revision='1.6' />
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <style>
+    <style-rule element='worksheet'>
+      <format attr='font-size' value='12' />
+    </style-rule>
+  </style>
+  <datasources>
+    <datasource caption='hospital_readmissions (hospital_readmissions)' inline='true' name='federated.10vm66c01ahbrr1g36qvl0c3x20i' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='hospital_readmissions' name='excel-direct.0d5fsjm0nzoo4y1gw8sk30eehx8g'>
+            <connection class='excel-direct' cleaning='no' compat='no' dataRefreshTime='' filename='C:/Users/donal/Downloads/hospital_readmissions.xlsx' interpretationMode='0' password='' server='' validate='no' workgroup-auth-mode='as-is' />
+          </named-connection>
+        </named-connections>
+        <relation connection='excel-direct.0d5fsjm0nzoo4y1gw8sk30eehx8g' name='hospital_readmissions' table='[hospital_readmissions$]' type='table'>
+          <columns gridOrigin='A1:Q10001:no:A1:Q10001:0' header='yes' outcome='6'>
+            <column datatype='string' name='age' ordinal='0' />
+            <column datatype='integer' name='time_in_hospital' ordinal='1' />
+            <column datatype='integer' name='n_lab_procedures' ordinal='2' />
+            <column datatype='integer' name='n_procedures' ordinal='3' />
+            <column datatype='integer' name='n_medications' ordinal='4' />
+            <column datatype='integer' name='n_outpatient' ordinal='5' />
+            <column datatype='integer' name='n_inpatient' ordinal='6' />
+            <column datatype='integer' name='n_emergency' ordinal='7' />
+            <column datatype='string' name='medical_specialty' ordinal='8' />
+            <column datatype='string' name='diag_1' ordinal='9' />
+            <column datatype='string' name='diag_2' ordinal='10' />
+            <column datatype='string' name='diag_3' ordinal='11' />
+            <column datatype='string' name='glucose_test' ordinal='12' />
+            <column datatype='string' name='A1Ctest' ordinal='13' />
+            <column datatype='string' name='change' ordinal='14' />
+            <column datatype='string' name='diabetes_med' ordinal='15' />
+            <column datatype='string' name='readmitted' ordinal='16' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[hospital_readmissions]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>0</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:Q10001:no:A1:Q10001:0&quot;</attribute>
+              <attribute datatype='boolean' name='header'>true</attribute>
+              <attribute datatype='integer' name='outcome'>6</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>age</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[age]</local-name>
+            <parent-name>[hospital_readmissions]</parent-name>
+            <remote-alias>age</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <object-id>[hospital!readmissions_F196FB03FB2F4C01B7D52D2E822D69F9]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>time_in_hospital</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[time_in_hospital]</local-name>
+            <parent-name>[hospital_readmissions]</parent-name>
+            <remote-alias>time_in_hospital</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <object-id>[hospital!readmissions_F196FB03FB2F4C01B7D52D2E822D69F9]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>n_lab_procedures</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[n_lab_procedures]</local-name>
+            <parent-name>[hospital_readmissions]</parent-name>
+            <remote-alias>n_lab_procedures</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <object-id>[hospital!readmissions_F196FB03FB2F4C01B7D52D2E822D69F9]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>n_procedures</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[n_procedures]</local-name>
+            <parent-name>[hospital_readmissions]</parent-name>
+            <remote-alias>n_procedures</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <object-id>[hospital!readmissions_F196FB03FB2F4C01B7D52D2E822D69F9]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>n_medications</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[n_medications]</local-name>
+            <parent-name>[hospital_readmissions]</parent-name>
+            <remote-alias>n_medications</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <object-id>[hospital!readmissions_F196FB03FB2F4C01B7D52D2E822D69F9]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>n_outpatient</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[n_outpatient]</local-name>
+            <parent-name>[hospital_readmissions]</parent-name>
+            <remote-alias>n_outpatient</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <object-id>[hospital!readmissions_F196FB03FB2F4C01B7D52D2E822D69F9]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>n_inpatient</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[n_inpatient]</local-name>
+            <parent-name>[hospital_readmissions]</parent-name>
+            <remote-alias>n_inpatient</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <object-id>[hospital!readmissions_F196FB03FB2F4C01B7D52D2E822D69F9]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>n_emergency</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[n_emergency]</local-name>
+            <parent-name>[hospital_readmissions]</parent-name>
+            <remote-alias>n_emergency</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <object-id>[hospital!readmissions_F196FB03FB2F4C01B7D52D2E822D69F9]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>medical_specialty</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[medical_specialty]</local-name>
+            <parent-name>[hospital_readmissions]</parent-name>
+            <remote-alias>medical_specialty</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <object-id>[hospital!readmissions_F196FB03FB2F4C01B7D52D2E822D69F9]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>diag_1</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[diag_1]</local-name>
+            <parent-name>[hospital_readmissions]</parent-name>
+            <remote-alias>diag_1</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <object-id>[hospital!readmissions_F196FB03FB2F4C01B7D52D2E822D69F9]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>diag_2</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[diag_2]</local-name>
+            <parent-name>[hospital_readmissions]</parent-name>
+            <remote-alias>diag_2</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <object-id>[hospital!readmissions_F196FB03FB2F4C01B7D52D2E822D69F9]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>diag_3</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[diag_3]</local-name>
+            <parent-name>[hospital_readmissions]</parent-name>
+            <remote-alias>diag_3</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <object-id>[hospital!readmissions_F196FB03FB2F4C01B7D52D2E822D69F9]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>glucose_test</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[glucose_test]</local-name>
+            <parent-name>[hospital_readmissions]</parent-name>
+            <remote-alias>glucose_test</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <object-id>[hospital!readmissions_F196FB03FB2F4C01B7D52D2E822D69F9]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>A1Ctest</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[A1Ctest]</local-name>
+            <parent-name>[hospital_readmissions]</parent-name>
+            <remote-alias>A1Ctest</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <object-id>[hospital!readmissions_F196FB03FB2F4C01B7D52D2E822D69F9]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>change</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[change]</local-name>
+            <parent-name>[hospital_readmissions]</parent-name>
+            <remote-alias>change</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <object-id>[hospital!readmissions_F196FB03FB2F4C01B7D52D2E822D69F9]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>diabetes_med</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[diabetes_med]</local-name>
+            <parent-name>[hospital_readmissions]</parent-name>
+            <remote-alias>diabetes_med</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <object-id>[hospital!readmissions_F196FB03FB2F4C01B7D52D2E822D69F9]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>readmitted</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[readmitted]</local-name>
+            <parent-name>[hospital_readmissions]</parent-name>
+            <remote-alias>readmitted</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <object-id>[hospital!readmissions_F196FB03FB2F4C01B7D52D2E822D69F9]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='A1C Category' datatype='string' name='[Calculation_1472114195516203008]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='IF [A1Ctest] = &apos;High&apos; Then &apos;High&apos;&#13;&#10;ELSEIF [A1Ctest] = &apos;Normal&apos; THEN &quot;Normal&quot;&#13;&#10;ELSE &apos;Not Performed&apos;&#13;&#10;END' />
+      </column>
+      <column caption='Readmitted Numeric' datatype='integer' name='[Calculation_1472114195518177281]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='IF [Calculation_1537134904591769600] then 1 else 0 END' />
+      </column>
+      <column caption='Length of Stay Group' datatype='string' name='[Calculation_1472114195527503874]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='If [time_in_hospital] &lt;= 3 THEN &quot;1-3 Days&quot;&#13;&#10;ELSEIF [time_in_hospital] &lt;= 6 THEN &quot;4-6 Days&quot;&#13;&#10;ELSEIF [time_in_hospital] &lt;= 9 THEN &quot;7-9 Days&quot;&#13;&#10;ELSE &quot;10+ Days&quot;&#13;&#10;END' />
+      </column>
+      <column caption='readmitted_boolean' datatype='boolean' name='[Calculation_1537134904591769600]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='IF [readmitted] = &quot;yes&quot; THEN TRUE &#13;&#10;ELSE FALSE &#13;&#10;END' />
+      </column>
+      <column caption='Readmission Rate (%)' datatype='real' default-format='p0.0%' name='[Calculation_1537134904593195009]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='SUM(IF [Calculation_1537134904591769600] THEN 1 ELSE 0 END) / COUNT([readmitted])' />
+      </column>
+      <column caption='Overall Readmission Rate (%)' datatype='real' default-format='p0.00%' name='[Calculation_391250278652833792]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='SUM(IF [readmitted] = &quot;yes&quot; THEN 1 ELSE 0 END) / COUNT([readmitted])' />
+      </column>
+      <column caption='Number of Patients' datatype='integer' name='[Calculation_391250278660128769]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column caption='hospital_readmissions' datatype='table' name='[__tableau_internal_object_id__].[hospital!readmissions_F196FB03FB2F4C01B7D52D2E822D69F9]' role='measure' type='quantitative' />
+      <column caption='Age' datatype='string' name='[age]' role='dimension' type='nominal' />
+      <column caption='Change' datatype='string' name='[change]' role='dimension' type='nominal' />
+      <column caption='Diabetes Med' datatype='string' name='[diabetes_med]' role='dimension' type='nominal' />
+      <column caption='Diag 1' datatype='string' name='[diag_1]' role='dimension' type='nominal' />
+      <column caption='Diag 2' datatype='string' name='[diag_2]' role='dimension' type='nominal' />
+      <column caption='Diag 3' datatype='string' name='[diag_3]' role='dimension' type='nominal' />
+      <column caption='Glucose Test' datatype='string' name='[glucose_test]' role='dimension' type='nominal' />
+      <column caption='Medical Specialty' datatype='string' name='[medical_specialty]' role='dimension' type='nominal' />
+      <column caption='N Emergency' datatype='integer' name='[n_emergency]' role='measure' type='quantitative' />
+      <column caption='N Inpatient' datatype='integer' name='[n_inpatient]' role='measure' type='quantitative' />
+      <column caption='N Lab Procedures' datatype='integer' name='[n_lab_procedures]' role='measure' type='quantitative' />
+      <column caption='N Medications' datatype='integer' name='[n_medications]' role='measure' type='quantitative' />
+      <column caption='N Outpatient' datatype='integer' name='[n_outpatient]' role='measure' type='quantitative' />
+      <column caption='N Procedures' datatype='integer' name='[n_procedures]' role='measure' type='quantitative' />
+      <column caption='Readmitted' datatype='string' name='[readmitted]' role='dimension' type='nominal' />
+      <column caption='Time In Hospital' datatype='integer' name='[time_in_hospital]' role='measure' type='quantitative' />
+      <column-instance column='[Calculation_1472114195516203008]' derivation='None' name='[none:Calculation_1472114195516203008:nk]' pivot='key' type='nominal' />
+      <column-instance column='[Calculation_1472114195527503874]' derivation='None' name='[none:Calculation_1472114195527503874:nk]' pivot='key' type='nominal' />
+      <column-instance column='[age]' derivation='None' name='[none:age:nk]' pivot='key' type='nominal' />
+      <column-instance column='[Calculation_391250278660128769]' derivation='Sum' name='[sum:Calculation_391250278660128769:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Calculation_1537134904593195009]' derivation='User' name='[usr:Calculation_1537134904593195009:qk]' pivot='key' type='quantitative' />
+      <extract _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' object-id='' units='records'>
+        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='Data/TableauTemp/#TableauTemp_099pxyl0nsi6gp11hdu841kvl5lm.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='' username='tableau_internal_user'>
+          <relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>age</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[age]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>age</remote-alias>
+              <ordinal>0</ordinal>
+              <family>hospital_readmissions</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>6</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>time_in_hospital</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[time_in_hospital]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>time_in_hospital</remote-alias>
+              <ordinal>1</ordinal>
+              <family>hospital_readmissions</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>14</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>n_lab_procedures</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[n_lab_procedures]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>n_lab_procedures</remote-alias>
+              <ordinal>2</ordinal>
+              <family>hospital_readmissions</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>117</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>n_procedures</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[n_procedures]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>n_procedures</remote-alias>
+              <ordinal>3</ordinal>
+              <family>hospital_readmissions</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>7</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>n_medications</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[n_medications]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>n_medications</remote-alias>
+              <ordinal>4</ordinal>
+              <family>hospital_readmissions</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>84</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>n_outpatient</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[n_outpatient]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>n_outpatient</remote-alias>
+              <ordinal>5</ordinal>
+              <family>hospital_readmissions</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>30</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>n_inpatient</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[n_inpatient]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>n_inpatient</remote-alias>
+              <ordinal>6</ordinal>
+              <family>hospital_readmissions</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>25</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>n_emergency</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[n_emergency]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>n_emergency</remote-alias>
+              <ordinal>7</ordinal>
+              <family>hospital_readmissions</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>28</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>medical_specialty</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[medical_specialty]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>medical_specialty</remote-alias>
+              <ordinal>8</ordinal>
+              <family>hospital_readmissions</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>7</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>diag_1</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[diag_1]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>diag_1</remote-alias>
+              <ordinal>9</ordinal>
+              <family>hospital_readmissions</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>7</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>diag_2</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[diag_2]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>diag_2</remote-alias>
+              <ordinal>10</ordinal>
+              <family>hospital_readmissions</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>8</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>diag_3</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[diag_3]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>diag_3</remote-alias>
+              <ordinal>11</ordinal>
+              <family>hospital_readmissions</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>8</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>glucose_test</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[glucose_test]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>glucose_test</remote-alias>
+              <ordinal>12</ordinal>
+              <family>hospital_readmissions</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>A1Ctest</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[A1Ctest]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>A1Ctest</remote-alias>
+              <ordinal>13</ordinal>
+              <family>hospital_readmissions</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>change</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[change]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>change</remote-alias>
+              <ordinal>14</ordinal>
+              <family>hospital_readmissions</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>diabetes_med</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[diabetes_med]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>diabetes_med</remote-alias>
+              <ordinal>15</ordinal>
+              <family>hospital_readmissions</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>readmitted</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[readmitted]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>readmitted</remote-alias>
+              <ordinal>16</ordinal>
+              <family>hospital_readmissions</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[none:age:nk]' palette='color_blind_10_0' type='palette'>
+            <map to='#1170aa'>
+              <bucket>&quot;[40-50)&quot;</bucket>
+            </map>
+            <map to='#57606c'>
+              <bucket>&quot;[70-80)&quot;</bucket>
+            </map>
+            <map to='#5fa2ce'>
+              <bucket>&quot;[80-90)&quot;</bucket>
+            </map>
+            <map to='#a3acb9'>
+              <bucket>&quot;[60-70)&quot;</bucket>
+            </map>
+            <map to='#c85200'>
+              <bucket>&quot;[90-100)&quot;</bucket>
+            </map>
+            <map to='#fc7d0b'>
+              <bucket>&quot;[50-60)&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:Calculation_1472114195516203008:nk]' palette='tableau20_10_0' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;High&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Normal&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Not Performed&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:AdhocCluster:1:ok]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>1</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>5</bucket>
+            </map>
+            <map to='#76b7b2'>
+              <bucket>4</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>3</bucket>
+            </map>
+            <map to='#edc948'>
+              <bucket>6</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>2</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:Calculation_1472114195527503874:nk]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;1-3 Days&quot;</bucket>
+            </map>
+            <map to='#76b7b2'>
+              <bucket>&quot;10+ Days&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;7-9 Days&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;4-6 Days&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <analytic-model>
+        <name>
+          <field name='[AnalyticModel:{6e76fd53-eb93-4222-9fd9-19c35e7cb75f}]' />
+        </name>
+        <analytic-model-specifications class='cluster-specifications'>
+          <analysis-fields>
+            <field name='[federated.10vm66c01ahbrr1g36qvl0c3x20i].[sum:Calculation_391250278660128769:qk]' />
+            <field name='[federated.10vm66c01ahbrr1g36qvl0c3x20i].[usr:Calculation_1537134904593195009:qk]' />
+          </analysis-fields>
+          <filter-fields />
+          <lod-fields />
+          <number-of-desired-clusters>3</number-of-desired-clusters>
+          <is-dissagregate>false</is-dissagregate>
+        </analytic-model-specifications>
+        <result-fields />
+      </analytic-model>
+      <object-graph>
+        <objects>
+          <object caption='hospital_readmissions' id='hospital!readmissions_F196FB03FB2F4C01B7D52D2E822D69F9'>
+            <properties context=''>
+              <relation connection='excel-direct.0d5fsjm0nzoo4y1gw8sk30eehx8g' name='hospital_readmissions' table='[hospital_readmissions$]' type='table'>
+                <columns gridOrigin='A1:Q10001:no:A1:Q10001:0' header='yes' outcome='6'>
+                  <column datatype='string' name='age' ordinal='0' />
+                  <column datatype='integer' name='time_in_hospital' ordinal='1' />
+                  <column datatype='integer' name='n_lab_procedures' ordinal='2' />
+                  <column datatype='integer' name='n_procedures' ordinal='3' />
+                  <column datatype='integer' name='n_medications' ordinal='4' />
+                  <column datatype='integer' name='n_outpatient' ordinal='5' />
+                  <column datatype='integer' name='n_inpatient' ordinal='6' />
+                  <column datatype='integer' name='n_emergency' ordinal='7' />
+                  <column datatype='string' name='medical_specialty' ordinal='8' />
+                  <column datatype='string' name='diag_1' ordinal='9' />
+                  <column datatype='string' name='diag_2' ordinal='10' />
+                  <column datatype='string' name='diag_3' ordinal='11' />
+                  <column datatype='string' name='glucose_test' ordinal='12' />
+                  <column datatype='string' name='A1Ctest' ordinal='13' />
+                  <column datatype='string' name='change' ordinal='14' />
+                  <column datatype='string' name='diabetes_med' ordinal='15' />
+                  <column datatype='string' name='readmitted' ordinal='16' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='Extract' table='[Extract].[Extract]' type='table' />
+            </properties>
+          </object>
+        </objects>
+      </object-graph>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Average Length of Stay vs. Readmission Rate'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='hospital_readmissions (hospital_readmissions)' name='federated.10vm66c01ahbrr1g36qvl0c3x20i' />
+          </datasources>
+          <datasource-dependencies datasource='federated.10vm66c01ahbrr1g36qvl0c3x20i'>
+            <column caption='Readmitted Numeric' datatype='integer' name='[Calculation_1472114195518177281]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='IF [Calculation_1537134904591769600] then 1 else 0 END' />
+            </column>
+            <column caption='Length of Stay Group' datatype='string' name='[Calculation_1472114195527503874]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='If [time_in_hospital] &lt;= 3 THEN &quot;1-3 Days&quot;&#13;&#10;ELSEIF [time_in_hospital] &lt;= 6 THEN &quot;4-6 Days&quot;&#13;&#10;ELSEIF [time_in_hospital] &lt;= 9 THEN &quot;7-9 Days&quot;&#13;&#10;ELSE &quot;10+ Days&quot;&#13;&#10;END' />
+            </column>
+            <column caption='readmitted_boolean' datatype='boolean' name='[Calculation_1537134904591769600]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='IF [readmitted] = &quot;yes&quot; THEN TRUE &#13;&#10;ELSE FALSE &#13;&#10;END' />
+            </column>
+            <column caption='Number of Patients' datatype='integer' name='[Calculation_391250278660128769]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='1' />
+            </column>
+            <column-instance column='[Calculation_1472114195518177281]' derivation='Avg' name='[avg:Calculation_1472114195518177281:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_1472114195527503874]' derivation='None' name='[none:Calculation_1472114195527503874:nk]' pivot='key' type='nominal' />
+            <column caption='Readmitted' datatype='string' name='[readmitted]' role='dimension' type='nominal' />
+            <column-instance column='[Calculation_391250278660128769]' derivation='Sum' name='[sum:Calculation_391250278660128769:qk]' pivot='key' type='quantitative' />
+            <column caption='Time In Hospital' datatype='integer' name='[time_in_hospital]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <shelf-sorts>
+            <shelf-sort-v2 dimension-to-sort='[federated.10vm66c01ahbrr1g36qvl0c3x20i].[none:Calculation_1472114195527503874:nk]' direction='DESC' is-on-innermost-dimension='true' measure-to-sort-by='[federated.10vm66c01ahbrr1g36qvl0c3x20i].[avg:Calculation_1472114195518177281:qk]' shelf='rows' />
+          </shelf-sorts>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='title' class='0' field='[federated.10vm66c01ahbrr1g36qvl0c3x20i].[avg:Calculation_1472114195518177281:qk]' scope='cols' value='Readmission Rate (%)' />
+            <encoding attr='space' class='0' field='[federated.10vm66c01ahbrr1g36qvl0c3x20i].[avg:Calculation_1472114195518177281:qk]' field-type='quantitative' max='0.55' min='0.0' range-type='fixed' scope='cols' type='space' />
+          </style-rule>
+          <style-rule element='cell'>
+            <format attr='text-format' field='[federated.10vm66c01ahbrr1g36qvl0c3x20i].[avg:Calculation_1472114195518177281:qk]' value='p0%' />
+            <format attr='height' field='[federated.10vm66c01ahbrr1g36qvl0c3x20i].[none:Calculation_1472114195527503874:nk]' value='96' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='width' field='[federated.10vm66c01ahbrr1g36qvl0c3x20i].[none:Calculation_1472114195527503874:nk]' value='196' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='text-format' field='[federated.10vm66c01ahbrr1g36qvl0c3x20i].[avg:Calculation_1472114195518177281:qk]' value='p0%' />
+          </style-rule>
+          <style-rule element='refline'>
+            <format attr='fill-above' id='refline0' value='#00000000' />
+            <format attr='fill-below' id='refline0' value='#00000000' />
+            <format attr='stroke-size' id='refline0' value='5' />
+            <format attr='stroke-color' id='refline0' value='#0000003e' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.10vm66c01ahbrr1g36qvl0c3x20i].[none:Calculation_1472114195527503874:nk]' />
+              <tooltip column='[federated.10vm66c01ahbrr1g36qvl0c3x20i].[sum:Calculation_391250278660128769:qk]' />
+            </encodings>
+            <reference-line axis-column='[federated.10vm66c01ahbrr1g36qvl0c3x20i].[avg:Calculation_1472114195518177281:qk]' enable-instant-analytics='true' formula='average' id='refline0' label='Overall Avg Readmission Rate' label-type='custom' probability='95' scope='per-table' value-column='[federated.10vm66c01ahbrr1g36qvl0c3x20i].[avg:Calculation_1472114195518177281:qk]' z-order='1' />
+            <customized-tooltip>
+              <formatted-text>
+                <run fontcolor='#787878'>Length of Stay:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.10vm66c01ahbrr1g36qvl0c3x20i].[none:Calculation_1472114195527503874:nk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'>Avg. Readmission Rate(%):&#9;</run>
+                <run bold='true'><![CDATA[<[federated.10vm66c01ahbrr1g36qvl0c3x20i].[avg:Calculation_1472114195518177281:qk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#606b76'>Patients in Group:</run>
+                <run fontcolor='#818b91'>Æ </run>
+                <run>Æ </run>
+                <run bold='true'><![CDATA[<[federated.10vm66c01ahbrr1g36qvl0c3x20i].[sum:Calculation_391250278660128769:qk]>]]></run>
+              </formatted-text>
+            </customized-tooltip>
+            <style>
+              <style-rule element='datalabel'>
+                <format attr='color-mode' value='auto' />
+                <format attr='font-weight' value='bold' />
+                <format attr='font-size' value='12' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minheight' value='-1' />
+                <format attr='maxheight' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.10vm66c01ahbrr1g36qvl0c3x20i].[none:Calculation_1472114195527503874:nk]</rows>
+        <cols>[federated.10vm66c01ahbrr1g36qvl0c3x20i].[avg:Calculation_1472114195518177281:qk]</cols>
+      </table>
+      <simple-id uuid='{9BCE425D-FD73-4B17-9844-EE83CEC70115}' />
+    </worksheet>
+    <worksheet name='Overall Readmission Rate'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='hospital_readmissions (hospital_readmissions)' name='federated.10vm66c01ahbrr1g36qvl0c3x20i' />
+          </datasources>
+          <datasource-dependencies datasource='federated.10vm66c01ahbrr1g36qvl0c3x20i'>
+            <column caption='readmitted_boolean' datatype='boolean' name='[Calculation_1537134904591769600]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='IF [readmitted] = &quot;yes&quot; THEN TRUE &#13;&#10;ELSE FALSE &#13;&#10;END' />
+            </column>
+            <column caption='Readmission Rate (%)' datatype='real' default-format='p0.0%' name='[Calculation_1537134904593195009]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='SUM(IF [Calculation_1537134904591769600] THEN 1 ELSE 0 END) / COUNT([readmitted])' />
+            </column>
+            <column caption='Readmitted' datatype='string' name='[readmitted]' role='dimension' type='nominal' />
+            <column-instance column='[Calculation_1537134904593195009]' derivation='User' name='[usr:Calculation_1537134904593195009:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='font-weight' value='bold' />
+            <format attr='text-align' value='center' />
+            <format attr='vertical-align' value='center' />
+            <format attr='text-format' field='[federated.10vm66c01ahbrr1g36qvl0c3x20i].[usr:Calculation_1537134904593195009:qk]' value='p0%' />
+            <format attr='font-size' value='9' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='font-weight' value='bold' />
+            <format attr='font-size' value='12' />
+            <format attr='text-format' field='[federated.10vm66c01ahbrr1g36qvl0c3x20i].[usr:Calculation_1537134904593195009:qk]' value='p0.0%' />
+          </style-rule>
+          <style-rule element='title'>
+            <format attr='font-weight' value='bold' />
+            <format attr='font-size' value='9' />
+          </style-rule>
+          <style-rule element='tooltip'>
+            <format attr='font-size' value='12' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.10vm66c01ahbrr1g36qvl0c3x20i].[usr:Calculation_1537134904593195009:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{EF1B8B13-A308-41A8-BEF0-CFB8D18B9B93}' />
+    </worksheet>
+    <worksheet name='Readmission Rates by A1C Test Result'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='hospital_readmissions (hospital_readmissions)' name='federated.10vm66c01ahbrr1g36qvl0c3x20i' />
+          </datasources>
+          <datasource-dependencies datasource='federated.10vm66c01ahbrr1g36qvl0c3x20i'>
+            <column datatype='string' name='[A1Ctest]' role='dimension' type='nominal' />
+            <column caption='A1C Category' datatype='string' name='[Calculation_1472114195516203008]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='IF [A1Ctest] = &apos;High&apos; Then &apos;High&apos;&#13;&#10;ELSEIF [A1Ctest] = &apos;Normal&apos; THEN &quot;Normal&quot;&#13;&#10;ELSE &apos;Not Performed&apos;&#13;&#10;END' />
+            </column>
+            <column caption='Readmitted Numeric' datatype='integer' name='[Calculation_1472114195518177281]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='IF [Calculation_1537134904591769600] then 1 else 0 END' />
+            </column>
+            <column caption='readmitted_boolean' datatype='boolean' name='[Calculation_1537134904591769600]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='IF [readmitted] = &quot;yes&quot; THEN TRUE &#13;&#10;ELSE FALSE &#13;&#10;END' />
+            </column>
+            <column-instance column='[Calculation_1472114195518177281]' derivation='Avg' name='[avg:Calculation_1472114195518177281:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_1472114195516203008]' derivation='None' name='[none:Calculation_1472114195516203008:nk]' pivot='key' type='nominal' />
+            <column caption='Readmitted' datatype='string' name='[readmitted]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <shelf-sorts>
+            <shelf-sort-v2 dimension-to-sort='[federated.10vm66c01ahbrr1g36qvl0c3x20i].[none:Calculation_1472114195516203008:nk]' direction='DESC' is-on-innermost-dimension='true' measure-to-sort-by='[federated.10vm66c01ahbrr1g36qvl0c3x20i].[avg:Calculation_1472114195518177281:qk]' shelf='columns' />
+          </shelf-sorts>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='title' class='0' field='[federated.10vm66c01ahbrr1g36qvl0c3x20i].[avg:Calculation_1472114195518177281:qk]' scope='rows' value='Readmission Rate (%)' />
+            <encoding attr='space' class='0' field='[federated.10vm66c01ahbrr1g36qvl0c3x20i].[avg:Calculation_1472114195518177281:qk]' field-type='quantitative' max='0.55' min='0.0' range-type='fixed' scope='rows' type='space' />
+          </style-rule>
+          <style-rule element='cell'>
+            <format attr='width' field='[federated.10vm66c01ahbrr1g36qvl0c3x20i].[none:Calculation_1472114195516203008:nk]' value='135' />
+            <format attr='text-format' field='[federated.10vm66c01ahbrr1g36qvl0c3x20i].[avg:Calculation_1472114195518177281:qk]' value='p0%' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='text-format' field='[federated.10vm66c01ahbrr1g36qvl0c3x20i].[avg:Calculation_1472114195518177281:qk]' value='p0%' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <encodings>
+              <color column='[federated.10vm66c01ahbrr1g36qvl0c3x20i].[none:Calculation_1472114195516203008:nk]' />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text>
+                <run fontcolor='#787878'>A1C Category:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.10vm66c01ahbrr1g36qvl0c3x20i].[none:Calculation_1472114195516203008:nk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'>Avg. Readmitted Numeric:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.10vm66c01ahbrr1g36qvl0c3x20i].[avg:Calculation_1472114195518177281:qk]>]]></run>
+                <run>Æ&#10;</run>
+                <run bold='true' fontcolor='#818b91'>Definitions:</run>
+                <run>Æ&#10;</run>
+                <run bold='true' fontcolor='#818b91'>A1C = </run>
+                <run bold='true'>Average blood sugar levels over the past 2-3 months</run>
+                <run>Æ&#10;</run>
+                <run bold='true' fontcolor='#818b91'>High =</run>
+                <run bold='true'> A1C &gt; 7% (poor diabetes control)</run>
+                <run>Æ&#10;</run>
+                <run bold='true' fontcolor='#818b91'>Normal =</run>
+                <run bold='true'> A1C &lt;= 7%</run>
+                <run>Æ&#10;</run>
+                <run bold='true' fontcolor='#818b91'>Not Performed = </run>
+                <run bold='true'>No A1C test recoreded</run>
+              </formatted-text>
+            </customized-tooltip>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.10vm66c01ahbrr1g36qvl0c3x20i].[avg:Calculation_1472114195518177281:qk]</rows>
+        <cols>[federated.10vm66c01ahbrr1g36qvl0c3x20i].[none:Calculation_1472114195516203008:nk]</cols>
+      </table>
+      <simple-id uuid='{B87FE20D-2AEC-49F1-BF7F-E3391E2DECB2}' />
+    </worksheet>
+    <worksheet name='Readmission Trends by Age Group'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontcolor='#000000' fontname='Benton Sans Book'>Readmission Trends by Age Group</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='hospital_readmissions (hospital_readmissions)' name='federated.10vm66c01ahbrr1g36qvl0c3x20i' />
+          </datasources>
+          <datasource-dependencies datasource='federated.10vm66c01ahbrr1g36qvl0c3x20i'>
+            <column caption='readmitted_boolean' datatype='boolean' name='[Calculation_1537134904591769600]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='IF [readmitted] = &quot;yes&quot; THEN TRUE &#13;&#10;ELSE FALSE &#13;&#10;END' />
+            </column>
+            <column caption='Readmission Rate (%)' datatype='real' default-format='p0.0%' name='[Calculation_1537134904593195009]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='SUM(IF [Calculation_1537134904591769600] THEN 1 ELSE 0 END) / COUNT([readmitted])' />
+            </column>
+            <column caption='Age' datatype='string' name='[age]' role='dimension' type='nominal' />
+            <column-instance column='[age]' derivation='None' name='[none:age:nk]' pivot='key' type='nominal' />
+            <column-instance column='[time_in_hospital]' derivation='None' name='[none:time_in_hospital:qk]' pivot='key' type='quantitative' />
+            <column caption='Readmitted' datatype='string' name='[readmitted]' role='dimension' type='nominal' />
+            <column caption='Time In Hospital' datatype='integer' name='[time_in_hospital]' role='measure' type='quantitative' />
+            <column-instance column='[Calculation_1537134904593195009]' derivation='User' name='[usr:Calculation_1537134904593195009:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='title' class='0' field='[federated.10vm66c01ahbrr1g36qvl0c3x20i].[none:time_in_hospital:qk]' scope='cols' value='Time In Hospital (Days)' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='text-format' field='[federated.10vm66c01ahbrr1g36qvl0c3x20i].[usr:Calculation_1537134904593195009:qk]' value='p0.0%' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Line' />
+            <encodings>
+              <color column='[federated.10vm66c01ahbrr1g36qvl0c3x20i].[none:age:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.10vm66c01ahbrr1g36qvl0c3x20i].[usr:Calculation_1537134904593195009:qk]</rows>
+        <cols>[federated.10vm66c01ahbrr1g36qvl0c3x20i].[none:time_in_hospital:qk]</cols>
+      </table>
+      <simple-id uuid='{CA404996-67CC-4E80-AF74-069B98DAD0FC}' />
+    </worksheet>
+    <worksheet name='Top Diagnoses Among Readmitted Patients'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='hospital_readmissions (hospital_readmissions)' name='federated.10vm66c01ahbrr1g36qvl0c3x20i' />
+          </datasources>
+          <datasource-dependencies datasource='federated.10vm66c01ahbrr1g36qvl0c3x20i'>
+            <column caption='readmitted_boolean' datatype='boolean' name='[Calculation_1537134904591769600]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='IF [readmitted] = &quot;yes&quot; THEN TRUE &#13;&#10;ELSE FALSE &#13;&#10;END' />
+            </column>
+            <column caption='Number of Patients' datatype='integer' name='[Calculation_391250278660128769]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='1' />
+            </column>
+            <column caption='Diag 1' datatype='string' name='[diag_1]' role='dimension' type='nominal' />
+            <column-instance column='[Calculation_1537134904591769600]' derivation='None' name='[none:Calculation_1537134904591769600:nk]' pivot='key' type='nominal' />
+            <column-instance column='[diag_1]' derivation='None' name='[none:diag_1:nk]' pivot='key' type='nominal' />
+            <column caption='Readmitted' datatype='string' name='[readmitted]' role='dimension' type='nominal' />
+            <column-instance column='[Calculation_391250278660128769]' derivation='Sum' name='[sum:Calculation_391250278660128769:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.10vm66c01ahbrr1g36qvl0c3x20i].[none:Calculation_1537134904591769600:nk]'>
+            <groupfilter function='member' level='[none:Calculation_1537134904591769600:nk]' member='true' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <shelf-sorts>
+            <shelf-sort-v2 dimension-to-sort='[federated.10vm66c01ahbrr1g36qvl0c3x20i].[none:diag_1:nk]' direction='DESC' is-on-innermost-dimension='true' measure-to-sort-by='[federated.10vm66c01ahbrr1g36qvl0c3x20i].[sum:Calculation_391250278660128769:qk]' shelf='rows' />
+          </shelf-sorts>
+          <slices>
+            <column>[federated.10vm66c01ahbrr1g36qvl0c3x20i].[none:Calculation_1537134904591769600:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <color column='[federated.10vm66c01ahbrr1g36qvl0c3x20i].[sum:Calculation_391250278660128769:qk]' />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text>
+                <run fontcolor='#787878'>Diagnosis Category:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.10vm66c01ahbrr1g36qvl0c3x20i].[none:diag_1:nk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'>Number of Readmitted Patients:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.10vm66c01ahbrr1g36qvl0c3x20i].[sum:Calculation_391250278660128769:qk]>]]></run>
+              </formatted-text>
+            </customized-tooltip>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='size' value='1.5822099447250366' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.10vm66c01ahbrr1g36qvl0c3x20i].[none:diag_1:nk]</rows>
+        <cols>[federated.10vm66c01ahbrr1g36qvl0c3x20i].[sum:Calculation_391250278660128769:qk]</cols>
+      </table>
+      <simple-id uuid='{17851CA9-5A9A-4A16-9507-1ABB62B2864D}' />
+    </worksheet>
+    <worksheet name='readmission_rate_by_age'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>Readmissions Rate By Age</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <repository-location derived-from='https://haproxy-traffic-splitter/workbooks/Healthcare_readmissions_dashboard/readmission_rate_by_age?rev=' id='113578590' path='/workbooks/Healthcare_readmissions_dashboard' revision='' />
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='hospital_readmissions (hospital_readmissions)' name='federated.10vm66c01ahbrr1g36qvl0c3x20i' />
+          </datasources>
+          <datasource-dependencies datasource='federated.10vm66c01ahbrr1g36qvl0c3x20i'>
+            <column caption='readmitted_boolean' datatype='boolean' name='[Calculation_1537134904591769600]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='IF [readmitted] = &quot;yes&quot; THEN TRUE &#13;&#10;ELSE FALSE &#13;&#10;END' />
+            </column>
+            <column caption='Readmission Rate (%)' datatype='real' default-format='p0.0%' name='[Calculation_1537134904593195009]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='SUM(IF [Calculation_1537134904591769600] THEN 1 ELSE 0 END) / COUNT([readmitted])' />
+            </column>
+            <column caption='Age' datatype='string' name='[age]' role='dimension' type='nominal' />
+            <column-instance column='[age]' derivation='None' name='[none:age:nk]' pivot='key' type='nominal' />
+            <column caption='Readmitted' datatype='string' name='[readmitted]' role='dimension' type='nominal' />
+            <column-instance column='[Calculation_1537134904593195009]' derivation='User' name='[usr:Calculation_1537134904593195009:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <shelf-sorts>
+            <shelf-sort-v2 dimension-to-sort='[federated.10vm66c01ahbrr1g36qvl0c3x20i].[none:age:nk]' direction='DESC' is-on-innermost-dimension='true' measure-to-sort-by='[federated.10vm66c01ahbrr1g36qvl0c3x20i].[usr:Calculation_1537134904593195009:qk]' shelf='rows' />
+          </shelf-sorts>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.10vm66c01ahbrr1g36qvl0c3x20i].[usr:Calculation_1537134904593195009:qk]' palette='red_green_diverging_10_0' reverse='true' type='interpolated' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='in-tooltip' field='[federated.10vm66c01ahbrr1g36qvl0c3x20i].[usr:Calculation_1537134904593195009:qk]' value='false' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <encodings>
+              <color column='[federated.10vm66c01ahbrr1g36qvl0c3x20i].[usr:Calculation_1537134904593195009:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='datalabel'>
+                <format attr='color-mode' value='auto' />
+                <format attr='font-size' value='10' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='mark-transparency' value='255' />
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-mode' value='all' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.10vm66c01ahbrr1g36qvl0c3x20i].[none:age:nk]</rows>
+        <cols>[federated.10vm66c01ahbrr1g36qvl0c3x20i].[usr:Calculation_1537134904593195009:qk]</cols>
+      </table>
+      <simple-id uuid='{3A0B54DC-F095-4F8F-8243-06A7658AEBE0}' />
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard enable-sort-zone-taborder='true' name='Dashboard 1'>
+      <style />
+      <size maxheight='900' maxwidth='1600' minheight='900' minwidth='1600' preset-index='8' sizing-mode='fixed' />
+      <datasources>
+        <datasource caption='hospital_readmissions (hospital_readmissions)' name='federated.10vm66c01ahbrr1g36qvl0c3x20i' />
+      </datasources>
+      <datasource-dependencies datasource='federated.10vm66c01ahbrr1g36qvl0c3x20i'>
+        <column caption='readmitted_boolean' datatype='boolean' name='[Calculation_1537134904591769600]' role='dimension' type='nominal'>
+          <calculation class='tableau' formula='IF [readmitted] = &quot;yes&quot; THEN TRUE &#13;&#10;ELSE FALSE &#13;&#10;END' />
+        </column>
+        <column-instance column='[Calculation_1537134904591769600]' derivation='None' name='[none:Calculation_1537134904591769600:nk]' pivot='key' type='nominal' />
+      </datasource-dependencies>
+      <zones>
+        <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='88778' id='7' param='horz' type-v2='layout-flow' w='99000' x='500' y='10333'>
+            <zone h='88778' id='5' type-v2='layout-basic' w='87875' x='500' y='10333'>
+              <zone h='41000' id='3' name='Top Diagnoses Among Readmitted Patients' w='87875' x='500' y='10333'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='47778' id='14' name='readmission_rate_by_age' w='87875' x='500' y='51333'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+            <zone fixed-size='178' h='88778' id='6' is-fixed='true' param='vert' type-v2='layout-flow' w='11125' x='88375' y='10333'>
+              <zone h='12445' id='8' name='Top Diagnoses Among Readmitted Patients' param='[federated.10vm66c01ahbrr1g36qvl0c3x20i].[none:Calculation_1537134904591769600:nk]' type-v2='filter' w='11125' x='88375' y='10333'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone fixed-size='64' h='8000' id='9' is-fixed='true' name='Top Diagnoses Among Readmitted Patients' pane-specification-id='0' param='[federated.10vm66c01ahbrr1g36qvl0c3x20i].[sum:Calculation_391250278660128769:qk]' type-v2='color' w='11125' x='88375' y='22778'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+          </zone>
+          <zone forceUpdate='true' h='9444' id='16' type-v2='text' w='99000' x='500' y='889'>
+            <formatted-text>
+              <run bold='true' fontcolor='#000000' fontsize='20'>Readmission Trends by Diagnosis and Age</run>
+              <run>Æ&#10;</run>
+              <run bold='true' fontcolor='#000000' fontsize='12' italic='true'>Identifying high-risk groups based on condition and age for better intervention</run>
+            </formatted-text>
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='4' />
+            </zone-style>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+        <zone h='10222' id='15' name='readmission_rate_by_age' pane-specification-id='0' param='[federated.10vm66c01ahbrr1g36qvl0c3x20i].[usr:Calculation_1537134904593195009:qk]' type-v2='color' w='11000' x='88500' y='51333' />
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='700' minheight='700' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='13' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98222' id='12' param='vert' type-v2='layout-flow' w='99000' x='500' y='889'>
+                <zone h='12445' id='8' mode='checkdropdown' name='Top Diagnoses Among Readmitted Patients' param='[federated.10vm66c01ahbrr1g36qvl0c3x20i].[none:Calculation_1537134904591769600:nk]' type-v2='filter' w='10000' x='89500' y='889'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='98222' id='3' is-fixed='true' name='Top Diagnoses Among Readmitted Patients' w='89000' x='500' y='889'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='8445' id='9' name='Top Diagnoses Among Readmitted Patients' pane-specification-id='0' param='[federated.10vm66c01ahbrr1g36qvl0c3x20i].[sum:Calculation_391250278660128769:qk]' type-v2='color' w='10000' x='89500' y='13334'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{FC8F2701-9DFB-4E90-A671-EF1800D9EA63}' />
+    </dashboard>
+    <dashboard enable-sort-zone-taborder='true' name='Dashboard 3 (2)'>
+      <style />
+      <size maxheight='900' maxwidth='1600' minheight='900' minwidth='1600' preset-index='8' sizing-mode='fixed' />
+      <zones>
+        <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='98222' id='7' param='horz' type-v2='layout-flow' w='99000' x='500' y='889'>
+            <zone h='98222' id='5' type-v2='layout-basic' w='89000' x='500' y='889'>
+              <zone h='98222' id='3' name='Readmission Rates by A1C Test Result' w='89000' x='500' y='889'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+            <zone fixed-size='160' h='98222' id='6' is-fixed='true' param='vert' type-v2='layout-flow' w='10000' x='89500' y='889'>
+              <zone h='2445' id='8' name='Readmission Rates by A1C Test Result' pane-specification-id='0' param='[federated.10vm66c01ahbrr1g36qvl0c3x20i].[none:Calculation_1472114195516203008:nk]' type-v2='color' w='10000' x='89500' y='889'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='700' minheight='700' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='12' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98222' id='11' param='vert' type-v2='layout-flow' w='99000' x='500' y='889'>
+                <zone fixed-size='280' h='98222' id='3' is-fixed='true' name='Readmission Rates by A1C Test Result' w='89000' x='500' y='889'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='11111' id='8' name='Readmission Rates by A1C Test Result' pane-specification-id='0' param='[federated.10vm66c01ahbrr1g36qvl0c3x20i].[none:Calculation_1472114195516203008:nk]' type-v2='color' w='10000' x='89500' y='889'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{68CD7404-FF1F-4564-8C5D-89846BC4FA04}' />
+    </dashboard>
+    <dashboard enable-sort-zone-taborder='true' name='Dashboard 5'>
+      <style />
+      <size maxheight='900' maxwidth='1600' minheight='900' minwidth='1600' preset-index='8' sizing-mode='fixed' />
+      <zones>
+        <zone h='100000' id='6' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='86444' id='9' param='horz' type-v2='layout-flow' w='99000' x='500' y='12667'>
+            <zone h='86444' id='7' type-v2='layout-basic' w='99000' x='500' y='12667'>
+              <zone h='86444' id='5' name='Average Length of Stay vs. Readmission Rate' w='62688' x='500' y='12667'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='25' />
+                </zone-style>
+              </zone>
+              <zone h='86444' id='15' name='Readmission Rates by A1C Test Result' w='36312' x='63188' y='12667'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+          </zone>
+          <zone forceUpdate='true' h='11778' id='17' type-v2='text' w='99000' x='500' y='889'>
+            <formatted-text>
+              <run bold='true' fontcolor='#000000' fontsize='20'>Readmission Trends by Treatment and Hospital Stay</run>
+              <run>Æ&#10;</run>
+              <run bold='true' fontcolor='#000000' fontsize='12' italic='true'>Exploring links between treatment compliance, hospital stay duration, and readmission likelihood</run>
+            </formatted-text>
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='4' />
+            </zone-style>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+        <zone h='12778' id='10' name='Average Length of Stay vs. Readmission Rate' pane-specification-id='0' param='[federated.10vm66c01ahbrr1g36qvl0c3x20i].[none:Calculation_1472114195527503874:nk]' type-v2='color' w='10375' x='51125' y='8556' />
+        <zone h='10222' id='16' name='Readmission Rates by A1C Test Result' pane-specification-id='0' param='[federated.10vm66c01ahbrr1g36qvl0c3x20i].[none:Calculation_1472114195516203008:nk]' type-v2='color' w='8813' x='90875' y='9778' />
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='700' minheight='700' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='14' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98222' id='13' param='vert' type-v2='layout-flow' w='99000' x='500' y='889'>
+                <zone fixed-size='280' h='98222' id='5' is-fixed='true' name='Average Length of Stay vs. Readmission Rate' w='88437' x='500' y='889'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='13667' id='10' name='Average Length of Stay vs. Readmission Rate' pane-specification-id='0' param='[federated.10vm66c01ahbrr1g36qvl0c3x20i].[none:Calculation_1472114195527503874:nk]' type-v2='color' w='10563' x='88937' y='889'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{6E17FA36-2A4A-4ECA-8107-E3C324A03508}' />
+    </dashboard>
+  </dashboards>
+  <windows source-height='30'>
+    <window class='worksheet' name='readmission_rate_by_age'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.10vm66c01ahbrr1g36qvl0c3x20i].[usr:Calculation_1537134904593195009:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{CFD4E720-2EF7-403F-BFFD-2616F025F9E5}' />
+    </window>
+    <window class='worksheet' name='Overall Readmission Rate'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{061BDA08-AB18-4018-856A-ED3BA1E32DA0}' />
+    </window>
+    <window class='worksheet' name='Readmission Trends by Age Group'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.10vm66c01ahbrr1g36qvl0c3x20i].[none:age:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{5FA4BCE0-8251-4190-BCC1-CDED60C23C28}' />
+    </window>
+    <window class='worksheet' name='Top Diagnoses Among Readmitted Patients'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card param='[federated.10vm66c01ahbrr1g36qvl0c3x20i].[none:Calculation_1537134904591769600:nk]' type='filter' />
+            <card pane-specification-id='0' param='[federated.10vm66c01ahbrr1g36qvl0c3x20i].[sum:Calculation_391250278660128769:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{AA1C2F5C-3B12-4D99-BE10-3D614D93196A}' />
+    </window>
+    <window class='worksheet' name='Readmission Rates by A1C Test Result'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.10vm66c01ahbrr1g36qvl0c3x20i].[none:Calculation_1472114195516203008:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{CBD148F5-3C3A-458D-8B2C-84731D1A6516}' />
+    </window>
+    <window class='worksheet' name='Average Length of Stay vs. Readmission Rate'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.10vm66c01ahbrr1g36qvl0c3x20i].[none:Calculation_1472114195527503874:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{14E2FA43-8E1A-4063-AEBA-9AB2C562ED44}' />
+    </window>
+    <window class='dashboard' name='Dashboard 1'>
+      <viewpoints>
+        <viewpoint name='Top Diagnoses Among Readmitted Patients' />
+        <viewpoint name='readmission_rate_by_age' />
+      </viewpoints>
+      <active id='-1' />
+      <simple-id uuid='{7AAA1144-5FFF-4474-B0F9-316C95CB2E3D}' />
+    </window>
+    <window class='dashboard' maximized='true' name='Dashboard 3 (2)'>
+      <viewpoints>
+        <viewpoint name='Readmission Rates by A1C Test Result'>
+          <zoom type='entire-view' />
+        </viewpoint>
+      </viewpoints>
+      <active id='-1' />
+      <simple-id uuid='{5A44ABD3-6324-4083-9FCB-984B3894E6A8}' />
+    </window>
+    <window class='dashboard' name='Dashboard 5'>
+      <viewpoints>
+        <viewpoint name='Average Length of Stay vs. Readmission Rate' />
+        <viewpoint name='Readmission Rates by A1C Test Result'>
+          <zoom type='fit-height' />
+        </viewpoint>
+      </viewpoints>
+      <active id='-1' />
+      <device-preview visible='true' />
+      <simple-id uuid='{71821D71-E9FD-4119-957E-3C8AC00EC774}' />
+    </window>
+  </windows>
+</workbook>
