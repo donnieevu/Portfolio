@@ -84,7 +84,7 @@ export default function Portfolio() {
           <div className="flex-1 flex justify-center md:justify-end">
             <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-primary/20">
               <img
-                src="/images/donald-headshot.png"
+                src="/images/headshot-dv.png"
                 alt="Donald Vu"
                 className="object-cover w-full h-full"
               />
