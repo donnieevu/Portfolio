@@ -409,7 +409,7 @@ export default function Portfolio() {
                     <div className="bg-card rounded-md overflow-hidden border">
                       <div className="aspect-video relative">
                         <img
-                          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/macro-1-overview-GgEUMxrerWY6h4Wg4ZbC0HbiTguaLx.png"
+                          src="/images/macro-1-overview.png"
                           alt="Excel-Macro Automated Reporting Tool Overview"
                           className="w-full h-full object-cover"
                         />
@@ -421,7 +421,7 @@ export default function Portfolio() {
                     <div className="bg-card rounded-md overflow-hidden border">
                       <div className="aspect-video relative">
                         <img
-                          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/macro-2-ui.png-5mMkQ35ZsB7WKaTct1YMGbRZqzJBWI.jpeg"
+                          src="/images/macro-2-ui.png"
                           alt="User Interface & Entry Point"
                           className="w-full h-full object-cover"
                         />
@@ -433,7 +433,7 @@ export default function Portfolio() {
                     <div className="bg-card rounded-md overflow-hidden border">
                       <div className="aspect-video relative">
                         <img
-                          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/macro-3-file-sweep.png-VVj8qLhIR2zpu6ZOlSyySHr5x34TNj.jpeg"
+                          src="/images/macro-3-file-sweep.png"
                           alt="Automated File Sweep"
                           className="w-full h-full object-cover"
                         />
@@ -445,7 +445,7 @@ export default function Portfolio() {
                     <div className="bg-card rounded-md overflow-hidden border">
                       <div className="aspect-video relative">
                         <img
-                          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/macro-4-python.png-bAXtHRSdPddnjgtuhuu2cfDGthCPMV.jpeg"
+                          src="/images/macro-4-python.png"
                           alt="Python Script - File Validation & Cleanup"
                           className="w-full h-full object-cover"
                         />
@@ -457,7 +457,7 @@ export default function Portfolio() {
                     <div className="bg-card rounded-md overflow-hidden border">
                       <div className="aspect-video relative">
                         <img
-                          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/marcro-5-sql-pt1.png-QLvXnQogverqwF8MVkJDJsh5OZueD8.jpeg"
+                          src="/images/macro-5-sql-pt1.png"
                           alt="SQL Logic - SLA Classification Part 1"
                           className="w-full h-full object-cover"
                         />
@@ -469,7 +469,7 @@ export default function Portfolio() {
                     <div className="bg-card rounded-md overflow-hidden border">
                       <div className="aspect-video relative">
                         <img
-                          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/macro-6-sql-pt2.png-4W90DeT4xBfJlbqPVNQQPenCJ72EbV.jpeg"
+                          src="/images/macro-6-sql-pt2.png"
                           alt="SQL Logic - SLA Classification Part 2"
                           className="w-full h-full object-cover"
                         />
@@ -481,7 +481,7 @@ export default function Portfolio() {
                     <div className="bg-card rounded-md overflow-hidden border">
                       <div className="aspect-video relative">
                         <img
-                          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/macro-7-automated-email.png-zhM1ojKyBuqpgi9h2SPBfdx2o5VStm.jpeg"
+                          src="/images/macro-7-auatomated-email.png"
                           alt="Automated Email Delivery"
                           className="w-full h-full object-cover"
                         />
@@ -493,7 +493,7 @@ export default function Portfolio() {
                     <div className="bg-card rounded-md overflow-hidden border">
                       <div className="aspect-video relative">
                         <img
-                          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/macro-8-takeaways.png-jqA2e8EucXHyqwF65K5Vzru1ni8cI5.jpeg"
+                          src="/images/macro-8-takeaways.png"
                           alt="Excel-Macro Tool Takeaways"
                           className="w-full h-full object-cover"
                         />
@@ -554,7 +554,7 @@ export default function Portfolio() {
                     <div className="bg-card rounded-md overflow-hidden border">
                       <div className="aspect-video relative">
                         <img
-                          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/consumerComplaint-1-dashboard-overview.png-npVKg0RVuTJEz5jq1gInCUlB8jgP0V.jpeg"
+                          src="/images/consumerComplaint-1-dashboard-overview.png"
                           alt="Consumer Complaint Dashboard Overview"
                           className="w-full h-full object-cover"
                         />
@@ -566,7 +566,7 @@ export default function Portfolio() {
                     <div className="bg-card rounded-md overflow-hidden border">
                       <div className="aspect-video relative">
                         <img
-                          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/consumerComplaint-2-agency-query-0TZGIHnVhQvimx56ADWy05J7jfNiQD.png"
+                          src="/images/consumerComplaint-2-agency-query.png"
                           alt="Agency Query"
                           className="w-full h-full object-cover"
                         />
@@ -578,7 +578,7 @@ export default function Portfolio() {
                     <div className="bg-card rounded-md overflow-hidden border">
                       <div className="aspect-video relative">
                         <img
-                          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/consumerComplaint-3-total-contract-query-khoQBYUNgC9OEnWJPE6YGFCzc6S5Wb.png"
+                          src="/images/consumerComplaint-3-total-contract-query.png"
                           alt="Total Contract Query"
                           className="w-full h-full object-cover"
                         />
@@ -590,7 +590,7 @@ export default function Portfolio() {
                     <div className="bg-card rounded-md overflow-hidden border">
                       <div className="aspect-video relative">
                         <img
-                          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/consumerComplaint-4-per-10k-dashboard-Z1sdqel5tSidJbRIGv8sVJ9zMKjoD6.png"
+                          src="/images/consumerComplaint-4-per-10k-dashboard.png"
                           alt="Complaints Per 10K Contracts Dashboard"
                           className="w-full h-full object-cover"
                         />
@@ -602,7 +602,7 @@ export default function Portfolio() {
                     <div className="bg-card rounded-md overflow-hidden border">
                       <div className="aspect-video relative">
                         <img
-                          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/consumerComplaint-4-reason-breakdown-dashboard-m7wg6JmR1jStzNAP1EDShfh5SpYdD6.png"
+                          src="/images/consumerComplaint-5-reason-breakdown-dashboard.png"
                           alt="Complaint Reason Breakdown Dashboard"
                           className="w-full h-full object-cover"
                         />
@@ -614,7 +614,7 @@ export default function Portfolio() {
                     <div className="bg-card rounded-md overflow-hidden border">
                       <div className="aspect-video relative">
                         <img
-                          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/consumerComplaint-5-dashboard-takeaways.png-oJNLLIv2dVI1u3orV6Y6w0nVruEpwW.jpeg"
+                          src="/images/consumerComplaint-6-dashboard-takeaways.png"
                           alt="Dashboard Takeaways"
                           className="w-full h-full object-cover"
                         />
@@ -675,7 +675,7 @@ export default function Portfolio() {
                     <div className="bg-card rounded-md overflow-hidden border">
                       <div className="aspect-video relative">
                         <img
-                          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/healthcare-1-overview.png-ePmHye6hN427LCg3xx82PfkDJGv7Lt.jpeg"
+                          src="/images/healthcare-1-overview.png"
                           alt="Healthcare Dashboard Overview"
                           className="w-full h-full object-cover"
                         />
@@ -687,7 +687,7 @@ export default function Portfolio() {
                     <div className="bg-card rounded-md overflow-hidden border">
                       <div className="aspect-video relative">
                         <img
-                          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/healthcare-2-dashboard-1.png-F6eougknZ0BDgWlEaOs7SdsqrmDP1h.jpeg"
+                          src="/images/healthcare-2-dashboard-1.png"
                           alt="Readmission Trends by Diagnosis & Age"
                           className="w-full h-full object-cover"
                         />
@@ -699,7 +699,7 @@ export default function Portfolio() {
                     <div className="bg-card rounded-md overflow-hidden border">
                       <div className="aspect-video relative">
                         <img
-                          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/healthcare-3-dashboard-2.png-2YzcBsbYG2Rn32NXnVLFgTmYOE2aeu.jpeg"
+                          src="/images/healthcare-3-dashboard-2.png"
                           alt="Readmission Trends by Treatment & Hospital Stay"
                           className="w-full h-full object-cover"
                         />
@@ -711,7 +711,7 @@ export default function Portfolio() {
                     <div className="bg-card rounded-md overflow-hidden border">
                       <div className="aspect-video relative">
                         <img
-                          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/healthcare-4-takeaways.png-MELnj0Rjn54wLh9SwLW6GmjsYbBeVE.jpeg"
+                          src="/images/healthcare-4-takeaways.png"
                           alt="Healthcare Dashboard Takeaways"
                           className="w-full h-full object-cover"
                         />
