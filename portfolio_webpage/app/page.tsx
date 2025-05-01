@@ -510,7 +510,7 @@ export default function Portfolio() {
                 />
               </div>
               <Link
-                href="/projects/consumer-complaint"
+                href="/projects/consumer-complaints"
                 className="text-sm font-medium text-blue-600 hover:underline"
               >
                 View Full Project →
