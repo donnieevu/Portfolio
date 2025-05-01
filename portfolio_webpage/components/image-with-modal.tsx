@@ -3,7 +3,6 @@
 import * as React from "react"
 import Image from "next/image"
 import { ZoomIn } from "lucide-react"
-
 import { Modal } from "@/components/ui/modal"
 import { cn } from "@/lib/utils"
 
@@ -15,6 +14,7 @@ interface ImageWithModalProps {
   width?: number
   height?: number
   fill?: boolean
+  rounded?: boolean
 }
 
 export function ImageWithModal({
@@ -25,16 +25,30 @@ export function ImageWithModal({
   width,
   height,
   fill = false,
+  rounded = false,
 }: ImageWithModalProps) {
   const [isModalOpen, setIsModalOpen] = React.useState(false)
 
   return (
     <>
       <div
-        className={cn("group relative cursor-pointer overflow-hidden", className)}
+        className={cn(
+          "group relative cursor-pointer overflow-hidden",
+          rounded ? "rounded-full ring-4 ring-primary/20" : "rounded-md",
+          className
+        )}
+        style={{
+          width: rounded ? (width || 320) : undefined,
+          height: rounded ? (height || 320) : undefined,
+        }}
         onClick={() => setIsModalOpen(true)}
       >
-        <div className="absolute inset-0 z-10 flex items-center justify-center bg-black/30 opacity-0 transition-opacity group-hover:opacity-100">
+        <div
+        className={cn(
+            "absolute inset-0 z-10 flex items-center justify-center bg-black/30 opacity-0 transition-opacity group-hover:opacity-100",
+            rounded ? "rounded-full" : "rounded-md"
+          )}
+          >
           <ZoomIn className="h-8 w-8 text-white" />
         </div>
         <Image
@@ -43,7 +57,11 @@ export function ImageWithModal({
           width={width || 800}
           height={height || 450}
           fill={fill}
-          className={cn("transition-transform group-hover:scale-105", imageClassName)}
+          className={cn(
+            "transition-transform scale-100 group-hover:scale-105",
+            rounded ? "rounded-full" : "rounded-md",
+            imageClassName
+          )}
           unoptimized={true}
         />
       </div>
@@ -57,7 +75,7 @@ export function ImageWithModal({
             height={800}
             className="h-auto max-h-[80vh] w-auto"
             style={{ objectFit: "contain" }}
-            unoptimized={true}
+            unoptimized
           />
         </div>
       </Modal>
