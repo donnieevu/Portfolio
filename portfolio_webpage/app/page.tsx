@@ -1,11 +1,11 @@
 import Link from "next/link";
 import { Mail, Linkedin, FileText, MapPin } from "lucide-react";
-import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ImageWithModal } from "@/components/image-with-modal";
+import ZoomOnHover from "@/components/zoom-on-hover";
 import { ThemeToggle } from "@/components/theme-toggle";
 
 export default function Portfolio() {
@@ -470,17 +470,15 @@ export default function Portfolio() {
                 validation, SQL job execution, and report generation with
                 automated email notifications.
               </p>
-
               <div className="flex justify-center mb-4">
-                <Image
+                <ImageWithModal
                   src="/images/macro-1-overview.png"
                   alt="Excel-Macro Overview"
                   width={800}
                   height={450}
-                  className="rounded-md border object-cover"
+                  zoomOnHover
                 />
               </div>
-
               <Link
                 href="/projects/macro-tool"
                 className="text-sm font-medium text-blue-600 hover:underline"
@@ -500,12 +498,13 @@ export default function Portfolio() {
                 comparisons regardless of agency size.
               </p>
               <div className="flex justify-center mb-4">
-                <Image
+                <ImageWithModal
                   src="/images/consumerComplaint-1-dashboard-overview.png"
                   alt="Consumer Complaint Overview"
                   width={800}
                   height={450}
                   className="rounded-md border object-cover"
+                  zoomOnHover
                 />
               </div>
               <Link
@@ -525,12 +524,13 @@ export default function Portfolio() {
                 high-risk groups and improve care outcomes.
               </p>
               <div className="flex justify-center mb-4">
-                <Image
+                <ImageWithModal
                   src="/images/healthcare-1-overview.png"
                   alt="Healthcare Dashboard Overview"
                   width={800}
                   height={450}
                   className="rounded-md border object-cover"
+                  zoomOnHover
                 />
               </div>
               <Link

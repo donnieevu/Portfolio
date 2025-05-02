@@ -1,20 +1,22 @@
-"use client"
+"use client";
 
-import * as React from "react"
-import Image from "next/image"
-import { ZoomIn } from "lucide-react"
-import { Modal } from "@/components/ui/modal"
-import { cn } from "@/lib/utils"
+import * as React from "react";
+import Image from "next/image";
+import { ZoomIn } from "lucide-react";
+import { Modal } from "@/components/ui/modal";
+import { cn } from "@/lib/utils";
+import ZoomOnHover from "@/components/zoom-on-hover";
 
 interface ImageWithModalProps {
-  src: string
-  alt: string
-  className?: string
-  imageClassName?: string
-  width?: number
-  height?: number
-  fill?: boolean
-  rounded?: boolean
+  src: string;
+  alt: string;
+  className?: string;
+  imageClassName?: string;
+  width?: number;
+  height?: number;
+  fill?: boolean;
+  rounded?: boolean;
+  zoomOnHover?: boolean;
 }
 
 export function ImageWithModal({
@@ -26,8 +28,9 @@ export function ImageWithModal({
   height,
   fill = false,
   rounded = false,
+  zoomOnHover = false,
 }: ImageWithModalProps) {
-  const [isModalOpen, setIsModalOpen] = React.useState(false)
+  const [isModalOpen, setIsModalOpen] = React.useState(false);
 
   return (
     <>
@@ -38,17 +41,17 @@ export function ImageWithModal({
           className
         )}
         style={{
-          width: rounded ? (width || 320) : undefined,
-          height: rounded ? (height || 320) : undefined,
+          width: rounded ? width || 320 : undefined,
+          height: rounded ? height || 320 : undefined,
         }}
         onClick={() => setIsModalOpen(true)}
       >
         <div
-        className={cn(
+          className={cn(
             "absolute inset-0 z-10 flex items-center justify-center bg-black/30 opacity-0 transition-opacity group-hover:opacity-100",
             rounded ? "rounded-full" : "rounded-md"
           )}
-          >
+        >
           <ZoomIn className="h-8 w-8 text-white" />
         </div>
         <Image
@@ -68,17 +71,21 @@ export function ImageWithModal({
 
       <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
         <div className="relative">
-          <Image
-            src={src || "/placeholder.svg"}
-            alt={alt}
-            width={1200}
-            height={800}
-            className="h-auto max-h-[80vh] w-auto"
-            style={{ objectFit: "contain" }}
-            unoptimized
-          />
+          {zoomOnHover ? (
+            <ZoomOnHover src={src} alt={alt} />
+          ) : (
+            <Image
+              src={src || "/placeholder.svg"}
+              alt={alt}
+              width={1200}
+              height={800}
+              className="h-auto max-h-[80vh] w-auto"
+              style={{ objectFit: "contain" }}
+              unoptimized
+            />
+          )}
         </div>
       </Modal>
     </>
-  )
+  );
 }
