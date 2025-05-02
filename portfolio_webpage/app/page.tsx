@@ -127,7 +127,7 @@ export default function Portfolio() {
               analytics, dashboard reporting, and process automation. I'm
               skilled in implementing workflows that support cross-functional
               teams, internal onboarding, and data delivery using SQL, Python,
-              Tableau, and Excel VBA.
+              Tableau/Power Bi, and Excel VBA.
             </p>
             <p className="text-lg">
               I have a proven ability to develop tools and reporting processes
