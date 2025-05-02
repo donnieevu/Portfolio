@@ -100,6 +100,7 @@ export default function ConsumerComplaintProjectPage() {
               className="w-full h-full"
               imageClassName="object-cover w-full h-full"
               rounded={false}
+              zoomOnHover
             />
             <p className="text-sm text-center text-muted-foreground">
               {caption}
