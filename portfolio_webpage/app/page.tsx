@@ -58,8 +58,8 @@ export default function Portfolio() {
               Hi, I'm <span className="text-primary">Donald Vu</span>
             </h1>
             <p className="text-xl text-muted-foreground">
-              Data and Operations Specialist with expertise in SQL-based
-              analytics, process automation, and dashboard reporting.
+              Data & Operations Specialist | SQL Analytics, Dashboard Reporting,
+              and Workflow Automation”
             </p>
             <div className="flex flex-wrap gap-2 pt-2">
               <div className="flex items-center gap-1 text-sm text-muted-foreground">
@@ -124,7 +124,7 @@ export default function Portfolio() {
           <div className="space-y-4">
             <p className="text-lg">
               I'm a Data and Operations Specialist with experience in SQL-based
-              analytics, process automation, and dashboard reporting. I'm
+              analytics, dashboard reporting, and process automation. I'm
               skilled in implementing workflows that support cross-functional
               teams, internal onboarding, and data delivery using SQL, Python,
               Tableau, and Excel VBA.
@@ -175,7 +175,7 @@ export default function Portfolio() {
                 </div>
                 <div className="space-y-6">
                   <div>
-                    <h3 className="text-xl font-bold mb-3">Tableau</h3>
+                    <h3 className="text-xl font-bold mb-3">Tableau/Power BI</h3>
                     <p className="text-muted-foreground">
                       Trend analysis, KPI dashboards, interactive
                       visualizations, and data storytelling
@@ -374,8 +374,9 @@ export default function Portfolio() {
                     SQL (BigQuery)
                   </Badge>
                   <Badge className="bg-blue-600 text-white">SQL (MySQL)</Badge>
-                  <Badge className="bg-blue-600 text-white">Python</Badge>
-                  <Badge className="bg-blue-600 text-white">pandas</Badge>
+                  <Badge className="bg-blue-600 text-white">
+                    Python (pandas)
+                  </Badge>
                   <Badge className="bg-blue-600 text-white">Excel VBA</Badge>
                   <Badge className="bg-blue-600 text-white">Git</Badge>
                 </div>
@@ -390,9 +391,7 @@ export default function Portfolio() {
                 </h3>
                 <div className="flex flex-wrap gap-2">
                   <Badge className="bg-green-600 text-white">Tableau</Badge>
-                  <Badge className="bg-green-600 text-white">
-                    Excel dashboards
-                  </Badge>
+                  <Badge className="bg-green-600 text-white">Power BI</Badge>
                   <Badge className="bg-green-600 text-white">
                     KPI tracking
                   </Badge>
