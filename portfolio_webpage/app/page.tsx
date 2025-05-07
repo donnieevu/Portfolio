@@ -105,7 +105,7 @@ export default function Portfolio() {
               </Link>
             </div>
           </div>
-          <div className="flex-1 flex justify-center md:justify-end">
+          <div className="flex-1 flex items-center justify-center md:justify-end md:items-center">
             <ImageWithModal
               src="/images/headshot-dv.png"
               alt="Donald Vu"
@@ -113,7 +113,7 @@ export default function Portfolio() {
               height={320}
               rounded
               className="w-64 h-64 md:w-80 md:h-80 overflow-hidden"
-              imageClassName="object-cover w-full h-full"
+              imageClassName="object-cover object-[center_30%] w-full h-full"
             />
           </div>
         </section>
