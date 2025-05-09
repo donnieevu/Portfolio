@@ -367,7 +367,7 @@ export default function Portfolio() {
             <Card>
               <CardContent className="pt-6">
                 <h3 className="text-xl font-bold mb-4">
-                  Data Analysis & Querying
+                  Data Handling & Automation
                 </h3>
                 <div className="flex flex-wrap gap-2">
                   <Badge className="bg-blue-600 text-white">
