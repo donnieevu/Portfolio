@@ -221,7 +221,7 @@ export default function Portfolio() {
                   </div>
                   <div className="text-muted-foreground text-right min-w-[180px] md:ml-auto">
                     <p>Irving, TX</p>
-                    <p>December 2023 - Present</p>
+                    <p>December 2023 - May 2025</p>
                   </div>
                 </div>
                 <ul className="list-disc pl-5 space-y-2">
