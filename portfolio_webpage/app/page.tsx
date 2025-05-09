@@ -373,12 +373,12 @@ export default function Portfolio() {
                   <Badge className="bg-blue-600 text-white">
                     SQL (BigQuery)
                   </Badge>
-                  <Badge className="bg-blue-600 text-white">SQL (MySQL)</Badge>
                   <Badge className="bg-blue-600 text-white">
                     Python (pandas)
                   </Badge>
                   <Badge className="bg-blue-600 text-white">Excel VBA</Badge>
                   <Badge className="bg-blue-600 text-white">Git</Badge>
+                  <Badge className="bg-blue-600 text-white">Bash</Badge>
                 </div>
               </CardContent>
             </Card>
