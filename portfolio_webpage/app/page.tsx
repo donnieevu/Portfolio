@@ -1,12 +1,11 @@
 import Link from "next/link";
 import { Mail, Linkedin, FileText, MapPin } from "lucide-react";
-import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ImageWithModal } from "@/components/image-with-modal";
-import ZoomOnHover from "@/components/zoom-on-hover";
 import { ThemeToggle } from "@/components/theme-toggle";
+import { MobileMenu } from "@/components/mobile-menu";
 
 export default function Portfolio() {
   return (
@@ -49,6 +48,7 @@ export default function Portfolio() {
             </Link>
             <ThemeToggle />
           </nav>
+          <MobileMenu />
         </div>
       </header>
 
