@@ -13,11 +13,13 @@ export default function Portfolio() {
     <div className="min-h-screen bg-background overflow-x-hidden">
       {/* Header */}
       <header className="sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur">
-        <div className="container flex h-16 items-center justify-between">
-          <div className="font-bold text-xl">
-            <Link href="/">Donald Vu</Link>
+        <div className="container flex flex-wrap items-center justify-between px-4 sm:px-6 h-auto py-3">
+          <div className="flex-1 min-w-0">
+            <Link href="/" className="font-bold text-xl whitespace-nowrap">
+              Donald Vu
+            </Link>
           </div>
-          <nav className="flex items-center gap-6">
+          <nav className="hidden sm:flex items-center gap-4 sm:gap-6">
             <Link href="#about" className="text-sm font-medium hover:underline">
               About
             </Link>
