@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState, useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { X } from "lucide-react";
 
@@ -18,12 +18,11 @@ export default function FullscreenProjectImage({
   imageClassName = "",
 }: FullscreenProjectImageProps) {
   const containerRef = useRef<HTMLDivElement>(null);
-  const imgRef = useRef<HTMLImageElement>(null);
   const [isFullscreen, setIsFullscreen] = useState(false);
 
-  const handleClick = () => {
-    if (imgRef.current?.requestFullscreen) {
-      imgRef.current.requestFullscreen();
+  const handleEnter = () => {
+    if (containerRef.current?.requestFullscreen) {
+      containerRef.current.requestFullscreen();
     }
   };
 
@@ -42,22 +41,20 @@ export default function FullscreenProjectImage({
   }, []);
 
   return (
-    <div ref={containerRef} className={`relative ${className}`}>
-      <div
-        className={`select-none touch-pan-y overflow-auto ${
-          isFullscreen ? "zoom-container" : ""
-        }`}
-      >
-        <Image
-          ref={imgRef}
-          onClick={handleClick}
-          src={src}
-          alt={alt || ""}
-          width={800}
-          height={450}
-          className={`cursor-pointer w-full h-auto rounded-md border object-contain ${imageClassName}`}
-        />
-      </div>
+    <div
+      ref={containerRef}
+      className={`relative ${
+        isFullscreen ? "h-screen overflow-auto bg-black" : ""
+      } ${className}`}
+    >
+      <Image
+        onClick={handleEnter}
+        src={src}
+        alt={alt || ""}
+        width={800}
+        height={450}
+        className={`w-full h-auto rounded-md border object-contain cursor-pointer ${imageClassName}`}
+      />
 
       {isFullscreen && (
         <button
