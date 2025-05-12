@@ -45,7 +45,7 @@ export default function FullscreenProjectImage({
     <div
       ref={ref}
       onClick={handleClick}
-      className={`relative cursor-zoom-in ${className}`}
+      className={`relative cursor-pointer ${className}`}
     >
       <Image
         src={src}
@@ -59,7 +59,7 @@ export default function FullscreenProjectImage({
       {isFullscreen && (
         <button
           onClick={handleExit}
-          className="absolute top-4 right-4 z-50 bg-black/70 text-white p-2 rounded-full"
+          className="absolute top-4 right-4 z-50 bg-white text-black p-2 rounded-full shadow-lg ring-1 ring-gray-400 hover:bg-gray-100 transition-all duration-200 hover:scale-110 cursor-pointer"
         >
           <X className="w-5 h-5" />
           <span className="sr-only">Exit fullscreen</span>
