@@ -10,7 +10,7 @@ import { ThemeToggle } from "@/components/theme-toggle";
 
 export default function Portfolio() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background overflow-x-hidden">
       {/* Header */}
       <header className="sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur">
         <div className="container flex h-16 items-center justify-between">
@@ -50,9 +50,9 @@ export default function Portfolio() {
         </div>
       </header>
 
-      <main className="container py-10 md:py-16">
+      <main className="container mx-auto px-4 py-10 md:py-16">
         {/* Hero Section */}
-        <section className="flex flex-col-reverse md:flex-row items-center justify-between gap-10 py-10">
+        <section className="flex flex-col-reverse md:flex-row items-center md:items-start justify-between gap-6 md:gap-10 px-4 sm:px-6">
           <div className="flex-1 space-y-4">
             <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
               Hi, I'm <span className="text-primary">Donald Vu</span>
@@ -105,14 +105,12 @@ export default function Portfolio() {
               </Link>
             </div>
           </div>
-          <div className="flex-1 flex items-center justify-center md:justify-end md:items-center">
+          <div className="w-full md:w-auto flex items-center justify-center">
             <ImageWithModal
               src="/images/headshot-dv.png"
               alt="Donald Vu"
-              width={320}
-              height={320}
               rounded
-              className="w-64 h-64 md:w-80 md:h-80 overflow-hidden"
+              className="w-40 h-40 sm:w-56 sm:h-56 md:w-80 md:h-80 overflow-hidden"
               imageClassName="object-cover object-[center_30%] w-full h-full"
             />
           </div>
@@ -470,14 +468,15 @@ export default function Portfolio() {
                 validation, SQL job execution, and report generation with
                 automated email notifications.
               </p>
-              <div className="flex justify-center mb-4">
-                <ImageWithModal
-                  src="/images/macro-1-overview.png"
-                  alt="Excel-Macro Overview"
-                  width={800}
-                  height={450}
-                  zoomOnHover
-                />
+              <div className="flex justify-center">
+                <div className="mb-4">
+                  <ImageWithModal
+                    src="/images/macro-1-overview.png"
+                    alt="Excel-Macro Overview"
+                    className="rounded-md border w-full h-auto object-contain"
+                    zoomOnHover
+                  />
+                </div>
               </div>
               <Link
                 href="/projects/macro-tool"
@@ -497,15 +496,15 @@ export default function Portfolio() {
                 agency and category, with normalized metrics to enable fair
                 comparisons regardless of agency size.
               </p>
-              <div className="flex justify-center mb-4">
-                <ImageWithModal
-                  src="/images/consumerComplaint-1-dashboard-overview.png"
-                  alt="Consumer Complaint Overview"
-                  width={800}
-                  height={450}
-                  className="rounded-md border object-cover"
-                  zoomOnHover
-                />
+              <div className="flex justify-center">
+                <div className="mb-4">
+                  <ImageWithModal
+                    src="/images/consumerComplaint-1-dashboard-overview.png"
+                    alt="Consumer Complaint Overview"
+                    className="rounded-md border w-full h-auto max-w-full object-contain"
+                    zoomOnHover
+                  />
+                </div>
               </div>
               <Link
                 href="/projects/consumer-complaints"
@@ -523,15 +522,15 @@ export default function Portfolio() {
                 by diagnosis, treatment, and patient demographics to identify
                 high-risk groups and improve care outcomes.
               </p>
-              <div className="flex justify-center mb-4">
-                <ImageWithModal
-                  src="/images/healthcare-1-overview.png"
-                  alt="Healthcare Dashboard Overview"
-                  width={800}
-                  height={450}
-                  className="rounded-md border object-cover"
-                  zoomOnHover
-                />
+              <div className="flex justify-center">
+                <div className="mb-4">
+                  <ImageWithModal
+                    src="/images/healthcare-1-overview.png"
+                    alt="Healthcare Dashboard Overview"
+                    className="rounded-md border w-full h-auto max-w-full object-contain"
+                    zoomOnHover
+                  />
+                </div>
               </div>
               <Link
                 href="/projects/healthcare-dashboard"
