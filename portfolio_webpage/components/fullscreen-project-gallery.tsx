@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState, useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 
@@ -20,12 +20,14 @@ export default function FullscreenProjectGallery({
   startIndex,
 }: FullscreenProjectGalleryProps) {
   const containerRef = useRef<HTMLDivElement>(null);
+  const imgRef = useRef<HTMLImageElement>(null); // NEW: grab the actual image element
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [index, setIndex] = useState(startIndex);
 
   const enterFullscreen = () => {
-    if (containerRef.current?.requestFullscreen) {
-      containerRef.current.requestFullscreen();
+    const img = imgRef.current;
+    if (img?.requestFullscreen) {
+      img.requestFullscreen(); // FULLSCREEN THE <img> directly
     }
   };
 
@@ -39,7 +41,7 @@ export default function FullscreenProjectGallery({
     const onChange = () => {
       const active = !!document.fullscreenElement;
       setIsFullscreen(active);
-      if (!active) setIndex(startIndex); // reset image index on close
+      if (!active) setIndex(startIndex);
     };
     document.addEventListener("fullscreenchange", onChange);
     return () => document.removeEventListener("fullscreenchange", onChange);
@@ -49,15 +51,22 @@ export default function FullscreenProjectGallery({
   const prev = () => setIndex((i) => (i - 1 + images.length) % images.length);
 
   return (
-    <div ref={containerRef} className={`relative w-full`}>
-      <Image
-        onClick={enterFullscreen}
-        src={images[index].src}
-        alt={images[index].alt || ""}
-        width={800}
-        height={450}
-        className="cursor-pointer w-full h-auto rounded-md border object-contain"
-      />
+    <div ref={containerRef} className="relative w-full">
+      <div
+        className={`select-none touch-pan-y overflow-auto ${
+          isFullscreen ? "zoom-container" : ""
+        }`}
+      >
+        <Image
+          ref={imgRef}
+          onClick={enterFullscreen}
+          src={images[index].src}
+          alt={images[index].alt || ""}
+          width={800}
+          height={450}
+          className="cursor-pointer w-full h-auto rounded-md border object-contain"
+        />
+      </div>
       {images[index].caption && (
         <p className="text-sm text-center text-muted-foreground mt-2">
           {images[index].caption}
@@ -66,7 +75,6 @@ export default function FullscreenProjectGallery({
 
       {isFullscreen && (
         <>
-          {/* ❌ Exit Button */}
           <button
             onClick={(e) => {
               e.stopPropagation();
@@ -78,7 +86,6 @@ export default function FullscreenProjectGallery({
             <span className="sr-only">Exit fullscreen</span>
           </button>
 
-          {/* ⬅️ Previous */}
           <button
             onClick={(e) => {
               e.stopPropagation();
@@ -89,7 +96,6 @@ export default function FullscreenProjectGallery({
             <ChevronLeft className="w-5 h-5" />
           </button>
 
-          {/* ➡️ Next */}
           <button
             onClick={(e) => {
               e.stopPropagation();
