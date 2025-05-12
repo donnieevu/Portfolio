@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { ImageWithModal } from "@/components/image-with-modal";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { MobileMenu } from "@/components/mobile-menu";
+import FullscreenProjectImage from "@/components/fullscreen-project-image";
 
 export default function Portfolio() {
   return (
@@ -472,11 +473,9 @@ export default function Portfolio() {
               </p>
               <div className="flex justify-center">
                 <div className="mb-4">
-                  <ImageWithModal
+                  <FullscreenProjectImage
                     src="/images/macro-1-overview.png"
                     alt="Excel-Macro Overview"
-                    className="rounded-md border w-full h-auto object-contain"
-                    zoomOnHover
                   />
                 </div>
               </div>
@@ -500,11 +499,9 @@ export default function Portfolio() {
               </p>
               <div className="flex justify-center">
                 <div className="mb-4">
-                  <ImageWithModal
+                  <FullscreenProjectImage
                     src="/images/consumerComplaint-1-dashboard-overview.png"
                     alt="Consumer Complaint Overview"
-                    className="rounded-md border w-full h-auto max-w-full object-contain"
-                    zoomOnHover
                   />
                 </div>
               </div>
@@ -526,11 +523,9 @@ export default function Portfolio() {
               </p>
               <div className="flex justify-center">
                 <div className="mb-4">
-                  <ImageWithModal
+                  <FullscreenProjectImage
                     src="/images/healthcare-1-overview.png"
                     alt="Healthcare Dashboard Overview"
-                    className="rounded-md border w-full h-auto max-w-full object-contain"
-                    zoomOnHover
                   />
                 </div>
               </div>

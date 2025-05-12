@@ -1,6 +1,39 @@
 import { Badge } from "@/components/ui/badge";
-import { ImageWithModal } from "@/components/image-with-modal";
+import FullscreenProjectGallery from "@/components/fullscreen-project-gallery";
 import Link from "next/link";
+
+const images = [
+  {
+    src: "/images/consumerComplaint-1-dashboard-overview.png",
+    alt: "Dashboard Overview",
+    caption: "Dashboard Overview",
+  },
+  {
+    src: "/images/consumerComplaint-2-agency-query.png",
+    alt: "Agency Join Query",
+    caption: "Agency Join Query",
+  },
+  {
+    src: "/images/consumerComplaint-3-total-contract-query.png",
+    alt: "Total Contract Query",
+    caption: "Total Contract Query",
+  },
+  {
+    src: "/images/consumerComplaint-4-per-10k-dashboard.png",
+    alt: "Complaints Per 10K",
+    caption: "Complaints Per 10K Contracts",
+  },
+  {
+    src: "/images/consumerComplaint-5-reason-breakdown-dashboard.png",
+    alt: "Complaint Reasons",
+    caption: "Complaint Reason Breakdown",
+  },
+  {
+    src: "/images/consumerComplaint-6-dashboard-takeaways.png",
+    alt: "Takeaways",
+    caption: "Project Takeaways",
+  },
+];
 
 export default function ConsumerComplaintProjectPage() {
   return (
@@ -61,51 +94,12 @@ export default function ConsumerComplaintProjectPage() {
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-10">
-        {[
-          {
-            src: "/images/consumerComplaint-1-dashboard-overview.png",
-            alt: "Dashboard Overview",
-            caption: "Dashboard Overview",
-          },
-          {
-            src: "/images/consumerComplaint-2-agency-query.png",
-            alt: "Agency Join Query",
-            caption: "Agency Join Query",
-          },
-          {
-            src: "/images/consumerComplaint-3-total-contract-query.png",
-            alt: "Total Contract Query",
-            caption: "Total Contract Query",
-          },
-          {
-            src: "/images/consumerComplaint-4-per-10k-dashboard.png",
-            alt: "Complaints Per 10K",
-            caption: "Complaints Per 10K Contracts",
-          },
-          {
-            src: "/images/consumerComplaint-5-reason-breakdown-dashboard.png",
-            alt: "Complaint Reasons",
-            caption: "Complaint Reason Breakdown",
-          },
-          {
-            src: "/images/consumerComplaint-6-dashboard-takeaways.png",
-            alt: "Takeaways",
-            caption: "Project Takeaways",
-          },
-        ].map(({ src, alt, caption }) => (
-          <div key={src} className="space-y-2">
-            <ImageWithModal
-              src={src}
-              alt={alt}
-              className="w-full h-full"
-              imageClassName="object-cover w-full h-full"
-              rounded={false}
-              zoomOnHover
-            />
-            <p className="text-sm text-center text-muted-foreground">
-              {caption}
-            </p>
-          </div>
+        {images.map((img, i) => (
+          <FullscreenProjectGallery
+            key={img.src}
+            images={images}
+            startIndex={i}
+          />
         ))}
       </div>
     </div>
