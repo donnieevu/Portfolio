@@ -17,12 +17,13 @@ export default function FullscreenProjectImage({
   className = "",
   imageClassName = "",
 }: FullscreenProjectImageProps) {
-  const ref = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const imgRef = useRef<HTMLImageElement>(null);
   const [isFullscreen, setIsFullscreen] = useState(false);
 
   const handleClick = () => {
-    if (ref.current?.requestFullscreen) {
-      ref.current.requestFullscreen();
+    if (containerRef.current?.requestFullscreen) {
+      containerRef.current.requestFullscreen();
     }
   };
 
@@ -32,7 +33,6 @@ export default function FullscreenProjectImage({
     }
   };
 
-  // Track fullscreen status
   useEffect(() => {
     const onChange = () => {
       setIsFullscreen(!!document.fullscreenElement);
@@ -42,20 +42,17 @@ export default function FullscreenProjectImage({
   }, []);
 
   return (
-    <div
-      ref={ref}
-      onClick={handleClick}
-      className={`relative cursor-pointer ${className}`}
-    >
+    <div ref={containerRef} className={`relative ${className}`}>
       <Image
+        onClick={handleClick}
+        ref={imgRef}
         src={src}
         alt={alt || ""}
         width={800}
         height={450}
-        className={`w-full h-auto rounded-md border object-contain ${imageClassName}`}
+        className={`cursor-pointer w-full h-auto rounded-md border object-contain ${imageClassName}`}
       />
 
-      {/* Exit button shown only in fullscreen */}
       {isFullscreen && (
         <button
           onClick={handleExit}
