@@ -113,8 +113,8 @@ export default function Portfolio() {
               src="/images/headshot-dv.png"
               alt="Donald Vu"
               rounded
-              className="w-40 h-40 sm:w-56 sm:h-56 md:w-80 md:h-80 overflow-hidden"
-              imageClassName="object-cover object-[center_30%] w-full h-full"
+              className="flex items-center justify-center w-full h-[320px] overflow-hidden"
+              imageClassName="object-cover object-[center_20%] w-full h-auto pt-20"
             />
           </div>
         </section>
