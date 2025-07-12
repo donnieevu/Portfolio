@@ -124,22 +124,29 @@ export default function Portfolio() {
           <h2 className="text-3xl font-bold mb-8">About Me</h2>
           <div className="space-y-4">
             <p className="text-lg">
-              I'm a Data and Operations Specialist with experience in SQL-based
-              analytics, dashboard reporting, and process automation. I'm
-              skilled in implementing workflows that support cross-functional
-              teams, internal onboarding, and data delivery using SQL, Python,
-              Tableau/Power Bi, and Excel VBA.
+              Security+ certified Data and Operations Analyst with 3+ years of
+              experience helping teams work smarter through troubleshooting,
+              automation, and clear documentation. I’m currently transitioning
+              into cybersecurity to become an entry-level SOC Analyst, where I
+              can build on my problem-solving skills and support organizations
+              in monitoring systems, investigating alerts, and responding to
+              incidents. I enjoy tackling technical challenges, working with
+              people, and creating processes that keep things running smoothly
+              and securely.
             </p>
             <p className="text-lg">
               I have a proven ability to develop tools and reporting processes
               that streamline operations and reduce manual effort. I'm
               comfortable working across technical and non-technical
               stakeholders to meet data requirements and enable decision-making.
+              I’m building on these strengths as I move into cybersecurity,
+              ready to help monitor systems and support security teams as an
+              entry-level SOC Analyst.
             </p>
             <p className="text-lg">
-              When I'm not working, I enjoy basketball, following the NBA,
-              focusing on health & wellness, playing video games (especially
-              Marvel Rivals), watching anime, and enjoying
+              When I'm not working, I enjoy playing basketball, following the
+              NBA, focusing on health & wellness, playing video games
+              (especially Valorant), watching anime, and enjoying
               psychological/thriller movies.
             </p>
           </div>
