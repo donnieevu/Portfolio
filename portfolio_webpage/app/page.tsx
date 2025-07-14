@@ -61,8 +61,8 @@ export default function Portfolio() {
               Hi, I'm <span className="text-primary">Donald Vu</span>
             </h1>
             <p className="text-xl text-muted-foreground">
-              Data & Operations Specialist | SQL Analytics, Dashboard Reporting,
-              and Workflow Automation
+              SOC Analyst | Transitioning from Data & Ops to Cybersecurity |
+              Security+ Certified
             </p>
             <div className="flex flex-wrap gap-2 pt-2">
               <div className="flex items-center gap-1 text-sm text-muted-foreground">
