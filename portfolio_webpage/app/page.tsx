@@ -152,6 +152,79 @@ export default function Portfolio() {
           </div>
         </section>
 
+        {/* Certifications Section */}
+        <section id="certifications" className="py-16 scroll-mt-20">
+          <h2 className="text-3xl font-bold mb-8">Certifications</h2>
+          <Card>
+            <CardContent className="p-6">
+              <div className="flex flex-col md:flex-row justify-between mb-4">
+                <div>
+                  <h3 className="text-xl font-bold">CompTIA Security+</h3>
+                  <p className="text-primary">Earned July 2025</p>
+                </div>
+                <div>
+                  <a
+                    href="/images/Donald_Vu_SecurityPlus.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-600 hover:underline text-right"
+                  >
+                    View Certificate →
+                  </a>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </section>
+
+        {/* Projects Section */}
+        <section id="projects" className="py-16 scroll-mt-20">
+          <h2 className="text-3xl font-bold mb-8">Projects</h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            {/* Cybersecurity Projects Card */}
+            <div className="bg-card rounded-lg border shadow-sm p-6 flex flex-col justify-between">
+              <div>
+                <h3 className="text-2xl font-bold mb-2">
+                  Cybersecurity Projects
+                </h3>
+                <p className="text-muted-foreground mb-4">
+                  Blue Team labs, SOC workflows, and practical hands-on
+                  exercises to showcase defensive security skills.
+                </p>
+              </div>
+              <div className="text-right">
+                <Link
+                  href="/projects/cybersecurity-projects"
+                  className="text-sm font-medium text-blue-600 hover:underline"
+                >
+                  View Projects →
+                </Link>
+              </div>
+            </div>
+
+            {/* Data & Operations Analyst Projects Card */}
+            <div className="bg-card rounded-lg border shadow-sm p-6 flex flex-col justify-between">
+              <div>
+                <h3 className="text-2xl font-bold mb-2">
+                  Data & Operations Analyst Projects
+                </h3>
+                <p className="text-muted-foreground mb-4">
+                  Dashboards, automation tools, and SQL-based workflows built to
+                  optimize operations and enhance data visibility.
+                </p>
+              </div>
+              <div className="text-right">
+                <Link
+                  href="/projects/data-analyst-projects"
+                  className="text-sm font-medium text-blue-600 hover:underline"
+                >
+                  View Projects →
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Technical Strengths Section */}
         <section id="technical-strengths" className="py-16 scroll-mt-20">
           <h2 className="text-3xl font-bold mb-8">Technical Strengths</h2>
@@ -213,6 +286,104 @@ export default function Portfolio() {
                 </p>
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* Skills Section */}
+        <section id="skills" className="py-16 scroll-mt-20">
+          <h2 className="text-3xl font-bold mb-8">Skills & Expertise</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Data Analysis & Querying */}
+            <Card>
+              <CardContent className="pt-6">
+                <h3 className="text-xl font-bold mb-4">
+                  Data Handling & Automation
+                </h3>
+                <div className="flex flex-wrap gap-2">
+                  <Badge className="bg-blue-600 text-white">
+                    SQL (BigQuery)
+                  </Badge>
+                  <Badge className="bg-blue-600 text-white">
+                    Python (pandas)
+                  </Badge>
+                  <Badge className="bg-blue-600 text-white">Excel VBA</Badge>
+                  <Badge className="bg-blue-600 text-white">Git</Badge>
+                  <Badge className="bg-blue-600 text-white">Bash</Badge>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Visualization & Reporting */}
+            <Card>
+              <CardContent className="pt-6">
+                <h3 className="text-xl font-bold mb-4">
+                  Visualization & Reporting
+                </h3>
+                <div className="flex flex-wrap gap-2">
+                  <Badge className="bg-green-600 text-white">Tableau</Badge>
+                  <Badge className="bg-green-600 text-white">Power BI</Badge>
+                  <Badge className="bg-green-600 text-white">
+                    KPI tracking
+                  </Badge>
+                  <Badge className="bg-green-600 text-white">
+                    Data visualization
+                  </Badge>
+                  <Badge className="bg-green-600 text-white">
+                    Report creation
+                  </Badge>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Automation & Optimization */}
+            <Card>
+              <CardContent className="pt-6">
+                <h3 className="text-xl font-bold mb-4">
+                  Automation & Optimization
+                </h3>
+                <div className="flex flex-wrap gap-2">
+                  <Badge className="bg-purple-600 text-white">
+                    Workflow automation
+                  </Badge>
+                  <Badge className="bg-purple-600 text-white">
+                    Process optimization
+                  </Badge>
+                  <Badge className="bg-purple-600 text-white">
+                    Report creation
+                  </Badge>
+                  <Badge className="bg-purple-600 text-white">
+                    Email scheduling
+                  </Badge>
+                  <Badge className="bg-purple-600 text-white">
+                    Data pipelines
+                  </Badge>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Cross-functional Collaboration */}
+            <Card>
+              <CardContent className="pt-6">
+                <h3 className="text-xl font-bold mb-4">
+                  Cross-functional Collaboration
+                </h3>
+                <div className="flex flex-wrap gap-2">
+                  <Badge className="bg-pink-600 text-white">
+                    Cross-function onboarding
+                  </Badge>
+                  <Badge className="bg-pink-600 text-white">Training</Badge>
+                  <Badge className="bg-pink-600 text-white">
+                    Stakeholder engagement
+                  </Badge>
+                  <Badge className="bg-pink-600 text-white">
+                    Documentation
+                  </Badge>
+                  <Badge className="bg-pink-600 text-white">
+                    Team coordination
+                  </Badge>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </section>
 
@@ -365,210 +536,6 @@ export default function Portfolio() {
               </p>
             </CardContent>
           </Card>
-        </section>
-
-        {/* Certifications Section */}
-        <section id="certifications" className="py-16 scroll-mt-20">
-          <h2 className="text-3xl font-bold mb-8">Certifications</h2>
-          <Card>
-            <CardContent className="p-6">
-              <div className="flex flex-col md:flex-row justify-between mb-4">
-                <div>
-                  <h3 className="text-xl font-bold">CompTIA Security+</h3>
-                  <p className="text-primary">Earned July 2025</p>
-                </div>
-                <div>
-                  <a
-                    href="/images/Donald_Vu_SecurityPlus.pdf"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-blue-600 hover:underline text-right"
-                  >
-                    View Certificate →
-                  </a>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        </section>
-
-        {/* Skills Section */}
-        <section id="skills" className="py-16 scroll-mt-20">
-          <h2 className="text-3xl font-bold mb-8">Skills & Expertise</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Data Analysis & Querying */}
-            <Card>
-              <CardContent className="pt-6">
-                <h3 className="text-xl font-bold mb-4">
-                  Data Handling & Automation
-                </h3>
-                <div className="flex flex-wrap gap-2">
-                  <Badge className="bg-blue-600 text-white">
-                    SQL (BigQuery)
-                  </Badge>
-                  <Badge className="bg-blue-600 text-white">
-                    Python (pandas)
-                  </Badge>
-                  <Badge className="bg-blue-600 text-white">Excel VBA</Badge>
-                  <Badge className="bg-blue-600 text-white">Git</Badge>
-                  <Badge className="bg-blue-600 text-white">Bash</Badge>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Visualization & Reporting */}
-            <Card>
-              <CardContent className="pt-6">
-                <h3 className="text-xl font-bold mb-4">
-                  Visualization & Reporting
-                </h3>
-                <div className="flex flex-wrap gap-2">
-                  <Badge className="bg-green-600 text-white">Tableau</Badge>
-                  <Badge className="bg-green-600 text-white">Power BI</Badge>
-                  <Badge className="bg-green-600 text-white">
-                    KPI tracking
-                  </Badge>
-                  <Badge className="bg-green-600 text-white">
-                    Data visualization
-                  </Badge>
-                  <Badge className="bg-green-600 text-white">
-                    Report creation
-                  </Badge>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Automation & Optimization */}
-            <Card>
-              <CardContent className="pt-6">
-                <h3 className="text-xl font-bold mb-4">
-                  Automation & Optimization
-                </h3>
-                <div className="flex flex-wrap gap-2">
-                  <Badge className="bg-purple-600 text-white">
-                    Workflow automation
-                  </Badge>
-                  <Badge className="bg-purple-600 text-white">
-                    Process optimization
-                  </Badge>
-                  <Badge className="bg-purple-600 text-white">
-                    Report creation
-                  </Badge>
-                  <Badge className="bg-purple-600 text-white">
-                    Email scheduling
-                  </Badge>
-                  <Badge className="bg-purple-600 text-white">
-                    Data pipelines
-                  </Badge>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Cross-functional Collaboration */}
-            <Card>
-              <CardContent className="pt-6">
-                <h3 className="text-xl font-bold mb-4">
-                  Cross-functional Collaboration
-                </h3>
-                <div className="flex flex-wrap gap-2">
-                  <Badge className="bg-pink-600 text-white">
-                    Cross-function onboarding
-                  </Badge>
-                  <Badge className="bg-pink-600 text-white">Training</Badge>
-                  <Badge className="bg-pink-600 text-white">
-                    Stakeholder engagement
-                  </Badge>
-                  <Badge className="bg-pink-600 text-white">
-                    Documentation
-                  </Badge>
-                  <Badge className="bg-pink-600 text-white">
-                    Team coordination
-                  </Badge>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        </section>
-
-        {/* Projects Section */}
-        <section id="projects" className="py-16 scroll-mt-20">
-          <h2 className="text-3xl font-bold mb-8">Featured Projects</h2>
-          <div className="space-y-12">
-            <div className="bg-card rounded-lg border shadow-sm overflow-hidden p-6">
-              <h3 className="text-2xl font-bold mb-3">
-                Excel-Macro Automated Reporting Tool
-              </h3>
-              <p className="text-muted-foreground mb-4">
-                End-to-end automation solution that streamlines data cleaning,
-                validation, SQL job execution, and report generation with
-                automated email notifications.
-              </p>
-              <div className="flex justify-center">
-                <div className="mb-4">
-                  <FullscreenProjectImage
-                    src="/images/macro-1-overview.png"
-                    alt="Excel-Macro Overview"
-                  />
-                </div>
-              </div>
-              <Link
-                href="/projects/macro-tool"
-                className="text-sm font-medium text-blue-600 hover:underline"
-              >
-                View Full Project →
-              </Link>
-            </div>
-
-            {/* Consumer Complaint Dashboard */}
-            <div className="bg-card rounded-lg border shadow-sm overflow-hidden p-6">
-              <h3 className="text-2xl font-bold mb-3">
-                Consumer Complaint Dashboard
-              </h3>
-              <p className="text-muted-foreground mb-4">
-                Interactive dashboard that analyzes consumer complaints by
-                agency and category, with normalized metrics to enable fair
-                comparisons regardless of agency size.
-              </p>
-              <div className="flex justify-center">
-                <div className="mb-4">
-                  <FullscreenProjectImage
-                    src="/images/consumerComplaint-1-dashboard-overview.png"
-                    alt="Consumer Complaint Overview"
-                  />
-                </div>
-              </div>
-              <Link
-                href="/projects/consumer-complaints"
-                className="text-sm font-medium text-blue-600 hover:underline"
-              >
-                View Full Project →
-              </Link>
-            </div>
-
-            {/* Healthcare Dashboard */}
-            <div className="bg-card rounded-lg border shadow-sm overflow-hidden p-6">
-              <h3 className="text-2xl font-bold mb-3">Healthcare Dashboard</h3>
-              <p className="text-muted-foreground mb-4">
-                Data visualization project analyzing hospital readmission trends
-                by diagnosis, treatment, and patient demographics to identify
-                high-risk groups and improve care outcomes.
-              </p>
-              <div className="flex justify-center">
-                <div className="mb-4">
-                  <FullscreenProjectImage
-                    src="/images/healthcare-1-overview.png"
-                    alt="Healthcare Dashboard Overview"
-                  />
-                </div>
-              </div>
-              <Link
-                href="/projects/healthcare-dashboard"
-                className="text-sm font-medium text-blue-600 hover:underline"
-              >
-                View Full Project →
-              </Link>
-            </div>
-          </div>
         </section>
 
         {/* Contact Section */}
