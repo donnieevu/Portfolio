@@ -5,9 +5,18 @@ import FullscreenProjectImage from "@/components/fullscreen-project-image";
 export default function DataAnalystProjects() {
   return (
     <main className="container mx-auto px-4 py-10 md:py-16">
-      <h1 className="text-4xl font-bold mb-10">
-        Data & Operations Analyst Projects
-      </h1>
+      <div className="relative mb-10">
+        <Link
+          href="/"
+          className="absolute left-0 text-sm font-medium hover:underline text-white"
+        >
+          ← Back to Home
+        </Link>
+        <h1 className="text-4xl font-bold text-center">
+          Data & Operations Analyst Projects
+        </h1>
+      </div>
+
       <div className="space-y-12">
         {/* Macro Tool */}
         <Card>

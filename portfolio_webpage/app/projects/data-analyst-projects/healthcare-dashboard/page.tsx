@@ -28,11 +28,16 @@ const images = [
 export default function HealthcareDashboardPage() {
   return (
     <div className="max-w-6xl mx-auto py-16 px-4 space-y-10">
-      <Link href="/#projects" className="text-sm text-blue-500 hover:underline">
-        ← Back to Projects
-      </Link>
+      <div className="relative mb-10">
+        <Link
+          href="/projects/data-analyst-projects"
+          className="absolute left-0 text-sm text-blue-500 hover:underline"
+        >
+          ← Back to Projects
+        </Link>
+        <h1 className="text-3xl font-bold text-center">Healthcare Dashboard</h1>
+      </div>
 
-      <h1 className="text-3xl font-bold">Healthcare Dashboard</h1>
       <p className="text-muted-foreground text-lg">
         Data visualization project analyzing hospital readmission trends by
         diagnosis, treatment, and patient demographics to identify high-risk
