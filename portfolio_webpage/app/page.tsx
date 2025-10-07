@@ -149,36 +149,10 @@ export default function Portfolio() {
           </div>
         </section>
 
-        {/* Certifications Section */}
-        <section id="certifications" className="py-16 scroll-mt-20">
-          <h2 className="text-3xl font-bold mb-8">Certifications</h2>
-          <Card>
-            <CardContent className="p-6">
-              <div className="flex flex-col md:flex-row justify-between mb-4">
-                <div>
-                  <h3 className="text-xl font-bold">CompTIA Security+</h3>
-                  <p className="text-primary">Earned July 2025</p>
-                </div>
-                <div>
-                  <a
-                    href="/images/Donald_Vu_SecurityPlus.pdf"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-blue-600 hover:underline text-right"
-                  >
-                    View Certificate →
-                  </a>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        </section>
-
         {/* Projects Section */}
         <section id="projects" className="py-16 scroll-mt-20">
           <h2 className="text-3xl font-bold mb-8">Projects</h2>
           <div className="grid md:grid-cols-1 gap-6">
-
             {/* Data & Operations Analyst Projects Card */}
             <div className="bg-card rounded-lg border shadow-sm p-6 flex flex-col justify-between">
               <div>
@@ -362,6 +336,31 @@ export default function Portfolio() {
               </CardContent>
             </Card>
           </div>
+        </section>
+        
+        {/* Certifications Section */}
+        <section id="certifications" className="py-16 scroll-mt-20">
+          <h2 className="text-3xl font-bold mb-8">Certifications</h2>
+          <Card>
+            <CardContent className="p-6">
+              <div className="flex flex-col md:flex-row justify-between mb-4">
+                <div>
+                  <h3 className="text-xl font-bold">CompTIA Security+</h3>
+                  <p className="text-primary">Earned July 2025</p>
+                </div>
+                <div>
+                  <a
+                    href="/images/Donald_Vu_SecurityPlus.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-600 hover:underline text-right"
+                  >
+                    View Certificate →
+                  </a>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
         </section>
 
         {/* Experience Section */}
