@@ -148,219 +148,7 @@ export default function Portfolio() {
             </p>
           </div>
         </section>
-
-        {/* Projects Section */}
-        <section id="projects" className="py-12 md:py-14 scroll-mt-20">
-          <h2 className="text-3xl font-bold mb-8">Projects</h2>
-          <div className="grid md:grid-cols-1 gap-6">
-            {/* Data & Operations Analyst Projects Card */}
-            <div className="bg-card rounded-lg border shadow-sm p-6 flex flex-col justify-between">
-              <div>
-                <h3 className="text-2xl font-bold mb-2">
-                  Data & Operations Analyst Projects
-                </h3>
-                <p className="text-muted-foreground mb-4">
-                  Dashboards, automation tools, and SQL-based workflows built to
-                  optimize operations and enhance data visibility.
-                </p>
-              </div>
-              <div className="text-right">
-                <Link
-                  href="/projects/data-analyst-projects"
-                  className="text-sm font-medium text-blue-600 hover:underline"
-                >
-                  View Projects →
-                </Link>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Technical Strengths Section */}
-        <section
-          id="technical-strengths"
-          className="py-12 md:py-14 scroll-mt-20"
-        >
-          <h2 className="text-3xl font-bold mb-8">Technical Strengths</h2>
-          <div className="bg-card rounded-lg border shadow-sm overflow-hidden">
-            <div className="p-6">
-              <div className="grid md:grid-cols-2 gap-8">
-                <div className="space-y-6">
-                  <div>
-                    <h3 className="text-xl font-bold mb-3">SQL</h3>
-                    <p className="text-muted-foreground">
-                      CTEs, joins, filtering logic, KPI calculations, and
-                      complex query optimization
-                    </p>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold mb-3">GCP/BigQuery</h3>
-                    <p className="text-muted-foreground">
-                      Cloud-based SQL querying for healthcare data analysis,
-                      connected to DBVisualizer for local exploration
-                    </p>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold mb-3">Python</h3>
-                    <p className="text-muted-foreground">
-                      Data cleaning with pandas, Excel file automation, and
-                      process monitoring scripts
-                    </p>
-                  </div>
-                </div>
-                <div className="space-y-6">
-                  <div>
-                    <h3 className="text-xl font-bold mb-3">Tableau/Power BI</h3>
-                    <p className="text-muted-foreground">
-                      Trend analysis, KPI dashboards, interactive
-                      visualizations, and data storytelling
-                    </p>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold mb-3">Excel/VBA</h3>
-                    <p className="text-muted-foreground">
-                      Automated pipelines, report generation macros, and
-                      user-friendly interfaces
-                    </p>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold mb-3">Git</h3>
-                    <p className="text-muted-foreground">
-                      Version control and publishing portfolio projects to
-                      GitHub for sharing and presentation
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="mt-6">
-                <h3 className="text-xl font-bold mb-3">Soft Skills</h3>
-                <p className="text-muted-foreground">
-                  Strong communicator, problem solver, and ability to translate
-                  technical concepts for non-technical audiences
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Skills Section */}
-        <section id="skills" className="py-12 md:py-14 scroll-mt-20">
-          <h2 className="text-3xl font-bold mb-6">Skills & Expertise</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Application Support & Troubleshooting */}
-            <Card>
-              <CardContent className="pt-6">
-                <h3 className="text-xl font-bold mb-4">
-                  Application Support & Troubleshooting
-                </h3>
-                <div className="flex flex-wrap gap-2">
-                  <Badge className="bg-blue-600 text-white">
-                    Incident Management
-                  </Badge>
-                  <Badge className="bg-blue-600 text-white">
-                    Root Cause Analysis
-                  </Badge>
-                  <Badge className="bg-blue-600 text-white">JIRA (Kanban)</Badge>
-                  <Badge className="bg-blue-600 text-white">
-                    System Monitoring
-                  </Badge>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Scripting & Automation */}
-            <Card>
-              <CardContent className="pt-6">
-                <h3 className="text-xl font-bold mb-4">
-                  Scripting & Automation
-                </h3>
-                <div className="flex flex-wrap gap-2">
-                  <Badge className="bg-purple-600 text-white">Python</Badge>
-                  <Badge className="bg-purple-600 text-white">Excel VBA</Badge>
-                  <Badge className="bg-purple-600 text-white">Bash</Badge>
-                  <Badge className="bg-purple-600 text-white">PowerShell</Badge>
-                  <Badge className="bg-purple-600 text-white">
-                    Workflow Automation
-                  </Badge>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Monitoring & Analysis */}
-            <Card>
-              <CardContent className="pt-6">
-                <h3 className="text-xl font-bold mb-4">
-                  Monitoring & Analysis
-                </h3>
-                <div className="flex flex-wrap gap-2">
-                  <Badge className="bg-green-600 text-white">
-                    SQL (BigQuery, MySQL)
-                  </Badge>
-                  <Badge className="bg-green-600 text-white">Splunk</Badge>
-                  <Badge className="bg-green-600 text-white">ELK Stack</Badge>
-                  <Badge className="bg-green-600 text-white">
-                    Log Analysis
-                  </Badge>
-                  <Badge className="bg-green-600 text-white">
-                    Performance Optimization
-                  </Badge>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Communication & Collaboration */}
-            <Card>
-              <CardContent className="pt-6">
-                <h3 className="text-xl font-bold mb-4">
-                  Communication & Collaboration
-                </h3>
-                <div className="flex flex-wrap gap-2">
-                  <Badge className="bg-pink-600 text-white">
-                    Technical Documentation
-                  </Badge>
-                  <Badge className="bg-pink-600 text-white">
-                    Cross-Functional Collaboration
-                  </Badge>
-                  <Badge className="bg-pink-600 text-white">
-                    Customer Support
-                  </Badge>
-                  <Badge className="bg-pink-600 text-white">
-                    Knowledge Sharing
-                  </Badge>
-                  <Badge className="bg-pink-600 text-white">
-                    Process Improvement
-                  </Badge>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        </section>
-
-        {/* Certifications Section */}
-        <section id="certifications" className="py-12 md:py-14 scroll-mt-20">
-          <h2 className="text-3xl font-bold mb-8">Certifications</h2>
-          <Card>
-            <CardContent className="p-6">
-              <div className="flex flex-col md:flex-row justify-between mb-4">
-                <div>
-                  <h3 className="text-xl font-bold">CompTIA Security+</h3>
-                  <p className="text-primary">Earned July 2025</p>
-                </div>
-                <div>
-                  <a
-                    href="/images/Donald_Vu_SecurityPlus.pdf"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-blue-600 hover:underline text-right"
-                  >
-                    View Certificate →
-                  </a>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        </section>
-
+        
         {/* Experience Section */}
         <section id="experience" className="py-12 md:py-14 scroll-mt-20">
           <h2 className="text-3xl font-bold mb-8">Work Experience</h2>
@@ -483,6 +271,220 @@ export default function Portfolio() {
               </CardContent>
             </Card>
           </div>
+        </section>
+
+        {/* Projects Section */}
+        <section id="projects" className="py-12 md:py-14 scroll-mt-20">
+          <h2 className="text-3xl font-bold mb-8">Projects</h2>
+          <div className="grid md:grid-cols-1 gap-6">
+            {/* Data & Operations Analyst Projects Card */}
+            <div className="bg-card rounded-lg border shadow-sm p-6 flex flex-col justify-between">
+              <div>
+                <h3 className="text-2xl font-bold mb-2">
+                  Data & Operations Analyst Projects
+                </h3>
+                <p className="text-muted-foreground mb-4">
+                  Dashboards, automation tools, and SQL-based workflows built to
+                  optimize operations and enhance data visibility.
+                </p>
+              </div>
+              <div className="text-right">
+                <Link
+                  href="/projects/data-analyst-projects"
+                  className="text-sm font-medium text-blue-600 hover:underline"
+                >
+                  View Projects →
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Technical Strengths Section */}
+        <section
+          id="technical-strengths"
+          className="py-12 md:py-14 scroll-mt-20"
+        >
+          <h2 className="text-3xl font-bold mb-8">Technical Strengths</h2>
+          <div className="bg-card rounded-lg border shadow-sm overflow-hidden">
+            <div className="p-6">
+              <div className="grid md:grid-cols-2 gap-8">
+                <div className="space-y-6">
+                  <div>
+                    <h3 className="text-xl font-bold mb-3">SQL</h3>
+                    <p className="text-muted-foreground">
+                      CTEs, joins, filtering logic, KPI calculations, and
+                      complex query optimization
+                    </p>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold mb-3">GCP/BigQuery</h3>
+                    <p className="text-muted-foreground">
+                      Cloud-based SQL querying for healthcare data analysis,
+                      connected to DBVisualizer for local exploration
+                    </p>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold mb-3">Python</h3>
+                    <p className="text-muted-foreground">
+                      Data cleaning with pandas, Excel file automation, and
+                      process monitoring scripts
+                    </p>
+                  </div>
+                </div>
+                <div className="space-y-6">
+                  <div>
+                    <h3 className="text-xl font-bold mb-3">Tableau/Power BI</h3>
+                    <p className="text-muted-foreground">
+                      Trend analysis, KPI dashboards, interactive
+                      visualizations, and data storytelling
+                    </p>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold mb-3">Excel/VBA</h3>
+                    <p className="text-muted-foreground">
+                      Automated pipelines, report generation macros, and
+                      user-friendly interfaces
+                    </p>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold mb-3">Git</h3>
+                    <p className="text-muted-foreground">
+                      Version control and publishing portfolio projects to
+                      GitHub for sharing and presentation
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="mt-6">
+                <h3 className="text-xl font-bold mb-3">Soft Skills</h3>
+                <p className="text-muted-foreground">
+                  Strong communicator, problem solver, and ability to translate
+                  technical concepts for non-technical audiences
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Skills Section */}
+        <section id="skills" className="py-12 md:py-14 scroll-mt-20">
+          <h2 className="text-3xl font-bold mb-6">Skills & Expertise</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Application Support & Troubleshooting */}
+            <Card>
+              <CardContent className="pt-6">
+                <h3 className="text-xl font-bold mb-4">
+                  Application Support & Troubleshooting
+                </h3>
+                <div className="flex flex-wrap gap-2">
+                  <Badge className="bg-blue-600 text-white">
+                    Incident Management
+                  </Badge>
+                  <Badge className="bg-blue-600 text-white">
+                    Root Cause Analysis
+                  </Badge>
+                  <Badge className="bg-blue-600 text-white">
+                    JIRA (Kanban)
+                  </Badge>
+                  <Badge className="bg-blue-600 text-white">
+                    System Monitoring
+                  </Badge>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Scripting & Automation */}
+            <Card>
+              <CardContent className="pt-6">
+                <h3 className="text-xl font-bold mb-4">
+                  Scripting & Automation
+                </h3>
+                <div className="flex flex-wrap gap-2">
+                  <Badge className="bg-purple-600 text-white">Python</Badge>
+                  <Badge className="bg-purple-600 text-white">Excel VBA</Badge>
+                  <Badge className="bg-purple-600 text-white">Bash</Badge>
+                  <Badge className="bg-purple-600 text-white">PowerShell</Badge>
+                  <Badge className="bg-purple-600 text-white">
+                    Workflow Automation
+                  </Badge>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Monitoring & Analysis */}
+            <Card>
+              <CardContent className="pt-6">
+                <h3 className="text-xl font-bold mb-4">
+                  Monitoring & Analysis
+                </h3>
+                <div className="flex flex-wrap gap-2">
+                  <Badge className="bg-green-600 text-white">
+                    SQL (BigQuery, MySQL)
+                  </Badge>
+                  <Badge className="bg-green-600 text-white">Splunk</Badge>
+                  <Badge className="bg-green-600 text-white">ELK Stack</Badge>
+                  <Badge className="bg-green-600 text-white">
+                    Log Analysis
+                  </Badge>
+                  <Badge className="bg-green-600 text-white">
+                    Performance Optimization
+                  </Badge>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Communication & Collaboration */}
+            <Card>
+              <CardContent className="pt-6">
+                <h3 className="text-xl font-bold mb-4">
+                  Communication & Collaboration
+                </h3>
+                <div className="flex flex-wrap gap-2">
+                  <Badge className="bg-pink-600 text-white">
+                    Technical Documentation
+                  </Badge>
+                  <Badge className="bg-pink-600 text-white">
+                    Cross-Functional Collaboration
+                  </Badge>
+                  <Badge className="bg-pink-600 text-white">
+                    Customer Support
+                  </Badge>
+                  <Badge className="bg-pink-600 text-white">
+                    Knowledge Sharing
+                  </Badge>
+                  <Badge className="bg-pink-600 text-white">
+                    Process Improvement
+                  </Badge>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+
+        {/* Certifications Section */}
+        <section id="certifications" className="py-12 md:py-14 scroll-mt-20">
+          <h2 className="text-3xl font-bold mb-8">Certifications</h2>
+          <Card>
+            <CardContent className="p-6">
+              <div className="flex flex-col md:flex-row justify-between mb-4">
+                <div>
+                  <h3 className="text-xl font-bold">CompTIA Security+</h3>
+                  <p className="text-primary">Earned July 2025</p>
+                </div>
+                <div>
+                  <a
+                    href="/images/Donald_Vu_SecurityPlus.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-600 hover:underline text-right"
+                  >
+                    View Certificate →
+                  </a>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
         </section>
 
         {/* Education Section */}
