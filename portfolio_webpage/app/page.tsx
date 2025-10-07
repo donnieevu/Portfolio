@@ -177,27 +177,7 @@ export default function Portfolio() {
         {/* Projects Section */}
         <section id="projects" className="py-16 scroll-mt-20">
           <h2 className="text-3xl font-bold mb-8">Projects</h2>
-          <div className="grid md:grid-cols-2 gap-6">
-            {/* Cybersecurity Projects Card */}
-            <div className="bg-card rounded-lg border shadow-sm p-6 flex flex-col justify-between">
-              <div>
-                <h3 className="text-2xl font-bold mb-2">
-                  Cybersecurity Projects
-                </h3>
-                <p className="text-muted-foreground mb-4">
-                  Blue Team labs, SOC workflows, and practical hands-on
-                  exercises to showcase defensive security skills.
-                </p>
-              </div>
-              <div className="text-right">
-                <Link
-                  href="/projects/cybersecurity-projects"
-                  className="text-sm font-medium text-blue-600 hover:underline"
-                >
-                  View Projects →
-                </Link>
-              </div>
-            </div>
+          <div className="grid md:grid-cols-1 gap-6">
 
             {/* Data & Operations Analyst Projects Card */}
             <div className="bg-card rounded-lg border shadow-sm p-6 flex flex-col justify-between">
