@@ -177,7 +177,10 @@ export default function Portfolio() {
         </section>
 
         {/* Technical Strengths Section */}
-        <section id="technical-strengths" className="py-12 md:py-14 scroll-mt-20">
+        <section
+          id="technical-strengths"
+          className="py-12 md:py-14 scroll-mt-20"
+        >
           <h2 className="text-3xl font-bold mb-8">Technical Strengths</h2>
           <div className="bg-card rounded-lg border shadow-sm overflow-hidden">
             <div className="p-6">
@@ -242,102 +245,97 @@ export default function Portfolio() {
 
         {/* Skills Section */}
         <section id="skills" className="py-12 md:py-14 scroll-mt-20">
-          <h2 className="text-3xl font-bold mb-8">Skills & Expertise</h2>
+          <h2 className="text-3xl font-bold mb-6">Skills & Expertise</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Data Analysis & Querying */}
+            {/* Application Support & Troubleshooting */}
             <Card>
               <CardContent className="pt-6">
                 <h3 className="text-xl font-bold mb-4">
-                  Data Handling & Automation
+                  Application Support & Troubleshooting
                 </h3>
                 <div className="flex flex-wrap gap-2">
                   <Badge className="bg-blue-600 text-white">
-                    SQL (BigQuery)
+                    Incident Management
                   </Badge>
                   <Badge className="bg-blue-600 text-white">
-                    Python (pandas)
+                    Root Cause Analysis
                   </Badge>
-                  <Badge className="bg-blue-600 text-white">Excel VBA</Badge>
-                  <Badge className="bg-blue-600 text-white">Git</Badge>
-                  <Badge className="bg-blue-600 text-white">Bash</Badge>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Visualization & Reporting */}
-            <Card>
-              <CardContent className="pt-6">
-                <h3 className="text-xl font-bold mb-4">
-                  Visualization & Reporting
-                </h3>
-                <div className="flex flex-wrap gap-2">
-                  <Badge className="bg-green-600 text-white">Tableau</Badge>
-                  <Badge className="bg-green-600 text-white">Power BI</Badge>
-                  <Badge className="bg-green-600 text-white">
-                    KPI tracking
-                  </Badge>
-                  <Badge className="bg-green-600 text-white">
-                    Data visualization
-                  </Badge>
-                  <Badge className="bg-green-600 text-white">
-                    Report creation
+                  <Badge className="bg-blue-600 text-white">JIRA (Kanban)</Badge>
+                  <Badge className="bg-blue-600 text-white">
+                    System Monitoring
                   </Badge>
                 </div>
               </CardContent>
             </Card>
 
-            {/* Automation & Optimization */}
+            {/* Scripting & Automation */}
             <Card>
               <CardContent className="pt-6">
                 <h3 className="text-xl font-bold mb-4">
-                  Automation & Optimization
+                  Scripting & Automation
                 </h3>
                 <div className="flex flex-wrap gap-2">
+                  <Badge className="bg-purple-600 text-white">Python</Badge>
+                  <Badge className="bg-purple-600 text-white">Excel VBA</Badge>
+                  <Badge className="bg-purple-600 text-white">Bash</Badge>
+                  <Badge className="bg-purple-600 text-white">PowerShell</Badge>
                   <Badge className="bg-purple-600 text-white">
-                    Workflow automation
-                  </Badge>
-                  <Badge className="bg-purple-600 text-white">
-                    Process optimization
-                  </Badge>
-                  <Badge className="bg-purple-600 text-white">
-                    Report creation
-                  </Badge>
-                  <Badge className="bg-purple-600 text-white">
-                    Email scheduling
-                  </Badge>
-                  <Badge className="bg-purple-600 text-white">
-                    Data pipelines
+                    Workflow Automation
                   </Badge>
                 </div>
               </CardContent>
             </Card>
 
-            {/* Cross-functional Collaboration */}
+            {/* Monitoring & Analysis */}
             <Card>
               <CardContent className="pt-6">
                 <h3 className="text-xl font-bold mb-4">
-                  Cross-functional Collaboration
+                  Monitoring & Analysis
+                </h3>
+                <div className="flex flex-wrap gap-2">
+                  <Badge className="bg-green-600 text-white">
+                    SQL (BigQuery, MySQL)
+                  </Badge>
+                  <Badge className="bg-green-600 text-white">Splunk</Badge>
+                  <Badge className="bg-green-600 text-white">ELK Stack</Badge>
+                  <Badge className="bg-green-600 text-white">
+                    Log Analysis
+                  </Badge>
+                  <Badge className="bg-green-600 text-white">
+                    Performance Optimization
+                  </Badge>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Communication & Collaboration */}
+            <Card>
+              <CardContent className="pt-6">
+                <h3 className="text-xl font-bold mb-4">
+                  Communication & Collaboration
                 </h3>
                 <div className="flex flex-wrap gap-2">
                   <Badge className="bg-pink-600 text-white">
-                    Cross-function onboarding
-                  </Badge>
-                  <Badge className="bg-pink-600 text-white">Training</Badge>
-                  <Badge className="bg-pink-600 text-white">
-                    Stakeholder engagement
+                    Technical Documentation
                   </Badge>
                   <Badge className="bg-pink-600 text-white">
-                    Documentation
+                    Cross-Functional Collaboration
                   </Badge>
                   <Badge className="bg-pink-600 text-white">
-                    Team coordination
+                    Customer Support
+                  </Badge>
+                  <Badge className="bg-pink-600 text-white">
+                    Knowledge Sharing
+                  </Badge>
+                  <Badge className="bg-pink-600 text-white">
+                    Process Improvement
                   </Badge>
                 </div>
               </CardContent>
             </Card>
           </div>
         </section>
-        
+
         {/* Certifications Section */}
         <section id="certifications" className="py-12 md:py-14 scroll-mt-20">
           <h2 className="text-3xl font-bold mb-8">Certifications</h2>
