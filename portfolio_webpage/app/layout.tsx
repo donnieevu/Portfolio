@@ -3,7 +3,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 
 export const metadata: Metadata = {
-  title: "Donald Vu's Portfolio'",
+  title: "Donald Vu's Portfolio",
   description:
     "Portfolio of Donald Vu – Security+ certified Data and Operations Analyst. Showcasing Projects, SQL automation, and dashboard reporting.",
   generator: "Next.js",
