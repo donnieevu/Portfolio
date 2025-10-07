@@ -53,7 +53,7 @@ export default function Portfolio() {
         </div>
       </header>
 
-      <main className="container mx-auto px-4 py-10 md:py-16">
+      <main className="container mx-auto px-4 py-10 md:py-14">
         {/* Hero Section */}
         <section className="flex flex-col-reverse md:flex-row items-center md:items-start justify-between gap-6 md:gap-10 px-4 sm:px-6">
           <div className="flex-1 space-y-4">
@@ -121,7 +121,7 @@ export default function Portfolio() {
         </section>
 
         {/* About Section */}
-        <section id="about" className="py-16 scroll-mt-20">
+        <section id="about" className="py-12 md:py-14 scroll-mt-20">
           <h2 className="text-3xl font-bold mb-8">About Me</h2>
           <div className="space-y-4">
             <p className="text-lg">
@@ -150,7 +150,7 @@ export default function Portfolio() {
         </section>
 
         {/* Projects Section */}
-        <section id="projects" className="py-16 scroll-mt-20">
+        <section id="projects" className="py-12 md:py-14 scroll-mt-20">
           <h2 className="text-3xl font-bold mb-8">Projects</h2>
           <div className="grid md:grid-cols-1 gap-6">
             {/* Data & Operations Analyst Projects Card */}
@@ -177,7 +177,7 @@ export default function Portfolio() {
         </section>
 
         {/* Technical Strengths Section */}
-        <section id="technical-strengths" className="py-16 scroll-mt-20">
+        <section id="technical-strengths" className="py-12 md:py-14 scroll-mt-20">
           <h2 className="text-3xl font-bold mb-8">Technical Strengths</h2>
           <div className="bg-card rounded-lg border shadow-sm overflow-hidden">
             <div className="p-6">
@@ -241,7 +241,7 @@ export default function Portfolio() {
         </section>
 
         {/* Skills Section */}
-        <section id="skills" className="py-16 scroll-mt-20">
+        <section id="skills" className="py-12 md:py-14 scroll-mt-20">
           <h2 className="text-3xl font-bold mb-8">Skills & Expertise</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Data Analysis & Querying */}
@@ -339,7 +339,7 @@ export default function Portfolio() {
         </section>
         
         {/* Certifications Section */}
-        <section id="certifications" className="py-16 scroll-mt-20">
+        <section id="certifications" className="py-12 md:py-14 scroll-mt-20">
           <h2 className="text-3xl font-bold mb-8">Certifications</h2>
           <Card>
             <CardContent className="p-6">
@@ -364,7 +364,7 @@ export default function Portfolio() {
         </section>
 
         {/* Experience Section */}
-        <section id="experience" className="py-16 scroll-mt-20">
+        <section id="experience" className="py-12 md:py-14 scroll-mt-20">
           <h2 className="text-3xl font-bold mb-8">Work Experience</h2>
           <div className="space-y-8">
             <Card>
@@ -488,7 +488,7 @@ export default function Portfolio() {
         </section>
 
         {/* Education Section */}
-        <section id="education" className="py-16 scroll-mt-20">
+        <section id="education" className="py-12 md:py-14 scroll-mt-20">
           <h2 className="text-3xl font-bold mb-8">Education</h2>
           <Card>
             <CardContent className="p-6">
@@ -515,7 +515,7 @@ export default function Portfolio() {
         </section>
 
         {/* Contact Section */}
-        <section id="contact" className="py-16 scroll-mt-20">
+        <section id="contact" className="py-12 md:py-14 scroll-mt-20">
           <h2 className="text-3xl font-bold mb-8">Get In Touch</h2>
           <div className="grid md:grid-cols-2 gap-10">
             <div className="space-y-4">
