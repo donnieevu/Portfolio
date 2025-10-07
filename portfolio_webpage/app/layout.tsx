@@ -3,9 +3,9 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 
 export const metadata: Metadata = {
-  title: "Donald Vu | SOC Analyst",
+  title: "Donald Vu's Portfolio'",
   description:
-    "Portfolio of Donald Vu – Security+ certified SOC Analyst transitioning from data and operations. Showcasing cybersecurity projects, SQL automation, and dashboard reporting.",
+    "Portfolio of Donald Vu – Security+ certified Data and Operations Analyst. Showcasing Projects, SQL automation, and dashboard reporting.",
   generator: "Next.js",
 };
 
