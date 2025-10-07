@@ -125,23 +125,19 @@ export default function Portfolio() {
           <div className="space-y-4">
             <p className="text-lg">
               Security+ certified Data and Operations Analyst with 3+ years of
-              experience helping teams work smarter through troubleshooting,
-              automation, and clear documentation. I’m currently transitioning
-              into cybersecurity to become an entry-level SOC Analyst, where I
-              can build on my problem-solving skills and support organizations
-              in monitoring systems, investigating alerts, and responding to
-              incidents. I enjoy tackling technical challenges, working with
-              people, and creating processes that keep things running smoothly
-              and securely.
+              experience troubleshooting systems, automating workflows, and
+              improving team efficiency through data-driven solutions. I’m now
+              focused on pursuing Technical and Application Support roles, where
+              I can apply my analytical and communication skills to ensure
+              reliable operations, resolve technical issues, and support users
+              across environments.
             </p>
             <p className="text-lg">
-              I have a proven ability to develop tools and reporting processes
-              that streamline operations and reduce manual effort. I'm
-              comfortable working across technical and non-technical
-              stakeholders to meet data requirements and enable decision-making.
-              I’m building on these strengths as I move into cybersecurity,
-              ready to help monitor systems and support security teams as an
-              entry-level SOC Analyst.
+              I’ve built automation tools, dashboards, and SQL workflows that
+              reduced manual workload and improved reporting accuracy. My
+              background in system monitoring and log analysis (via Security+
+              and TryHackMe) gives me the technical awareness to identify root
+              causes and maintain stable, secure systems.
             </p>
             <p className="text-lg">
               When I'm not working, I enjoy playing basketball, following the
