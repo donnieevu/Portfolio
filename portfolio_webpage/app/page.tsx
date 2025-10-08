@@ -148,7 +148,7 @@ export default function Portfolio() {
             </p>
           </div>
         </section>
-        
+
         {/* Experience Section */}
         <section id="experience" className="py-12 md:py-14 scroll-mt-20">
           <h2 className="text-3xl font-bold mb-8">Work Experience</h2>
@@ -520,9 +520,9 @@ export default function Portfolio() {
           <div className="grid md:grid-cols-2 gap-10">
             <div className="space-y-4">
               <p className="text-lg">
-                I'm always open to discussing new opportunities, data projects,
-                or just connecting with fellow professionals in the field. Feel
-                free to reach out through any of the channels below!
+                I'm always open to discussing new opportunities, potential
+                growth, or just connecting with fellow professionals in the
+                field. Feel free to reach out through any of the channels below!
               </p>
               <div className="space-y-2">
                 <div className="flex items-center gap-2">
