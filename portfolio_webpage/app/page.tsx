@@ -414,6 +414,17 @@ export default function Portfolio() {
                   <Badge className="bg-blue-600 text-white">
                     System Monitoring
                   </Badge>
+                  <Badge className="bg-blue-600 text-white">
+                    Nginx (Reverse Proxy)
+                  </Badge>
+                  <Badge className="bg-blue-600 text-white">
+                    Incident Triage
+                  </Badge>
+                  <Badge className="bg-blue-600 text-white">cURL Testing</Badge>
+                  <Badge className="bg-blue-600 text-white">Linux (WSL2)</Badge>
+                  <Badge className="bg-blue-600 text-white">
+                    Docker & Docker Compose
+                  </Badge>
                 </div>
               </CardContent>
             </Card>
@@ -429,6 +440,8 @@ export default function Portfolio() {
                   <Badge className="bg-purple-600 text-white">Excel VBA</Badge>
                   <Badge className="bg-purple-600 text-white">Bash</Badge>
                   <Badge className="bg-purple-600 text-white">PowerShell</Badge>
+                  <Badge className="bg-purple-600 text-white">sed</Badge>
+                  <Badge className="bg-purple-600 text-white">grep</Badge>
                   <Badge className="bg-purple-600 text-white">
                     Workflow Automation
                   </Badge>
@@ -454,6 +467,9 @@ export default function Portfolio() {
                   <Badge className="bg-green-600 text-white">
                     Performance Optimization
                   </Badge>
+                  <Badge className="bg-green-600 text-white">Grafana</Badge>
+                  <Badge className="bg-green-600 text-white">Promtail</Badge>
+                  <Badge className="bg-green-600 text-white">LogQL</Badge>
                 </div>
               </CardContent>
             </Card>
