@@ -149,6 +149,57 @@ export default function Portfolio() {
           </div>
         </section>
 
+        {/* Projects Section */}
+        <section id="projects" className="py-12 md:py-14 scroll-mt-20">
+          <h2 className="text-3xl font-bold mb-8">Projects</h2>
+
+          {/* 1 column on mobile, 2 columns on md+ */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
+            {/* Data & Operations Analyst Projects Card */}
+            <div className="bg-card rounded-lg border shadow-sm p-6 flex flex-col justify-between h-full">
+              <div>
+                <h3 className="text-2xl font-bold mb-2">
+                  Data &amp; Operations Analyst Projects
+                </h3>
+                <p className="text-muted-foreground mb-4">
+                  Dashboards, automation tools, and SQL-based workflows built to
+                  optimize operations and enhance data visibility.
+                </p>
+              </div>
+              <div className="text-right">
+                <Link
+                  href="/projects/data-analyst-projects"
+                  className="text-sm font-medium text-blue-600 hover:underline"
+                >
+                  View Projects →
+                </Link>
+              </div>
+            </div>
+
+            {/* Application Support Engineer Projects Card */}
+            <div className="bg-card rounded-lg border shadow-sm p-6 flex flex-col justify-between h-full">
+              <div>
+                <h3 className="text-2xl font-bold mb-2">
+                  Application Support Engineer Projects
+                </h3>
+                <p className="text-muted-foreground mb-4">
+                  Incident-driven labs: Nginx ↔ Flask ↔ Postgres, Loki/Grafana
+                  dashboards, runbooks, and post-incident reports showcasing
+                  triage & reliability skills.
+                </p>
+              </div>
+              <div className="text-right">
+                <Link
+                  href="/projects/ase-projects"
+                  className="text-sm font-medium text-blue-600 hover:underline"
+                >
+                  View Projects →
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Experience Section */}
         <section id="experience" className="py-12 md:py-14 scroll-mt-20">
           <h2 className="text-3xl font-bold mb-8">Work Experience</h2>
@@ -270,33 +321,6 @@ export default function Portfolio() {
                 </ul>
               </CardContent>
             </Card>
-          </div>
-        </section>
-
-        {/* Projects Section */}
-        <section id="projects" className="py-12 md:py-14 scroll-mt-20">
-          <h2 className="text-3xl font-bold mb-8">Projects</h2>
-          <div className="grid md:grid-cols-1 gap-6">
-            {/* Data & Operations Analyst Projects Card */}
-            <div className="bg-card rounded-lg border shadow-sm p-6 flex flex-col justify-between">
-              <div>
-                <h3 className="text-2xl font-bold mb-2">
-                  Data & Operations Analyst Projects
-                </h3>
-                <p className="text-muted-foreground mb-4">
-                  Dashboards, automation tools, and SQL-based workflows built to
-                  optimize operations and enhance data visibility.
-                </p>
-              </div>
-              <div className="text-right">
-                <Link
-                  href="/projects/data-analyst-projects"
-                  className="text-sm font-medium text-blue-600 hover:underline"
-                >
-                  View Projects →
-                </Link>
-              </div>
-            </div>
           </div>
         </section>
 

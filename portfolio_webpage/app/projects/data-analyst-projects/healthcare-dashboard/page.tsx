@@ -4,22 +4,22 @@ import Link from "next/link";
 
 const images = [
   {
-    src: "/images/healthcare-1-overview.png",
+    src: "/images/data-analyst-projects/healthcare/healthcare-1-overview.png",
     alt: "Overview",
     caption: "Dashboard Overview",
   },
   {
-    src: "/images/healthcare-2-dashboard-1.png",
+    src: "/images/data-analyst-projects/healthcare/healthcare-2-dashboard-1.png",
     alt: "By Diagnosis & Age",
     caption: "Readmission by Diagnosis & Age",
   },
   {
-    src: "/images/healthcare-3-dashboard-2.png",
+    src: "/images/data-analyst-projects/healthcare/healthcare-3-dashboard-2.png",
     alt: "By Treatment & Stay",
     caption: "Readmission by Treatment & Stay",
   },
   {
-    src: "/images/healthcare-4-takeaways.png",
+    src: "/images/data-analyst-projects/healthcare/healthcare-4-takeaways.png",
     alt: "Takeaways",
     caption: "Project Takeaways",
   },

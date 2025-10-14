@@ -29,7 +29,7 @@ export default function DataAnalystProjects() {
               with automated macros and email scheduling.
             </p>
             <FullscreenProjectImage
-              src="/images/macro-1-overview.png"
+              src="/images/data-analyst-projects/macro/macro-1-overview.png"
               alt="Excel-Macro Overview"
             />
             <Link
@@ -52,7 +52,7 @@ export default function DataAnalystProjects() {
               normalized metrics for comparison.
             </p>
             <FullscreenProjectImage
-              src="/images/consumerComplaint-1-dashboard-overview.png"
+              src="/images/data-analyst-projects/consumerComplaint/consumerComplaint-1-dashboard-overview.png"
               alt="Consumer Complaint Overview"
             />
             <Link
@@ -73,7 +73,7 @@ export default function DataAnalystProjects() {
               demographic slices to identify high-risk groups.
             </p>
             <FullscreenProjectImage
-              src="/images/healthcare-1-overview.png"
+              src="/images/data-analyst-projects/healthcare/healthcare-1-overview.png"
               alt="Healthcare Dashboard Overview"
             />
             <Link

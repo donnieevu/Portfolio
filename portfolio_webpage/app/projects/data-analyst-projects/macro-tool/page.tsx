@@ -5,42 +5,42 @@ import Link from "next/link";
 export default function MacroToolProjectPage() {
   const images = [
     {
-      src: "/images/macro-1-overview.png",
+      src: "/images/data-analyst-project/smacro/macro-1-overview.png",
       alt: "Project Overview",
       caption: "Project Overview",
     },
     {
-      src: "/images/macro-2-ui.png",
+      src: "/images/data-analyst-project/smacro/macro-2-ui.png",
       alt: "User Interface",
       caption: "UI & Entry Point",
     },
     {
-      src: "/images/macro-3-file-sweep.png",
+      src: "/images/data-analyst-project/smacro/macro-3-file-sweep.png",
       alt: "File Sweep",
       caption: "Automated File Sweep",
     },
     {
-      src: "/images/macro-4-python.png",
+      src: "/images/data-analyst-project/smacro/macro-4-python.png",
       alt: "Python Script",
       caption: "Validation Script",
     },
     {
-      src: "/images/macro-5-sql-pt1.png",
+      src: "/images/data-analyst-project/smacro/macro-5-sql-pt1.png",
       alt: "SQL Logic 1",
       caption: "SQL Classification Pt 1",
     },
     {
-      src: "/images/macro-6-sql-pt2.png",
+      src: "/images/data-analyst-project/smacro/macro-6-sql-pt2.png",
       alt: "SQL Logic 2",
       caption: "SQL Classification Pt 2",
     },
     {
-      src: "/images/macro-7-automated-email.png",
+      src: "/images/data-analyst-project/smacro/macro-7-automated-email.png",
       alt: "Email",
       caption: "Email Automation",
     },
     {
-      src: "/images/macro-8-takeaways.png",
+      src: "/images/data-analyst-project/smacro/macro-8-takeaways.png",
       alt: "Takeaways",
       caption: "Project Takeaways",
     },
@@ -50,7 +50,7 @@ export default function MacroToolProjectPage() {
     <div className="max-w-6xl mx-auto py-16 px-4 space-y-10">
       <div className="relative mb-10">
         <Link
-          href="/projects/data-analyst-projects"
+          href="/projects/data-analyst-project/s"
           className="absolute left-0 text-sm font-medium text-blue-600 hover:underline"
         >
           ← Back to Projects

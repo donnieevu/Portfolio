@@ -4,32 +4,32 @@ import Link from "next/link";
 
 const images = [
   {
-    src: "/images/consumerComplaint-1-dashboard-overview.png",
+    src: "/images/data-analyst-projects/consumerComplaint/consumerComplaint-1-dashboard-overview.png",
     alt: "Dashboard Overview",
     caption: "Dashboard Overview",
   },
   {
-    src: "/images/consumerComplaint-2-agency-query.png",
+    src: "/images/data-analyst-projects/consumerComplaint/consumerComplaint-2-agency-query.png",
     alt: "Agency Join Query",
     caption: "Agency Join Query",
   },
   {
-    src: "/images/consumerComplaint-3-total-contract-query.png",
+    src: "/images/data-analyst-projects/consumerComplaint/consumerComplaint-3-total-contract-query.png",
     alt: "Total Contract Query",
     caption: "Total Contract Query",
   },
   {
-    src: "/images/consumerComplaint-4-per-10k-dashboard.png",
+    src: "/images/data-analyst-projects/consumerComplaint/consumerComplaint-4-per-10k-dashboard.png",
     alt: "Complaints Per 10K",
     caption: "Complaints Per 10K Contracts",
   },
   {
-    src: "/images/consumerComplaint-5-reason-breakdown-dashboard.png",
+    src: "/images/data-analyst-projects/consumerComplaint/consumerComplaint-5-reason-breakdown-dashboard.png",
     alt: "Complaint Reasons",
     caption: "Complaint Reason Breakdown",
   },
   {
-    src: "/images/consumerComplaint-6-dashboard-takeaways.png",
+    src: "/images/data-analyst-projects/consumerComplaint/consumerComplaint-6-dashboard-takeaways.png",
     alt: "Takeaways",
     caption: "Project Takeaways",
   },
