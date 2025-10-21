@@ -58,6 +58,37 @@ export default function AseProjectsPage() {
             </Link>
           </div>
         </article>
+
+        {/* Memory & Performance Monitoring Card */}
+        <article className="bg-card rounded-lg border shadow-sm p-6 flex flex-col justify-between h-full w-full max-w-xl mx-auto md:mx-0">
+          <div>
+            <h3 className="text-2xl font-bold mb-2">
+              Memory & Performance Monitoring
+            </h3>
+            <p className="text-muted-foreground mb-4">
+              Simulated memory leaks and high CPU usage, then built monitoring
+              dashboards to track request patterns, errors, slow requests, and
+              memory usage.
+            </p>
+            <ul className="text-sm text-muted-foreground list-disc pl-5 space-y-1">
+              <li>Memory leak simulation with /api/memory-hog</li>
+              <li>CPU load testing with /api/burncpu</li>
+              <li>Docker stats for resource monitoring</li>
+              <li>4-panel Grafana dashboard</li>
+            </ul>
+          </div>
+          <div className="flex items-center justify-between pt-4">
+            <span className="text-xs uppercase tracking-wide text-muted-foreground">
+              Status: Completed
+            </span>
+            <Link
+              href="/projects/ase-projects/memory-performance"
+              className="text-sm font-medium text-blue-600 hover:underline"
+            >
+              View project →
+            </Link>
+          </div>
+        </article>
       </div>
     </main>
   );
