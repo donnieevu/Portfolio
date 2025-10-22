@@ -5,16 +5,27 @@ import FullscreenProjectImage from "@/components/fullscreen-project-image";
 export default function DataAnalystProjects() {
   return (
     <main className="container mx-auto px-4 py-10 md:py-16">
-      <div className="relative mb-10">
-        <Link
-          href="/"
-          className="absolute left-0 text-sm font-medium hover:underline text-white"
-        >
-          ← Back to Home
-        </Link>
-        <h1 className="text-4xl font-bold text-center">
-          Data & Operations Analyst Projects
-        </h1>
+      {/* Fixed header with grid layout */}
+      <div className="mb-10">
+        <div className="grid grid-cols-[auto,1fr,auto] items-center gap-4">
+          {/* Home button - left aligned */}
+          <Link
+            href="/"
+            className="inline-flex items-center rounded-md px-3 py-1.5 text-sm font-medium text-blue-600 hover:underline hover:text-blue-700 whitespace-nowrap flex-shrink-0"
+          >
+            ← Back to Home
+          </Link>
+
+          {/* Title - truly centered */}
+          <h1 className="text-xl sm:text-2xl md:text-4xl font-bold text-center justify-self-center min-w-0">
+            Data & Operations Analyst Projects
+          </h1>
+
+          {/* Empty spacer to balance the grid */}
+          <div className="w-20 md:w-24 flex-shrink-0 opacity-0 pointer-events-none">
+            spacer
+          </div>
+        </div>
       </div>
 
       <div className="space-y-12">
