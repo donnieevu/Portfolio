@@ -4,17 +4,24 @@ import Link from "next/link";
 export default function AseProjectsPage() {
   return (
     <main className="container mx-auto px-4 py-10 md:py-16">
-      {/* Top bar with centered title + right-aligned Home */}
-      <div className="relative mb-6">
-        <h1 className="text-4xl font-bold text-center">
-          Application Support Engineer Projects
-        </h1>
+      {/* Top bar with flex layout */}
+      <div className="flex items-center justify-between mb-6">
+        {/* Home button - always visible */}
         <Link
           href="/"
-          className="absolute left-0 top-1/2 -translate-y-1/2 inline-flex items-center rounded-md px-3 py-1.5 text-sm font-medium text-blue-600 hover:underline hover:text-blue-700"
+          className="inline-flex items-center rounded-md px-3 py-1.5 text-sm font-medium text-blue-600 hover:underline hover:text-blue-700 flex-shrink-0 mr-4"
         >
           ← Home
         </Link>
+
+        {/* Title - centered with flex grow */}
+        <h1 className="text-2xl md:text-4xl font-bold text-center flex-1 min-w-0">
+          Application Support Engineer Projects
+        </h1>
+
+        {/* Spacer to balance the layout */}
+        <div className="w-14 flex-shrink-0 md:hidden"></div>
+        <div className="w-20 flex-shrink-0 hidden md:block"></div>
       </div>
 
       {/* Centered subtitle with max width */}
