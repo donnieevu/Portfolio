@@ -81,7 +81,7 @@ export default function Portfolio() {
               </Button>
               <Button variant="outline" asChild>
                 <a
-                  href="/resume/Donald_Vu_Resume.pdf"
+                  href="/resume/Donald-Vu-Resume.pdf"
                   download
                   className="flex items-center gap-2"
                 >
