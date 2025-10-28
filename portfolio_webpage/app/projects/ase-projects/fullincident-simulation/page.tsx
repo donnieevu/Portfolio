@@ -249,7 +249,7 @@ export default function FullIncidentSimulationPage() {
                 </div>
                 <figcaption className="p-3 text-sm text-muted-foreground border-t bg-background/50 min-h-[60px] flex items-center">
                   Memory leak evidence - /memory-hog endpoint calls causing
-                  growth from 17MB to 20MB
+                  growth from 0MB to 20MB
                 </figcaption>
               </figure>
             </div>
