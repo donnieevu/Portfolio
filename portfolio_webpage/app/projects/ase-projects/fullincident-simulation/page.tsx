@@ -205,7 +205,7 @@ export default function FullIncidentSimulationPage() {
               Correlated database health with application logs to identify the
               memory leak. Database logs confirmed normal operation while
               application logs showed progressive memory accumulation through
-              repeated endpoint calls.
+              repeated /memory-hog endpoint calls.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <figure
@@ -219,14 +219,15 @@ export default function FullIncidentSimulationPage() {
                 <div className="flex-1">
                   <Image
                     src="/images/ase-projects/fullincident-simulation/fis-db-logs(4).png"
-                    alt="Database health verification logs"
+                    alt="Database health verification logs showing normal operation"
                     width={800}
                     height={400}
                     className="w-full h-auto group-hover:opacity-95 transition-opacity"
                   />
                 </div>
                 <figcaption className="p-3 text-sm text-muted-foreground border-t bg-background/50 min-h-[60px] flex items-center">
-                  Database health confirmed - normal operation and checkpoints
+                  Database health confirmed - listening on socket, system ready,
+                  normal checkpoints
                 </figcaption>
               </figure>
               <figure
@@ -240,15 +241,15 @@ export default function FullIncidentSimulationPage() {
                 <div className="flex-1">
                   <Image
                     src="/images/ase-projects/fullincident-simulation/fis-app-logs(5).png"
-                    alt="Application memory leak logs showing growth"
+                    alt="Application memory leak logs showing /memory-hog endpoint calls causing growth"
                     width={800}
                     height={400}
                     className="w-full h-auto group-hover:opacity-95 transition-opacity"
                   />
                 </div>
                 <figcaption className="p-3 text-sm text-muted-foreground border-t bg-background/50 min-h-[60px] flex items-center">
-                  Memory leak evidence - growing from 17MB to 20MB in
-                  application logs
+                  Memory leak evidence - /memory-hog endpoint calls causing
+                  growth from 17MB to 20MB
                 </figcaption>
               </figure>
             </div>
@@ -261,8 +262,9 @@ export default function FullIncidentSimulationPage() {
             </h3>
             <p className="text-sm text-muted-foreground mb-6">
               Executed controlled remediation by restarting the application
-              container and performed comprehensive verification to ensure
-              complete resolution and service recovery.
+              container with proper wait time for service recovery, then
+              performed comprehensive verification to ensure complete resolution
+              and service recovery.
             </p>
             <figure
               className="rounded-lg overflow-hidden border bg-background max-w-4xl mx-auto cursor-pointer group transition-all duration-200 hover:shadow-lg hover:border-blue-300 flex flex-col h-full"
@@ -275,7 +277,7 @@ export default function FullIncidentSimulationPage() {
               <div className="flex-1">
                 <Image
                   src="/images/ase-projects/fullincident-simulation/fis-restart-app(8).png"
-                  alt="Complete incident resolution workflow showing restart and verification"
+                  alt="Complete incident resolution workflow showing restart, wait time, and verification"
                   width={1200}
                   height={600}
                   className="w-full h-auto group-hover:opacity-95 transition-opacity"
@@ -283,7 +285,7 @@ export default function FullIncidentSimulationPage() {
               </div>
               <figcaption className="p-3 text-sm text-muted-foreground border-t bg-background/50 min-h-[60px] flex items-center">
                 Resolution workflow: Memory leak at 20MB → Container restart →
-                Verified cleared to 0MB
+                Sleep 30s → Verified cleared to 0MB
               </figcaption>
             </figure>
           </div>
