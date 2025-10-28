@@ -352,7 +352,7 @@ cat > incident_report.md << EOF
 # Incident Report - Application Errors
 
 ## Timeline
-- 19:12: Memory leak detected growing from 17MB to 20MB
+- 19:12: Memory leak detected growing from 0MB to 20MB
 - 19:15: Database health verified - normal operation
 - 19:18: Identified memory leak as root cause
 - 19:20: Restarted application container
