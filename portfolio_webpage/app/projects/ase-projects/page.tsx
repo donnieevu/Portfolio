@@ -30,13 +30,10 @@ export default function AseProjectsPage() {
         and runbooks.
       </p>
 
-      {/* Grid: 1 column on mobile, 2 on md+.
-          Single-card case is centered; when you add more, they'll flow 2 per row. */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {/* Existing/other cards... */}
-
-        {/* ASE Ticket/Triage (Nginx 502) */}
-        <article className="bg-card rounded-lg border shadow-sm p-6 flex flex-col justify-between h-full w-full max-w-xl mx-auto md:mx-0">
+      {/* Single column grid for all projects */}
+      <div className="grid grid-cols-1 gap-8 max-w-4xl mx-auto">
+        {/* Nginx 502 Upstream Triage */}
+        <article className="bg-card rounded-lg border shadow-sm p-6 flex flex-col justify-between h-full w-full">
           <div>
             <h3 className="text-2xl font-bold mb-2">
               Nginx 502 Upstream Triage
@@ -66,8 +63,8 @@ export default function AseProjectsPage() {
           </div>
         </article>
 
-        {/* Memory & Performance Monitoring Card */}
-        <article className="bg-card rounded-lg border shadow-sm p-6 flex flex-col justify-between h-full w-full max-w-xl mx-auto md:mx-0">
+        {/* Memory & Performance Monitoring */}
+        <article className="bg-card rounded-lg border shadow-sm p-6 flex flex-col justify-between h-full w-full">
           <div>
             <h3 className="text-2xl font-bold mb-2">
               Memory & Performance Monitoring
@@ -90,6 +87,38 @@ export default function AseProjectsPage() {
             </span>
             <Link
               href="/projects/ase-projects/memory-performance"
+              className="text-sm font-medium text-blue-600 hover:underline"
+            >
+              View project →
+            </Link>
+          </div>
+        </article>
+
+        {/* Full Incident Simulation */}
+        <article className="bg-card rounded-lg border shadow-sm p-6 flex flex-col justify-between h-full w-full">
+          <div>
+            <h3 className="text-2xl font-bold mb-2">
+              Full Incident Simulation
+            </h3>
+            <p className="text-muted-foreground mb-4">
+              Executed complete incident response for simulated production
+              outage caused by memory leak. Followed professional
+              troubleshooting from alert through root cause identification,
+              resolution, and verification.
+            </p>
+            <ul className="text-sm text-muted-foreground list-disc pl-5 space-y-1">
+              <li>Memory leak identification & metrics analysis</li>
+              <li>Multi-tool investigation (CLI + Grafana dashboards)</li>
+              <li>Container restart & comprehensive verification</li>
+              <li>Complete incident documentation</li>
+            </ul>
+          </div>
+          <div className="flex items-center justify-between pt-4">
+            <span className="text-xs uppercase tracking-wide text-muted-foreground">
+              Status: Completed
+            </span>
+            <Link
+              href="/projects/ase-projects/fullincident-simulation"
               className="text-sm font-medium text-blue-600 hover:underline"
             >
               View project →
