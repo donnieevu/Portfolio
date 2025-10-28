@@ -202,51 +202,53 @@ export default function FullIncidentSimulationPage() {
               3. Root Cause Identification
             </h3>
             <p className="text-sm text-muted-foreground mb-6">
-              Discovered the memory leak through application metrics analysis,
-              identifying the exact metric indicating progressive memory
-              accumulation.
+              Correlated database health with application logs to identify the
+              memory leak. Database logs confirmed normal operation while
+              application logs showed progressive memory accumulation through
+              repeated endpoint calls.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <figure
                 className="rounded-lg overflow-hidden border bg-background cursor-pointer group transition-all duration-200 hover:shadow-lg hover:border-blue-300 flex flex-col h-full"
                 onClick={() =>
                   setSelectedImage(
-                    "/images/ase-projects/fullincident-simulation/fis-smoking-gun(4).png"
+                    "/images/ase-projects/fullincident-simulation/fis-db-logs(4).png"
                   )
                 }
               >
                 <div className="flex-1">
                   <Image
-                    src="/images/ase-projects/fullincident-simulation/fis-smoking-gun(4).png"
-                    alt="Memory leak identification - first instance"
+                    src="/images/ase-projects/fullincident-simulation/fis-db-logs(4).png"
+                    alt="Database health verification logs"
                     width={800}
                     height={400}
                     className="w-full h-auto group-hover:opacity-95 transition-opacity"
                   />
                 </div>
                 <figcaption className="p-3 text-sm text-muted-foreground border-t bg-background/50 min-h-[60px] flex items-center">
-                  First memory leak detection (size: 20)
+                  Database health confirmed - normal operation and checkpoints
                 </figcaption>
               </figure>
               <figure
                 className="rounded-lg overflow-hidden border bg-background cursor-pointer group transition-all duration-200 hover:shadow-lg hover:border-blue-300 flex flex-col h-full"
                 onClick={() =>
                   setSelectedImage(
-                    "/images/ase-projects/fullincident-simulation/fis-smoking-gun(5).png"
+                    "/images/ase-projects/fullincident-simulation/fis-app-logs(5).png"
                   )
                 }
               >
                 <div className="flex-1">
                   <Image
-                    src="/images/ase-projects/fullincident-simulation/fis-smoking-gun(5).png"
-                    alt="Memory leak identification - second instance"
+                    src="/images/ase-projects/fullincident-simulation/fis-app-logs(5).png"
+                    alt="Application memory leak logs showing growth"
                     width={800}
                     height={400}
                     className="w-full h-auto group-hover:opacity-95 transition-opacity"
                   />
                 </div>
                 <figcaption className="p-3 text-sm text-muted-foreground border-t bg-background/50 min-h-[60px] flex items-center">
-                  Confirming memory leak (size: 20)
+                  Memory leak evidence - growing from 17MB to 20MB in
+                  application logs
                 </figcaption>
               </figure>
             </div>
@@ -258,8 +260,9 @@ export default function FullIncidentSimulationPage() {
               4. Resolution & Verification
             </h3>
             <p className="text-sm text-muted-foreground mb-6">
-              Executed controlled remediation and performed comprehensive
-              verification to ensure complete resolution and service recovery.
+              Executed controlled remediation by restarting the application
+              container and performed comprehensive verification to ensure
+              complete resolution and service recovery.
             </p>
             <figure
               className="rounded-lg overflow-hidden border bg-background max-w-4xl mx-auto cursor-pointer group transition-all duration-200 hover:shadow-lg hover:border-blue-300 flex flex-col h-full"
@@ -272,15 +275,15 @@ export default function FullIncidentSimulationPage() {
               <div className="flex-1">
                 <Image
                   src="/images/ase-projects/fullincident-simulation/fis-restart-app(8).png"
-                  alt="Complete incident resolution workflow"
+                  alt="Complete incident resolution workflow showing restart and verification"
                   width={1200}
                   height={600}
                   className="w-full h-auto group-hover:opacity-95 transition-opacity"
                 />
               </div>
               <figcaption className="p-3 text-sm text-muted-foreground border-t bg-background/50 min-h-[60px] flex items-center">
-                Complete resolution workflow: Memory leak found → Restarted →
-                Verified
+                Resolution workflow: Memory leak at 20MB → Container restart →
+                Verified cleared to 0MB
               </figcaption>
             </figure>
           </div>
@@ -306,6 +309,7 @@ curl http://localhost:8080/api/slow-db
 # Resource analysis
 docker stats --no-stream
 docker compose logs app --tail=20
+docker compose logs db --tail=20
 
 # Dashboard investigation
 # Grafana: http://localhost:3000
@@ -346,15 +350,16 @@ cat > incident_report.md << EOF
 # Incident Report - Application Errors
 
 ## Timeline
-- 17:10: Users report application errors
-- 17:12: Initial investigation started
-- 17:18: Identified memory leak (size: 20)
-- 17:20: Restarted application container
-- 17:22: Verified resolution - memory leak cleared
+- 19:12: Memory leak detected growing from 17MB to 20MB
+- 19:15: Database health verified - normal operation
+- 19:18: Identified memory leak as root cause
+- 19:20: Restarted application container
+- 19:22: Verified resolution - memory leak cleared to 0MB
 
 ## Root Cause
-Memory leak in application accumulating over time, 
-reaching critical threshold causing application instability
+Memory leak in application accumulating over time through 
+repeated /memory-hog endpoint calls, reaching critical 
+threshold causing application instability
 
 ## Resolution
 Restarted application container to clear accumulated memory
@@ -391,12 +396,12 @@ EOF`}
             </p>
           </article>
           <article className="rounded-lg border p-5">
-            <h3 className="font-semibold">Metrics-Driven Diagnosis</h3>
+            <h3 className="font-semibold">Log Analysis & Correlation</h3>
             <p className="text-sm text-muted-foreground mt-1">
-              Learned to leverage application metrics and monitoring dashboards
-              to identify patterns and correlations. Developed ability to trace
-              user-reported symptoms to underlying system metrics and resource
-              issues.
+              Learned to correlate application and database logs to isolate
+              issues. Developed ability to distinguish between normal system
+              operations and abnormal patterns indicating memory leaks or
+              performance issues.
             </p>
           </article>
           <article className="rounded-lg border p-5">
@@ -429,7 +434,7 @@ EOF`}
           </div>
           <div className="flex items-center space-x-2">
             <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-            <span>Metrics Monitoring</span>
+            <span>Log Analysis</span>
           </div>
           <div className="flex items-center space-x-2">
             <div className="w-2 h-2 bg-green-500 rounded-full"></div>
@@ -449,7 +454,7 @@ EOF`}
           </div>
           <div className="flex items-center space-x-2">
             <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-            <span>Grafana Dashboard Analysis</span>
+            <span>Database Health Checks</span>
           </div>
           <div className="flex items-center space-x-2">
             <div className="w-2 h-2 bg-green-500 rounded-full"></div>
@@ -488,7 +493,7 @@ EOF`}
                     approach
                   </li>
                   <li>
-                    Demonstrated proficiency with full-stack monitoring tools
+                    Demonstrated proficiency with log analysis and correlation
                   </li>
                   <li>Established reproducible incident response protocols</li>
                 </ul>
