@@ -155,27 +155,6 @@ export default function Portfolio() {
 
           {/* 1 column on mobile, 2 columns on md+ */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
-            {/* Data & Operations Analyst Projects Card */}
-            <div className="bg-card rounded-lg border shadow-sm p-6 flex flex-col justify-between h-full">
-              <div>
-                <h3 className="text-2xl font-bold mb-2">
-                  Data &amp; Operations Analyst Projects
-                </h3>
-                <p className="text-muted-foreground mb-4">
-                  Dashboards, automation tools, and SQL-based workflows built to
-                  optimize operations and enhance data visibility.
-                </p>
-              </div>
-              <div className="text-right">
-                <Link
-                  href="/projects/data-analyst-projects"
-                  className="text-sm font-medium text-blue-600 hover:underline"
-                >
-                  View Projects →
-                </Link>
-              </div>
-            </div>
-
             {/* Application Support Engineer Projects Card */}
             <div className="bg-card rounded-lg border shadow-sm p-6 flex flex-col justify-between h-full">
               <div>
@@ -191,6 +170,27 @@ export default function Portfolio() {
               <div className="text-right">
                 <Link
                   href="/projects/ase-projects"
+                  className="text-sm font-medium text-blue-600 hover:underline"
+                >
+                  View Projects →
+                </Link>
+              </div>
+            </div>
+
+            {/* Data & Operations Analyst Projects Card */}
+            <div className="bg-card rounded-lg border shadow-sm p-6 flex flex-col justify-between h-full">
+              <div>
+                <h3 className="text-2xl font-bold mb-2">
+                  Data &amp; Operations Analyst Projects
+                </h3>
+                <p className="text-muted-foreground mb-4">
+                  Dashboards, automation tools, and SQL-based workflows built to
+                  optimize operations and enhance data visibility.
+                </p>
+              </div>
+              <div className="text-right">
+                <Link
+                  href="/projects/data-analyst-projects"
                   className="text-sm font-medium text-blue-600 hover:underline"
                 >
                   View Projects →
