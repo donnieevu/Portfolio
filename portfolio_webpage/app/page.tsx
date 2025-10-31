@@ -148,7 +148,7 @@ export default function Portfolio() {
             />
           </div>
         </section>
-        
+
         {/* Projects Section */}
         <section id="projects" className="py-12 md:py-14 scroll-mt-20">
           <h2 className="text-3xl font-bold mb-8">Projects</h2>
@@ -159,7 +159,12 @@ export default function Portfolio() {
             <div className="bg-card rounded-lg border shadow-sm p-6 flex flex-col justify-between h-full">
               <div>
                 <h3 className="text-2xl font-bold mb-2">
-                  Application Support Engineer Projects
+                  <Link
+                    href="/projects/ase-projects"
+                    className="hover:underline"
+                  >
+                    Application Support Engineer Projects
+                  </Link>
                 </h3>
                 <p className="text-muted-foreground mb-4">
                   Incident-driven labs: Nginx ↔ Flask ↔ Postgres, Loki/Grafana
@@ -167,34 +172,23 @@ export default function Portfolio() {
                   triage & reliability skills.
                 </p>
               </div>
-              <div className="text-right">
-                <Link
-                  href="/projects/ase-projects"
-                  className="text-sm font-medium text-blue-600 hover:underline"
-                >
-                  View Projects →
-                </Link>
-              </div>
             </div>
 
             {/* Data & Operations Analyst Projects Card */}
             <div className="bg-card rounded-lg border shadow-sm p-6 flex flex-col justify-between h-full">
               <div>
                 <h3 className="text-2xl font-bold mb-2">
-                  Data &amp; Operations Analyst Projects
+                  <Link
+                    href="/projects/data-analyst-projects"
+                    className="hover:underline"
+                  >
+                    Data &amp; Operations Analyst Projects
+                  </Link>
                 </h3>
                 <p className="text-muted-foreground mb-4">
                   Dashboards, automation tools, and SQL-based workflows built to
                   optimize operations and enhance data visibility.
                 </p>
-              </div>
-              <div className="text-right">
-                <Link
-                  href="/projects/data-analyst-projects"
-                  className="text-sm font-medium text-blue-600 hover:underline"
-                >
-                  View Projects →
-                </Link>
               </div>
             </div>
           </div>

@@ -36,7 +36,12 @@ export default function AseProjectsPage() {
         <article className="bg-card rounded-lg border shadow-sm p-6 flex flex-col justify-between h-full w-full">
           <div>
             <h3 className="text-2xl font-bold mb-2">
-              Nginx 502 Upstream Triage
+              <Link
+                href="/projects/ase-projects/nginx-502-triage"
+                className="hover:underline"
+              >
+                Nginx 502 Upstream Triage
+              </Link>
             </h3>
             <p className="text-muted-foreground mb-4">
               Injected an upstream misconfig to force{" "}
@@ -54,12 +59,6 @@ export default function AseProjectsPage() {
             <span className="text-xs uppercase tracking-wide text-muted-foreground">
               Status: Completed
             </span>
-            <Link
-              href="/projects/ase-projects/nginx-502-triage"
-              className="text-sm font-medium text-blue-600 hover:underline"
-            >
-              View project →
-            </Link>
           </div>
         </article>
 
@@ -67,7 +66,12 @@ export default function AseProjectsPage() {
         <article className="bg-card rounded-lg border shadow-sm p-6 flex flex-col justify-between h-full w-full">
           <div>
             <h3 className="text-2xl font-bold mb-2">
-              Memory & Performance Monitoring
+              <Link
+                href="/projects/ase-projects/memory-performance"
+                className="hover:underline"
+              >
+                Memory & Performance Monitoring
+              </Link>
             </h3>
             <p className="text-muted-foreground mb-4">
               Simulated memory leaks and high CPU usage, then built monitoring
@@ -85,12 +89,6 @@ export default function AseProjectsPage() {
             <span className="text-xs uppercase tracking-wide text-muted-foreground">
               Status: Completed
             </span>
-            <Link
-              href="/projects/ase-projects/memory-performance"
-              className="text-sm font-medium text-blue-600 hover:underline"
-            >
-              View project →
-            </Link>
           </div>
         </article>
 
@@ -98,7 +96,12 @@ export default function AseProjectsPage() {
         <article className="bg-card rounded-lg border shadow-sm p-6 flex flex-col justify-between h-full w-full">
           <div>
             <h3 className="text-2xl font-bold mb-2">
-              Full Incident Simulation
+              <Link
+                href="/projects/ase-projects/fullincident-simulation"
+                className="hover:underline"
+              >
+                Full Incident Simulation
+              </Link>
             </h3>
             <p className="text-muted-foreground mb-4">
               Executed complete incident response for simulated production
@@ -117,12 +120,6 @@ export default function AseProjectsPage() {
             <span className="text-xs uppercase tracking-wide text-muted-foreground">
               Status: Completed
             </span>
-            <Link
-              href="/projects/ase-projects/fullincident-simulation"
-              className="text-sm font-medium text-blue-600 hover:underline"
-            >
-              View project →
-            </Link>
           </div>
         </article>
       </div>

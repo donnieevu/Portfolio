@@ -33,7 +33,12 @@ export default function DataAnalystProjects() {
         <Card>
           <CardContent className="p-6">
             <h2 className="text-2xl font-bold mb-3">
-              Excel-Macro Automated Reporting Tool
+              <Link
+                href="/projects/data-analyst-projects/macro-tool"
+                className="hover:underline"
+              >
+                Excel-Macro Automated Reporting Tool
+              </Link>
             </h2>
             <p className="text-muted-foreground mb-4">
               Streamlined data cleaning, SQL job execution, and report delivery
@@ -43,12 +48,6 @@ export default function DataAnalystProjects() {
               src="/images/data-analyst-projects/macro/macro-1-overview.png"
               alt="Excel-Macro Overview"
             />
-            <Link
-              href="/projects/data-analyst-projects/macro-tool"
-              className="text-blue-600 hover:underline"
-            >
-              View Full Project →
-            </Link>
           </CardContent>
         </Card>
 
@@ -56,7 +55,12 @@ export default function DataAnalystProjects() {
         <Card>
           <CardContent className="p-6">
             <h2 className="text-2xl font-bold mb-3">
-              Consumer Complaint Dashboard
+              <Link
+                href="/projects/data-analyst-projects/consumer-complaints"
+                className="hover:underline"
+              >
+                Consumer Complaint Dashboard
+              </Link>
             </h2>
             <p className="text-muted-foreground mb-4">
               Dashboard for analyzing complaints across agencies using
@@ -66,19 +70,21 @@ export default function DataAnalystProjects() {
               src="/images/data-analyst-projects/consumerComplaint/consumerComplaint-1-dashboard-overview.png"
               alt="Consumer Complaint Overview"
             />
-            <Link
-              href="/projects/data-analyst-projects/consumer-complaints"
-              className="text-blue-600 hover:underline"
-            >
-              View Full Project →
-            </Link>
           </CardContent>
         </Card>
 
         {/* Healthcare Dashboard */}
         <Card>
           <CardContent className="p-6">
-            <h2 className="text-2xl font-bold mb-3">Healthcare Dashboard</h2>
+            <h2 className="text-2xl font-bold mb-3">
+              {" "}
+              <Link
+                href="/projects/data-analyst-projects/healthcare-dashboard"
+                className="hover:underline"
+              >
+                Healthcare Dashboard
+              </Link>
+            </h2>
             <p className="text-muted-foreground mb-4">
               Analyzes readmission trends across diagnosis categories and
               demographic slices to identify high-risk groups.
@@ -87,12 +93,6 @@ export default function DataAnalystProjects() {
               src="/images/data-analyst-projects/healthcare/healthcare-1-overview.png"
               alt="Healthcare Dashboard Overview"
             />
-            <Link
-              href="/projects/data-analyst-projects/healthcare-dashboard"
-              className="text-blue-600 hover:underline"
-            >
-              View Full Project →
-            </Link>
           </CardContent>
         </Card>
       </div>
