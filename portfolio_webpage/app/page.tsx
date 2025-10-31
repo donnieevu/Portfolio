@@ -6,7 +6,12 @@ import { Badge } from "@/components/ui/badge";
 import { ImageWithModal } from "@/components/image-with-modal";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { MobileMenu } from "@/components/mobile-menu";
-import FullscreenProjectImage from "@/components/fullscreen-project-image";
+import {
+  Accordion,
+  AccordionItem,
+  AccordionTrigger,
+  AccordionContent,
+} from "@/components/ui/accordion";
 
 export default function Portfolio() {
   return (
@@ -193,6 +198,7 @@ export default function Portfolio() {
             </div>
           </div>
         </section>
+
         {/* Skills Section */}
         <section id="skills" className="py-12 md:py-14 scroll-mt-20">
           <h2 className="text-3xl font-bold mb-6">Skills &amp; Expertise</h2>
@@ -308,6 +314,7 @@ export default function Portfolio() {
         <section id="experience" className="py-12 md:py-14 scroll-mt-20">
           <h2 className="text-3xl font-bold mb-8">Work Experience</h2>
           <div className="space-y-8">
+            {/* CoreLogic — Data Analyst */}
             <Card>
               <CardContent className="p-6">
                 <div className="flex flex-col md:flex-row justify-between mb-4">
@@ -317,43 +324,61 @@ export default function Portfolio() {
                   </div>
                   <div className="text-muted-foreground text-right min-w-[180px] md:ml-auto">
                     <p>Irving, TX</p>
-                    <p>December 2023 - May 2025</p>
+                    <p>December 2023 – May 2025</p>
                   </div>
                 </div>
+
+                {/* Resume-aligned top bullets (ASE-relevant first) */}
                 <ul className="list-disc pl-5 space-y-2">
                   <li>
-                    Implemented automated reporting pipelines using SQL
-                    (BigQuery), Python, and Excel VBA, saving 2+ hours per
-                    request and reducing inefficiencies by 40%.
+                    Automated SQL (BigQuery), Python, and Excel VBA pipelines,
+                    reducing manual workload by
+                    <strong> 40%</strong>.
                   </li>
                   <li>
-                    Optimized data extraction and email delivery processes,
-                    reducing manual workload by 30% and improving data delivery
-                    consistency.
+                    Troubleshot data-driven application errors; performed{" "}
+                    <strong>root-cause analysis</strong> and validated fixes
+                    with SQL and log review.
                   </li>
                   <li>
-                    Collaborated with internal operations teams on onboarding
-                    and rollout of reporting tools, contributing to a 20%
-                    increase in SLA compliance.
+                    Built Tableau <strong>KPI dashboards</strong>; contributed
+                    to a <strong>98% on-time delivery</strong> rate across
+                    applications.
                   </li>
                   <li>
-                    Created Tableau dashboards to support cross-functional
-                    visibility of client servicing timelines and data requests.
-                  </li>
-                  <li>
-                    Utilized CTEs with window functions—such as COUNT() and
-                    ROW_NUMBER()—alongside CASE statements to clean and segment
-                    datasets for analysis.
-                  </li>
-                  <li>
-                    Authored internal documentation and supported stakeholder
-                    training, resulting in a 98% on-time delivery rate and
-                    improved team adoption.
+                    Managed <strong>Jira incidents</strong> and partnered with
+                    teams to deploy reliability improvements.
                   </li>
                 </ul>
+
+                {/* Site-only depth without clutter */}
+                <Accordion type="single" collapsible className="mt-3">
+                  <AccordionItem value="more-da">
+                    <AccordionTrigger className="text-sm text-primary">
+                      More impact
+                    </AccordionTrigger>
+                    <AccordionContent>
+                      <ul className="list-disc pl-5 space-y-2">
+                        <li>
+                          Optimized data extraction and email delivery processes
+                          to improve consistency and reduce rework.
+                        </li>
+                        <li>
+                          Used CTEs, window functions, and CASE logic to
+                          clean/segment datasets for analysis.
+                        </li>
+                        <li>
+                          Authored internal documentation and supported
+                          stakeholder training for better tool adoption.
+                        </li>
+                      </ul>
+                    </AccordionContent>
+                  </AccordionItem>
+                </Accordion>
               </CardContent>
             </Card>
 
+            {/* CoreLogic — Business Operations Analyst */}
             <Card>
               <CardContent className="p-6">
                 <div className="flex flex-col md:flex-row justify-between mb-4">
@@ -365,35 +390,49 @@ export default function Portfolio() {
                   </div>
                   <div className="text-muted-foreground text-right min-w-[180px] md:ml-auto">
                     <p>Irving, TX</p>
-                    <p>August 2021 - December 2023</p>
+                    <p>August 2021 – December 2023</p>
                   </div>
                 </div>
+
+                {/* Resume-aligned top bullets */}
                 <ul className="list-disc pl-5 space-y-2">
                   <li>
-                    Served as Subject Matter Expert for the Service Transfer
-                    Process, overseeing accurate onboarding and data migration
-                    of new client accounts.
+                    <strong>SME for Service Transfer</strong>: ensured accurate
+                    onboarding and data migration of new client accounts.
                   </li>
                   <li>
-                    Led new hire training and documentation efforts to
-                    accelerate internal workflow adoption.
+                    Led new-hire training and <strong>documentation</strong> to
+                    accelerate workflow adoption.
                   </li>
                   <li>
-                    Collaborated with cross-functional teams to coordinate data
-                    integration efforts and system alignment.
-                  </li>
-                  <li>
-                    Created operational reports to support internal performance
-                    monitoring and compliance reviews.
-                  </li>
-                  <li>
-                    Identified process inefficiencies and implemented
-                    improvements that reduced turnaround times.
+                    Coordinated cross-functional data integration efforts and
+                    system alignment.
                   </li>
                 </ul>
+
+                <Accordion type="single" collapsible className="mt-3">
+                  <AccordionItem value="more-boa">
+                    <AccordionTrigger className="text-sm text-primary">
+                      More impact
+                    </AccordionTrigger>
+                    <AccordionContent>
+                      <ul className="list-disc pl-5 space-y-2">
+                        <li>
+                          Created operational reports to support internal
+                          performance monitoring and compliance reviews.
+                        </li>
+                        <li>
+                          Identified process inefficiencies and implemented
+                          improvements that reduced turnaround times.
+                        </li>
+                      </ul>
+                    </AccordionContent>
+                  </AccordionItem>
+                </Accordion>
               </CardContent>
             </Card>
 
+            {/* Infosys — Software Engineer */}
             <Card>
               <CardContent className="p-6">
                 <div className="flex flex-col md:flex-row justify-between mb-4">
@@ -403,9 +442,10 @@ export default function Portfolio() {
                   </div>
                   <div className="text-muted-foreground text-right min-w-[180px] md:ml-auto">
                     <p>Richardson, TX</p>
-                    <p>June 2019 - June 2020</p>
+                    <p>June 2019 – June 2020</p>
                   </div>
                 </div>
+
                 <ul className="list-disc pl-5 space-y-2">
                   <li>
                     Participated in Agile software development and contributed
@@ -423,6 +463,28 @@ export default function Portfolio() {
                     optimizing responsiveness within an Agile environment.
                   </li>
                 </ul>
+
+                {/* Optional: add depth without clutter */}
+                {/* Remove this Accordion if you prefer only the three bullets above */}
+                <Accordion type="single" collapsible className="mt-3">
+                  <AccordionItem value="more-se">
+                    <AccordionTrigger className="text-sm text-primary">
+                      More impact
+                    </AccordionTrigger>
+                    <AccordionContent>
+                      <ul className="list-disc pl-5 space-y-2">
+                        <li>
+                          Supported team ceremonies and collaborated closely
+                          with product and QA during iterations.
+                        </li>
+                        <li>
+                          Handled UI refinements and responsiveness fixes across
+                          multiple components to improve UX.
+                        </li>
+                      </ul>
+                    </AccordionContent>
+                  </AccordionItem>
+                </Accordion>
               </CardContent>
             </Card>
           </div>
