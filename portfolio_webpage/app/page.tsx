@@ -493,24 +493,30 @@ export default function Portfolio() {
         {/* About Section */}
         <section id="about" className="py-12 md:py-14 scroll-mt-20">
           <h2 className="text-3xl font-bold mb-8">About Me</h2>
-          <div className="space-y-4">
-            <p className="text-lg">
-              Security+ Application Support Engineer (pivot from data/ops). I
-              focus on production reliability: reproduce issues, read
-              logs/metrics, restore service quickly, and document runbooks so
-              fixes are repeatable. In my labs, I practice the loop of triage →
-              isolate with logs/metrics → safe rollback → verification. I like
-              clear, plain-English communication and I’m building the habits
-              I’ll use on an on-call team.
-            </p>
-            <p className="text-lg">
-              Stack: Nginx, Docker, Linux, Grafana/Prometheus, SQL, Python.
-            </p>
-            <p className="text-lg">
-              Off-hours: basketball/NBA, gym, anime & thrillers, occasional
-              Valorant.
-            </p>
-          </div>
+          <Card>
+            <CardContent className="p-6">
+              <div className="space-y-4">
+                <p className="text-lg">
+                  <strong>Security+ Application Support Engineer</strong> (pivot
+                  from data/ops). I focus on production reliability: reproduce
+                  issues, read logs/metrics, restore service quickly, and
+                  document runbooks so fixes are repeatable. In my labs, I
+                  practice the loop of triage → isolate with logs/metrics → safe
+                  rollback → verification. I like clear, plain-English
+                  communication and I’m building the habits I’ll use on an
+                  on-call team.
+                </p>
+                <p className="text-lg">
+                  <strong>Stack:</strong> Nginx, Docker, Linux,
+                  Grafana/Prometheus, SQL, Python.
+                </p>
+                <p className="text-lg">
+                  <strong>Off-hours:</strong> basketball/NBA, gym, anime &amp;
+                  thrillers, occasional Valorant.
+                </p>
+              </div>
+            </CardContent>
+          </Card>
         </section>
 
         {/* Certifications Section */}
