@@ -319,7 +319,9 @@ export default function Portfolio() {
               <CardContent className="p-6">
                 <div className="flex flex-col md:flex-row justify-between mb-4">
                   <div>
-                    <h3 className="text-xl font-bold">Data Analyst</h3>
+                    <h3 className="text-xl font-bold">
+                      Data Analyst (Application Support)
+                    </h3>
                     <p className="text-primary">CoreLogic</p>
                   </div>
                   <div className="text-muted-foreground text-right min-w-[180px] md:ml-auto">
@@ -331,50 +333,21 @@ export default function Portfolio() {
                 {/* Resume-aligned top bullets (ASE-relevant first) */}
                 <ul className="list-disc pl-5 space-y-2">
                   <li>
-                    Automated SQL (BigQuery), Python, and Excel VBA pipelines,
-                    reducing manual workload by
-                    <strong> 40%</strong>.
+                    Owned an Excel/VBA automation for scheduled data pulls;
+                    monitored run logs, triaged failures, reproduced defects,
+                    and shipped script fixes under daily SLAs.
                   </li>
                   <li>
-                    Troubleshot data-driven application errors; performed{" "}
-                    <strong>root-cause analysis</strong> and validated fixes
-                    with SQL and log review.
+                    Reproduced errors with test inputs, patched the VBA
+                    module/configs, and verified outputs, enabling Client
+                    Account Managers to self-serve lien data.
                   </li>
                   <li>
-                    Built Tableau <strong>KPI dashboards</strong>; contributed
-                    to a <strong>98% on-time delivery</strong> rate across
-                    applications.
-                  </li>
-                  <li>
-                    Managed <strong>Jira incidents</strong> and partnered with
-                    teams to deploy reliability improvements.
+                    Authored a short runbook (steps, error glossary, log
+                    locations) so Client Account Managers could run pulls and
+                    re-runs independently.
                   </li>
                 </ul>
-
-                {/* Site-only depth without clutter */}
-                <Accordion type="single" collapsible className="mt-3">
-                  <AccordionItem value="more-da">
-                    <AccordionTrigger className="text-sm text-primary">
-                      More impact
-                    </AccordionTrigger>
-                    <AccordionContent>
-                      <ul className="list-disc pl-5 space-y-2">
-                        <li>
-                          Optimized data extraction and email delivery processes
-                          to improve consistency and reduce rework.
-                        </li>
-                        <li>
-                          Used CTEs, window functions, and CASE logic to
-                          clean/segment datasets for analysis.
-                        </li>
-                        <li>
-                          Authored internal documentation and supported
-                          stakeholder training for better tool adoption.
-                        </li>
-                      </ul>
-                    </AccordionContent>
-                  </AccordionItem>
-                </Accordion>
               </CardContent>
             </Card>
 
@@ -397,38 +370,18 @@ export default function Portfolio() {
                 {/* Resume-aligned top bullets */}
                 <ul className="list-disc pl-5 space-y-2">
                   <li>
-                    <strong>SME for Service Transfer</strong>: ensured accurate
-                    onboarding and data migration of new client accounts.
+                    Service Transfer SME: operated an Excel/VBA service-transfer
+                    tool to migrate prior-servicer → new-servicer loan numbers
+                    and key dates; validated mappings and spot-checked outputs
+                    before cutover.
                   </li>
                   <li>
-                    Led new-hire training and <strong>documentation</strong> to
-                    accelerate workflow adoption.
-                  </li>
-                  <li>
-                    Coordinated cross-functional data integration efforts and
-                    system alignment.
+                    Scaled the process: trained a team of 3 and wrote a runbook
+                    (how-to, error interpretation, recovery steps), coaching
+                    them to triage, reproduce, and resolve common failures
+                    without escalation.
                   </li>
                 </ul>
-
-                <Accordion type="single" collapsible className="mt-3">
-                  <AccordionItem value="more-boa">
-                    <AccordionTrigger className="text-sm text-primary">
-                      More impact
-                    </AccordionTrigger>
-                    <AccordionContent>
-                      <ul className="list-disc pl-5 space-y-2">
-                        <li>
-                          Created operational reports to support internal
-                          performance monitoring and compliance reviews.
-                        </li>
-                        <li>
-                          Identified process inefficiencies and implemented
-                          improvements that reduced turnaround times.
-                        </li>
-                      </ul>
-                    </AccordionContent>
-                  </AccordionItem>
-                </Accordion>
               </CardContent>
             </Card>
 
@@ -463,28 +416,6 @@ export default function Portfolio() {
                     optimizing responsiveness within an Agile environment.
                   </li>
                 </ul>
-
-                {/* Optional: add depth without clutter */}
-                {/* Remove this Accordion if you prefer only the three bullets above */}
-                <Accordion type="single" collapsible className="mt-3">
-                  <AccordionItem value="more-se">
-                    <AccordionTrigger className="text-sm text-primary">
-                      More impact
-                    </AccordionTrigger>
-                    <AccordionContent>
-                      <ul className="list-disc pl-5 space-y-2">
-                        <li>
-                          Supported team ceremonies and collaborated closely
-                          with product and QA during iterations.
-                        </li>
-                        <li>
-                          Handled UI refinements and responsiveness fixes across
-                          multiple components to improve UX.
-                        </li>
-                      </ul>
-                    </AccordionContent>
-                  </AccordionItem>
-                </Accordion>
               </CardContent>
             </Card>
           </div>
