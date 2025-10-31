@@ -20,14 +20,11 @@ export default function Portfolio() {
             </Link>
           </div>
           <nav className="hidden sm:flex items-center gap-4 sm:gap-6">
-            <Link href="#about" className="text-sm font-medium hover:underline">
-              About
-            </Link>
             <Link
-              href="#experience"
+              href="#projects"
               className="text-sm font-medium hover:underline"
             >
-              Experience
+              Projects
             </Link>
             <Link
               href="#skills"
@@ -36,10 +33,25 @@ export default function Portfolio() {
               Skills
             </Link>
             <Link
-              href="#projects"
+              href="#experience"
               className="text-sm font-medium hover:underline"
             >
-              Projects
+              Experience
+            </Link>
+            <Link href="#about" className="text-sm font-medium hover:underline">
+              About
+            </Link>
+            <Link
+              href="#certifications"
+              className="text-sm font-medium hover:underline"
+            >
+              Certifications
+            </Link>
+            <Link
+              href="#education"
+              className="text-sm font-medium hover:underline"
+            >
+              Education
             </Link>
             <Link
               href="#contact"
@@ -56,15 +68,32 @@ export default function Portfolio() {
       <main className="container mx-auto px-4 py-10 md:py-14">
         {/* Hero Section */}
         <section className="flex flex-col-reverse md:flex-row items-center md:items-start justify-between gap-6 md:gap-10 px-4 sm:px-6">
-          <div className="flex-1 space-y-4">
+          <div className="flex-1 space-y-4 max-w-3xl">
             <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
               Hi, I'm <span className="text-primary">Donald Vu</span>
             </h1>
-            <p className="text-xl text-muted-foreground">
-              Application Support Engineer | Technical Support Engineer | Data &
-              Operations Analyst | Security+ Certified | SQL • Python •
-              Troubleshooting • Automation
+            <p className="mt-3 text-lg md:text-xl text-muted-foreground leading-snug">
+              Application Support Engineer — production reliability & verified
+              fixes
             </p>
+
+            <ul className="mt-4 flex flex-wrap gap-2">
+              {[
+                "Nginx",
+                "Docker",
+                "Linux",
+                "Grafana/Prometheus",
+                "SQL",
+                "Python",
+              ].map((t) => (
+                <li
+                  key={t}
+                  className="rounded-full border bg-background px-3 py-1 text-sm text-foreground/80"
+                >
+                  {t}
+                </li>
+              ))}
+            </ul>
             <div className="flex flex-wrap gap-2 pt-2">
               <div className="flex items-center gap-1 text-sm text-muted-foreground">
                 <MapPin className="h-4 w-4" />
@@ -119,36 +148,7 @@ export default function Portfolio() {
             />
           </div>
         </section>
-
-        {/* About Section */}
-        <section id="about" className="py-12 md:py-14 scroll-mt-20">
-          <h2 className="text-3xl font-bold mb-8">About Me</h2>
-          <div className="space-y-4">
-            <p className="text-lg">
-              Security+ certified Data and Operations Analyst with 3+ years of
-              experience troubleshooting systems, automating workflows, and
-              improving team efficiency through data-driven solutions. I’m now
-              focused on pursuing Technical and Application Support roles, where
-              I can apply my analytical and communication skills to ensure
-              reliable operations, resolve technical issues, and support users
-              across environments.
-            </p>
-            <p className="text-lg">
-              I’ve built automation tools, dashboards, and SQL workflows that
-              reduced manual workload and improved reporting accuracy. My
-              background in system monitoring and log analysis (via Security+
-              and TryHackMe) gives me the technical awareness to identify root
-              causes and maintain stable, secure systems.
-            </p>
-            <p className="text-lg">
-              When I'm not working, I enjoy playing basketball, following the
-              NBA, focusing on health & wellness, playing video games
-              (especially Valorant), watching anime, and enjoying
-              psychological/thriller movies.
-            </p>
-          </div>
-        </section>
-
+        
         {/* Projects Section */}
         <section id="projects" className="py-12 md:py-14 scroll-mt-20">
           <h2 className="text-3xl font-bold mb-8">Projects</h2>
@@ -197,6 +197,116 @@ export default function Portfolio() {
                 </Link>
               </div>
             </div>
+          </div>
+        </section>
+        {/* Skills Section */}
+        <section id="skills" className="py-12 md:py-14 scroll-mt-20">
+          <h2 className="text-3xl font-bold mb-6">Skills &amp; Expertise</h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Application Support & Troubleshooting */}
+            <Card>
+              <CardContent className="pt-6">
+                <h3 className="text-xl font-bold mb-4">
+                  Application Support &amp; Troubleshooting
+                </h3>
+                <div className="flex flex-wrap gap-2">
+                  <Badge className="bg-blue-600 text-white">
+                    Incident Triage
+                  </Badge>
+                  <Badge className="bg-blue-600 text-white">
+                    Root Cause Analysis
+                  </Badge>
+                  <Badge className="bg-blue-600 text-white">Log Analysis</Badge>
+                  <Badge className="bg-blue-600 text-white">
+                    Nginx (Reverse Proxy)
+                  </Badge>
+                  <Badge className="bg-blue-600 text-white">
+                    Docker &amp; Docker Compose
+                  </Badge>
+                  <Badge className="bg-blue-600 text-white">
+                    Ticketing (Jira)
+                  </Badge>
+                  <Badge className="bg-blue-600 text-white">Linux (WSL2)</Badge>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Monitoring & Observability */}
+            <Card>
+              <CardContent className="pt-6">
+                <h3 className="text-xl font-bold mb-4">
+                  Monitoring &amp; Observability
+                </h3>
+                <div className="flex flex-wrap gap-2">
+                  <Badge className="bg-green-600 text-white">Grafana</Badge>
+                  <Badge className="bg-green-600 text-white">Loki</Badge>
+                  <Badge className="bg-green-600 text-white">
+                    Promtail / LogQL
+                  </Badge>
+                  <Badge className="bg-green-600 text-white">
+                    Splunk / SIEM
+                  </Badge>
+                  <Badge className="bg-green-600 text-white">
+                    Tableau &amp; Power BI (KPI)
+                  </Badge>
+                  <Badge className="bg-green-600 text-white">
+                    Metric Validation &amp; Reporting
+                  </Badge>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Scripting & Automation */}
+            <Card>
+              <CardContent className="pt-6">
+                <h3 className="text-xl font-bold mb-4">
+                  Scripting &amp; Automation
+                </h3>
+                <div className="flex flex-wrap gap-2">
+                  <Badge className="bg-purple-600 text-white">Python</Badge>
+                  <Badge className="bg-purple-600 text-white">
+                    SQL (BigQuery, MySQL)
+                  </Badge>
+                  <Badge className="bg-purple-600 text-white">
+                    psql (PostgreSQL CLI)
+                  </Badge>
+                  <Badge className="bg-purple-600 text-white">Bash</Badge>
+                  <Badge className="bg-purple-600 text-white">PowerShell</Badge>
+                  <Badge className="bg-purple-600 text-white">Excel VBA</Badge>
+                  <Badge className="bg-purple-600 text-white">
+                    Workflow Automation
+                  </Badge>
+                  <Badge className="bg-purple-600 text-white">Git</Badge>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Communication & Documentation */}
+            <Card>
+              <CardContent className="pt-6">
+                <h3 className="text-xl font-bold mb-4">
+                  Communication &amp; Documentation
+                </h3>
+                <div className="flex flex-wrap gap-2">
+                  <Badge className="bg-pink-600 text-white">
+                    Runbooks &amp; Knowledge Base
+                  </Badge>
+                  <Badge className="bg-pink-600 text-white">
+                    Technical Documentation
+                  </Badge>
+                  <Badge className="bg-pink-600 text-white">
+                    Cross-Functional Collaboration
+                  </Badge>
+                  <Badge className="bg-pink-600 text-white">
+                    Customer Support
+                  </Badge>
+                  <Badge className="bg-pink-600 text-white">
+                    Incident Reports / RCA Notes
+                  </Badge>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </section>
 
@@ -324,181 +434,26 @@ export default function Portfolio() {
           </div>
         </section>
 
-        {/* Technical Strengths Section */}
-        <section
-          id="technical-strengths"
-          className="py-12 md:py-14 scroll-mt-20"
-        >
-          <h2 className="text-3xl font-bold mb-8">Technical Strengths</h2>
-          <div className="bg-card rounded-lg border shadow-sm overflow-hidden">
-            <div className="p-6">
-              <div className="grid md:grid-cols-2 gap-8">
-                <div className="space-y-6">
-                  <div>
-                    <h3 className="text-xl font-bold mb-3">SQL</h3>
-                    <p className="text-muted-foreground">
-                      CTEs, joins, filtering logic, KPI calculations, and
-                      complex query optimization
-                    </p>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold mb-3">GCP/BigQuery</h3>
-                    <p className="text-muted-foreground">
-                      Cloud-based SQL querying for healthcare data analysis,
-                      connected to DBVisualizer for local exploration
-                    </p>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold mb-3">Python</h3>
-                    <p className="text-muted-foreground">
-                      Data cleaning with pandas, Excel file automation, and
-                      process monitoring scripts
-                    </p>
-                  </div>
-                </div>
-                <div className="space-y-6">
-                  <div>
-                    <h3 className="text-xl font-bold mb-3">Tableau/Power BI</h3>
-                    <p className="text-muted-foreground">
-                      Trend analysis, KPI dashboards, interactive
-                      visualizations, and data storytelling
-                    </p>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold mb-3">Excel/VBA</h3>
-                    <p className="text-muted-foreground">
-                      Automated pipelines, report generation macros, and
-                      user-friendly interfaces
-                    </p>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold mb-3">Git</h3>
-                    <p className="text-muted-foreground">
-                      Version control and publishing portfolio projects to
-                      GitHub for sharing and presentation
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="mt-6">
-                <h3 className="text-xl font-bold mb-3">Soft Skills</h3>
-                <p className="text-muted-foreground">
-                  Strong communicator, problem solver, and ability to translate
-                  technical concepts for non-technical audiences
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Skills Section */}
-        <section id="skills" className="py-12 md:py-14 scroll-mt-20">
-          <h2 className="text-3xl font-bold mb-6">Skills & Expertise</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Application Support & Troubleshooting */}
-            <Card>
-              <CardContent className="pt-6">
-                <h3 className="text-xl font-bold mb-4">
-                  Application Support & Troubleshooting
-                </h3>
-                <div className="flex flex-wrap gap-2">
-                  <Badge className="bg-blue-600 text-white">
-                    Incident Management
-                  </Badge>
-                  <Badge className="bg-blue-600 text-white">
-                    Root Cause Analysis
-                  </Badge>
-                  <Badge className="bg-blue-600 text-white">
-                    JIRA (Kanban)
-                  </Badge>
-                  <Badge className="bg-blue-600 text-white">
-                    System Monitoring
-                  </Badge>
-                  <Badge className="bg-blue-600 text-white">
-                    Nginx (Reverse Proxy)
-                  </Badge>
-                  <Badge className="bg-blue-600 text-white">
-                    Incident Triage
-                  </Badge>
-                  <Badge className="bg-blue-600 text-white">cURL Testing</Badge>
-                  <Badge className="bg-blue-600 text-white">Linux (WSL2)</Badge>
-                  <Badge className="bg-blue-600 text-white">
-                    Docker & Docker Compose
-                  </Badge>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Scripting & Automation */}
-            <Card>
-              <CardContent className="pt-6">
-                <h3 className="text-xl font-bold mb-4">
-                  Scripting & Automation
-                </h3>
-                <div className="flex flex-wrap gap-2">
-                  <Badge className="bg-purple-600 text-white">Python</Badge>
-                  <Badge className="bg-purple-600 text-white">Excel VBA</Badge>
-                  <Badge className="bg-purple-600 text-white">Bash</Badge>
-                  <Badge className="bg-purple-600 text-white">PowerShell</Badge>
-                  <Badge className="bg-purple-600 text-white">sed</Badge>
-                  <Badge className="bg-purple-600 text-white">grep</Badge>
-                  <Badge className="bg-purple-600 text-white">
-                    Workflow Automation
-                  </Badge>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Monitoring & Analysis */}
-            <Card>
-              <CardContent className="pt-6">
-                <h3 className="text-xl font-bold mb-4">
-                  Monitoring & Analysis
-                </h3>
-                <div className="flex flex-wrap gap-2">
-                  <Badge className="bg-green-600 text-white">
-                    SQL (BigQuery, MySQL)
-                  </Badge>
-                  <Badge className="bg-green-600 text-white">Splunk</Badge>
-                  <Badge className="bg-green-600 text-white">ELK Stack</Badge>
-                  <Badge className="bg-green-600 text-white">
-                    Log Analysis
-                  </Badge>
-                  <Badge className="bg-green-600 text-white">
-                    Performance Optimization
-                  </Badge>
-                  <Badge className="bg-green-600 text-white">Grafana</Badge>
-                  <Badge className="bg-green-600 text-white">Promtail</Badge>
-                  <Badge className="bg-green-600 text-white">LogQL</Badge>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Communication & Collaboration */}
-            <Card>
-              <CardContent className="pt-6">
-                <h3 className="text-xl font-bold mb-4">
-                  Communication & Collaboration
-                </h3>
-                <div className="flex flex-wrap gap-2">
-                  <Badge className="bg-pink-600 text-white">
-                    Technical Documentation
-                  </Badge>
-                  <Badge className="bg-pink-600 text-white">
-                    Cross-Functional Collaboration
-                  </Badge>
-                  <Badge className="bg-pink-600 text-white">
-                    Customer Support
-                  </Badge>
-                  <Badge className="bg-pink-600 text-white">
-                    Knowledge Sharing
-                  </Badge>
-                  <Badge className="bg-pink-600 text-white">
-                    Process Improvement
-                  </Badge>
-                </div>
-              </CardContent>
-            </Card>
+        {/* About Section */}
+        <section id="about" className="py-12 md:py-14 scroll-mt-20">
+          <h2 className="text-3xl font-bold mb-8">About Me</h2>
+          <div className="space-y-4">
+            <p className="text-lg">
+              Security+ Application Support Engineer (pivot from data/ops). I
+              focus on production reliability: reproduce issues, read
+              logs/metrics, restore service quickly, and document runbooks so
+              fixes are repeatable. In my labs, I practice the loop of triage →
+              isolate with logs/metrics → safe rollback → verification. I like
+              clear, plain-English communication and I’m building the habits
+              I’ll use on an on-call team.
+            </p>
+            <p className="text-lg">
+              Stack: Nginx, Docker, Linux, Grafana/Prometheus, SQL, Python.
+            </p>
+            <p className="text-lg">
+              Off-hours: basketball/NBA, gym, anime & thrillers, occasional
+              Valorant.
+            </p>
           </div>
         </section>
 
@@ -535,7 +490,7 @@ export default function Portfolio() {
               <div className="flex flex-col md:flex-row justify-between mb-4">
                 <div>
                   <h3 className="text-xl font-bold">
-                    Bachelor of Science in Management in Information Systems
+                    Bachelor of Science in Management Information Systems
                   </h3>
                   <p className="text-primary">
                     University of Texas at Arlington
