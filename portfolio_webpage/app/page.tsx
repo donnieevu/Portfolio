@@ -219,15 +219,18 @@ export default function Portfolio() {
                   </Badge>
                   <Badge className="bg-blue-600 text-white">Log Analysis</Badge>
                   <Badge className="bg-blue-600 text-white">
+                    Runbooks / KBs
+                  </Badge>
+                  <Badge className="bg-blue-600 text-white">
                     Nginx (Reverse Proxy)
                   </Badge>
                   <Badge className="bg-blue-600 text-white">
                     Docker &amp; Docker Compose
                   </Badge>
+                  <Badge className="bg-blue-600 text-white">Linux (WSL2)</Badge>
                   <Badge className="bg-blue-600 text-white">
                     Ticketing (Jira)
                   </Badge>
-                  <Badge className="bg-blue-600 text-white">Linux (WSL2)</Badge>
                 </div>
               </CardContent>
             </Card>
@@ -239,6 +242,7 @@ export default function Portfolio() {
                   Monitoring &amp; Observability
                 </h3>
                 <div className="flex flex-wrap gap-2">
+                  <Badge className="bg-green-600 text-white">Prometheus</Badge>
                   <Badge className="bg-green-600 text-white">Grafana</Badge>
                   <Badge className="bg-green-600 text-white">Loki</Badge>
                   <Badge className="bg-green-600 text-white">
@@ -248,10 +252,7 @@ export default function Portfolio() {
                     Splunk / SIEM
                   </Badge>
                   <Badge className="bg-green-600 text-white">
-                    Tableau &amp; Power BI (KPI)
-                  </Badge>
-                  <Badge className="bg-green-600 text-white">
-                    Metric Validation &amp; Reporting
+                    Metric Validation
                   </Badge>
                 </div>
               </CardContent>
@@ -264,19 +265,15 @@ export default function Portfolio() {
                   Scripting &amp; Automation
                 </h3>
                 <div className="flex flex-wrap gap-2">
+                  <Badge className="bg-purple-600 text-white">Excel VBA</Badge>
+                  <Badge className="bg-purple-600 text-white">SQL</Badge>
+                  <Badge className="bg-purple-600 text-white">Bash</Badge>
                   <Badge className="bg-purple-600 text-white">Python</Badge>
-                  <Badge className="bg-purple-600 text-white">
-                    SQL (BigQuery, MySQL)
-                  </Badge>
                   <Badge className="bg-purple-600 text-white">
                     psql (PostgreSQL CLI)
                   </Badge>
-                  <Badge className="bg-purple-600 text-white">Bash</Badge>
-                  <Badge className="bg-purple-600 text-white">PowerShell</Badge>
-                  <Badge className="bg-purple-600 text-white">Excel VBA</Badge>
-                  <Badge className="bg-purple-600 text-white">
-                    Workflow Automation
-                  </Badge>
+                  <Badge className="bg-purple-600 text-white">curl</Badge>
+                  <Badge className="bg-purple-600 text-white">grep / sed</Badge>
                   <Badge className="bg-purple-600 text-white">Git</Badge>
                 </div>
               </CardContent>
@@ -290,19 +287,16 @@ export default function Portfolio() {
                 </h3>
                 <div className="flex flex-wrap gap-2">
                   <Badge className="bg-pink-600 text-white">
-                    Runbooks &amp; Knowledge Base
+                    Incident Reports / RCA Notes
                   </Badge>
                   <Badge className="bg-pink-600 text-white">
-                    Technical Documentation
+                    Runbooks &amp; Knowledge Base
                   </Badge>
                   <Badge className="bg-pink-600 text-white">
                     Cross-Functional Collaboration
                   </Badge>
                   <Badge className="bg-pink-600 text-white">
                     Customer Support
-                  </Badge>
-                  <Badge className="bg-pink-600 text-white">
-                    Incident Reports / RCA Notes
                   </Badge>
                 </div>
               </CardContent>
