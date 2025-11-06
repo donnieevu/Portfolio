@@ -1,7 +1,14 @@
-Personal side projects dealing with different case scenarios to practice skills utilizing SQL, PYTHON, TABLEAU.
-End goal is to practice analytical skills by learning the process of data exploration, data transforming and cleaning, and creations of data visualization to answer questions that users need involving their specific data.
-Test data provided from Kaggle.
-Utilzing Google Cloud Platform for Big Query as the data warehouse to store test data from Kaggle.
-Utilizing Dbvisualizer as the tool for data exploration.
-Visual Studio Code for python to data clean/data transformation. 
-Tableau for data visualization creations.
+# Donald Vu — Portfolio (Website + Projects)
+
+This repository powers my **portfolio website** and houses project work across two tracks:
+
+- **Application Support / Incident Labs** (shown on the website): practical drills for triage, logging, and recovery (e.g., Nginx 502, app 500 with DB credential rotation, performance baselining).
+- **Data / Ops Analytics** (in this repo): SQL/Python pipelines and dashboards that turn raw data into decision-ready insights.
+
+**Live site:** portfolio-six-weld-82.vercel.app  
+**Repo focus:** Website source under `portfolio_webpage/` and data/ops projects under `healthcare_analytics_project/` and `learning/`.  
+*(Earlier repo description referenced Python/SQL/Tableau projects — those still live here alongside the website.)*
+
+---
+
+## Repository Structure
