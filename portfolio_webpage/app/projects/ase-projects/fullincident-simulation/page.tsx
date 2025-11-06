@@ -4,8 +4,42 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 
+type ShotProps = {
+  src: string;
+  alt: string;
+  caption: React.ReactNode;
+  onClick: () => void;
+};
+
+// Consistent screenshot card (fixed 16:9 area + equal caption height)
+function Shot({ src, alt, caption, onClick }: ShotProps) {
+  return (
+    <figure
+      className="flex h-full flex-col rounded-lg overflow-hidden border bg-background cursor-pointer group transition-all duration-200 hover:shadow-lg hover:border-blue-300"
+      onClick={onClick}
+    >
+      {/* Fixed 16:9 image space so both columns line up */}
+      <div className="relative w-full aspect-[16/9] bg-black/5">
+        <Image
+          src={src}
+          alt={alt}
+          fill
+          sizes="(max-width: 768px) 100vw, 50vw"
+          className="object-contain group-hover:opacity-95 transition-opacity"
+          priority={false}
+        />
+      </div>
+      {/* Uniform caption height + centered text */}
+      <figcaption className="p-3 text-sm text-muted-foreground border-t bg-background/50 min-h-12 flex items-center">
+        {caption}
+      </figcaption>
+    </figure>
+  );
+}
+
 export default function FullIncidentSimulationPage() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const imgBase = "/images/ase-projects/fullincident-simulation";
 
   return (
     <main className="container mx-auto px-4 py-10 md:py-16">
@@ -22,11 +56,12 @@ export default function FullIncidentSimulationPage() {
       </div>
 
       <p className="text-muted-foreground mb-8 max-w-3xl">
-        Executed a complete incident response workflow for a simulated
-        production outage caused by a memory leak. Followed professional
-        troubleshooting methodology from initial alert through root cause
-        identification, resolution, and verification using both CLI tools and
-        monitoring dashboards.
+        End-to-end incident response for a realistic outage: a{" "}
+        <strong>database credential rotation</strong> occurred in Postgres while
+        the application still used the old secret. The result was 500s on
+        DB-backed routes. I scoped by timestamp, reproduced once, correlated
+        logs, mitigated safely, validated recovery, and wrote a short rotation
+        checklist to prevent repeats.
       </p>
 
       {/* Quick facts */}
@@ -34,26 +69,30 @@ export default function FullIncidentSimulationPage() {
         <div className="bg-card rounded-lg border p-5">
           <h3 className="font-semibold mb-2">Stack</h3>
           <p className="text-sm text-muted-foreground">
-            Docker • Flask • Prometheus • Grafana • Linux
+            Docker • Nginx • Flask • Postgres • Linux
           </p>
         </div>
         <div className="bg-card rounded-lg border p-5">
           <h3 className="font-semibold mb-2">What I Did</h3>
           <ul className="text-sm text-muted-foreground list-disc pl-5 space-y-1">
-            <li>Responded to simulated user-reported errors</li>
-            <li>Systematic investigation using CLI and dashboards</li>
-            <li>Identified memory leak as root cause</li>
-            <li>Executed container restart and verified resolution</li>
+            <li>Baseline & timestamp window</li>
+            <li>Rotate DB password (simulate outage)</li>
+            <li>
+              Correlate 500s with <code>FATAL auth</code> in app logs
+            </li>
+            <li>Mitigate: restore secret or update app secret + restart</li>
+            <li>Validate 200s + clean log window</li>
+            <li>Publish DB-secret rotation checklist</li>
           </ul>
         </div>
         <div className="bg-card rounded-lg border p-5">
           <h3 className="font-semibold mb-2">Incident Timeline</h3>
           <ul className="text-sm text-muted-foreground list-disc pl-5 space-y-1">
-            <li>Alert received: User errors reported</li>
-            <li>Investigation: Health checks & diagnostics</li>
-            <li>Root cause: Memory leak identified</li>
-            <li>Resolution: Container restart</li>
-            <li>Verification: Service recovery confirmed</li>
+            <li>Baseline: routes 200</li>
+            <li>Rotate DB password → 500s</li>
+            <li>Logs show DB auth failures</li>
+            <li>Rollback/secret update → restart</li>
+            <li>Recovery validated; logs clean</li>
           </ul>
         </div>
       </div>
@@ -63,456 +102,163 @@ export default function FullIncidentSimulationPage() {
         <h2 className="text-2xl font-bold mb-6">Incident Response Story</h2>
 
         <div className="space-y-12">
-          {/* Step 1: Initial Investigation */}
+          {/* Step 1 */}
           <div>
             <h3 className="text-xl font-semibold mb-4 text-green-600">
-              1. Initial Investigation & Triage
+              1) Baseline & Scope
             </h3>
             <p className="text-sm text-muted-foreground mb-6">
-              Started with basic health checks and service status verification.
-              Reproduced user-reported errors by testing multiple API endpoints
-              to understand the scope and impact.
+              Confirm all services are healthy and take a quick baseline (
+              <code>/api/users</code> 200). Note the Date header / timestamp
+              window to align evidence.
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <figure
-                className="rounded-lg overflow-hidden border bg-background cursor-pointer group transition-all duration-200 hover:shadow-lg hover:border-blue-300 flex flex-col h-full"
+            <Shot
+              src={`${imgBase}/01-fis-containers-up.png`}
+              alt="Baseline: docker compose ps shows all services up"
+              caption="Baseline: services up before change."
+              onClick={() =>
+                setSelectedImage(`${imgBase}/01-fis-containers-up.png`)
+              }
+            />
+          </div>
+
+          {/* Step 2 */}
+          <div>
+            <h3 className="text-xl font-semibold mb-4 text-red-600">
+              2) Introduce Change → Reproduce Failure
+            </h3>
+            <p className="text-sm text-muted-foreground mb-6">
+              Rotate the DB password in Postgres while the app still uses the
+              old secret. DB-backed routes flip to 500; capture the failure in
+              the same timestamp window.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
+              <Shot
+                src={`${imgBase}/02-fis-rotate-db-pw.png`}
+                alt="ALTER USER postgres WITH PASSWORD — credential rotation"
+                caption="Introduced outage: DB password rotated."
                 onClick={() =>
-                  setSelectedImage(
-                    "/images/ase-projects/fullincident-simulation/fis-initial-investigation(1).png"
-                  )
+                  setSelectedImage(`${imgBase}/02-fis-rotate-db-pw.png`)
                 }
-              >
-                <div className="flex-1">
-                  <Image
-                    src="/images/ase-projects/fullincident-simulation/fis-initial-investigation(1).png"
-                    alt="Health check and service status verification"
-                    width={800}
-                    height={500}
-                    className="w-full h-auto group-hover:opacity-95 transition-opacity"
-                  />
-                </div>
-                <figcaption className="p-3 text-sm text-muted-foreground border-t bg-background/50 min-h-[60px] flex items-center">
-                  Service health check and container status verification
-                </figcaption>
-              </figure>
-              <figure
-                className="rounded-lg overflow-hidden border bg-background cursor-pointer group transition-all duration-200 hover:shadow-lg hover:border-blue-300 flex flex-col h-full"
+              />
+              <Shot
+                src={`${imgBase}/03-fis-app-log-auth-fail.png`}
+                alt="App logs: GET /users 500 and FATAL: password authentication failed"
+                caption={
+                  <>
+                    Failure window: <code>GET /users</code> → 500;{" "}
+                    <code>FATAL</code> auth error in app logs.
+                  </>
+                }
                 onClick={() =>
-                  setSelectedImage(
-                    "/images/ase-projects/fullincident-simulation/fis-initial-investigation(2).png"
-                  )
+                  setSelectedImage(`${imgBase}/03-fis-app-log-auth-fail.png`)
                 }
-              >
-                <div className="flex-1">
-                  <Image
-                    src="/images/ase-projects/fullincident-simulation/fis-initial-investigation(2).png"
-                    alt="Reproducing user issues with API endpoints"
-                    width={800}
-                    height={500}
-                    className="w-full h-auto group-hover:opacity-95 transition-opacity"
-                  />
-                </div>
-                <figcaption className="p-3 text-sm text-muted-foreground border-t bg-background/50 min-h-[60px] flex items-center">
-                  Testing API endpoints to reproduce user-reported errors
-                </figcaption>
-              </figure>
+              />
             </div>
           </div>
 
-          {/* Step 2: System Diagnostics */}
+          {/* Step 3 */}
           <div>
             <h3 className="text-xl font-semibold mb-4 text-blue-600">
-              2. System Diagnostics & Monitoring
+              3) Mitigation
             </h3>
             <p className="text-sm text-muted-foreground mb-6">
-              Utilized comprehensive monitoring tools to identify performance
-              patterns, resource constraints, and error trends across the
-              application stack.
+              Fastest mitigation is to restore the previous credential.
+              Alternatively, update the app secret to the new password and
+              restart the app.
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <figure
-                className="rounded-lg overflow-hidden border bg-background cursor-pointer group transition-all duration-200 hover:shadow-lg hover:border-blue-300 flex flex-col h-full"
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
+              <Shot
+                src={`${imgBase}/04-fis-rollback.png`}
+                alt="Rollback command to restore credential or update app secret and restart"
+                caption="Mitigation: restore credential (or update app secret + restart)."
                 onClick={() =>
-                  setSelectedImage(
-                    "/images/ase-projects/fullincident-simulation/fis-resource-check(3).png"
-                  )
+                  setSelectedImage(`${imgBase}/04-fis-rollback.png`)
                 }
-              >
-                <div className="flex-1">
-                  <Image
-                    src="/images/ase-projects/fullincident-simulation/fis-resource-check(3).png"
-                    alt="Container resource usage analysis"
-                    width={600}
-                    height={400}
-                    className="w-full h-auto group-hover:opacity-95 transition-opacity"
-                  />
-                </div>
-                <figcaption className="p-3 text-sm text-muted-foreground border-t bg-background/50 min-h-[60px] flex items-center">
-                  Container resource utilization analysis
-                </figcaption>
-              </figure>
-              <figure
-                className="rounded-lg overflow-hidden border bg-background cursor-pointer group transition-all duration-200 hover:shadow-lg hover:border-blue-300 flex flex-col h-full"
+              />
+              {/* NOTE: this matches your actual filename with triple 'c' */}
+              <Shot
+                src={`${imgBase}/05-fis-rollback-success.png`}
+                alt="ALTER ROLE success confirmation after rollback"
+                caption="Rollback confirmed: ALTER ROLE succeeded."
                 onClick={() =>
-                  setSelectedImage(
-                    "/images/ase-projects/fullincident-simulation/fis-dashboards(6).png"
-                  )
+                  setSelectedImage(`${imgBase}/05-fis-rollback-success.png`)
                 }
-              >
-                <div className="flex-1">
-                  <Image
-                    src="/images/ase-projects/fullincident-simulation/fis-dashboards(6).png"
-                    alt="Performance monitoring dashboard"
-                    width={600}
-                    height={400}
-                    className="w-full h-auto group-hover:opacity-95 transition-opacity"
-                  />
-                </div>
-                <figcaption className="p-3 text-sm text-muted-foreground border-t bg-background/50 min-h-[60px] flex items-center">
-                  Performance monitoring dashboard
-                </figcaption>
-              </figure>
-              <figure
-                className="rounded-lg overflow-hidden border bg-background cursor-pointer group transition-all duration-200 hover:shadow-lg hover:border-blue-300 flex flex-col h-full"
-                onClick={() =>
-                  setSelectedImage(
-                    "/images/ase-projects/fullincident-simulation/fis-dashboards(7).png"
-                  )
-                }
-              >
-                <div className="flex-1">
-                  <Image
-                    src="/images/ase-projects/fullincident-simulation/fis-dashboards(7).png"
-                    alt="Error monitoring dashboard"
-                    width={600}
-                    height={400}
-                    className="w-full h-auto group-hover:opacity-95 transition-opacity"
-                  />
-                </div>
-                <figcaption className="p-3 text-sm text-muted-foreground border-t bg-background/50 min-h-[60px] flex items-center">
-                  Error monitoring dashboard
-                </figcaption>
-              </figure>
+              />
             </div>
           </div>
 
-          {/* Step 3: Root Cause Identification */}
-          <div>
-            <h3 className="text-xl font-semibold mb-4 text-orange-600">
-              3. Root Cause Identification
-            </h3>
-            <p className="text-sm text-muted-foreground mb-6">
-              Correlated database health with application logs to identify the
-              memory leak. Database logs confirmed normal operation while
-              application logs showed progressive memory accumulation through
-              repeated /memory-hog endpoint calls.
-            </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <figure
-                className="rounded-lg overflow-hidden border bg-background cursor-pointer group transition-all duration-200 hover:shadow-lg hover:border-blue-300 flex flex-col h-full"
-                onClick={() =>
-                  setSelectedImage(
-                    "/images/ase-projects/fullincident-simulation/fis-db-logs(4).png"
-                  )
-                }
-              >
-                <div className="flex-1">
-                  <Image
-                    src="/images/ase-projects/fullincident-simulation/fis-db-logs(4).png"
-                    alt="Database health verification logs showing normal operation"
-                    width={800}
-                    height={400}
-                    className="w-full h-auto group-hover:opacity-95 transition-opacity"
-                  />
-                </div>
-                <figcaption className="p-3 text-sm text-muted-foreground border-t bg-background/50 min-h-[60px] flex items-center">
-                  Database health confirmed - listening on socket, system ready,
-                  normal checkpoints
-                </figcaption>
-              </figure>
-              <figure
-                className="rounded-lg overflow-hidden border bg-background cursor-pointer group transition-all duration-200 hover:shadow-lg hover:border-blue-300 flex flex-col h-full"
-                onClick={() =>
-                  setSelectedImage(
-                    "/images/ase-projects/fullincident-simulation/fis-app-logs(5).png"
-                  )
-                }
-              >
-                <div className="flex-1">
-                  <Image
-                    src="/images/ase-projects/fullincident-simulation/fis-app-logs(5).png"
-                    alt="Application memory leak logs showing /memory-hog endpoint calls causing growth"
-                    width={800}
-                    height={400}
-                    className="w-full h-auto group-hover:opacity-95 transition-opacity"
-                  />
-                </div>
-                <figcaption className="p-3 text-sm text-muted-foreground border-t bg-background/50 min-h-[60px] flex items-center">
-                  Memory leak evidence - /memory-hog endpoint calls causing
-                  growth from 0MB to 20MB
-                </figcaption>
-              </figure>
-            </div>
-          </div>
-
-          {/* Step 4: Resolution & Verification */}
+          {/* Step 4 */}
           <div>
             <h3 className="text-xl font-semibold mb-4 text-green-600">
-              4. Resolution & Verification
+              4) Recovery Validation
             </h3>
             <p className="text-sm text-muted-foreground mb-6">
-              Executed controlled remediation by restarting the application
-              container with proper wait time for service recovery, then
-              performed comprehensive verification to ensure complete resolution
-              and service recovery.
+              Re-test <code>/api/users</code> to confirm 200s, and tail logs to
+              ensure the window is clean (no new auth failures). Document the
+              incident and add the rotation checklist.
             </p>
-            <figure
-              className="rounded-lg overflow-hidden border bg-background max-w-4xl mx-auto cursor-pointer group transition-all duration-200 hover:shadow-lg hover:border-blue-300 flex flex-col h-full"
+            <Shot
+              src={`${imgBase}/06-fis-logs-clean-windows.png`}
+              alt="Post-fix log tail: no new authentication failures"
+              caption="Clean window after fix: no new auth failures."
               onClick={() =>
-                setSelectedImage(
-                  "/images/ase-projects/fullincident-simulation/fis-restart-app(8).png"
-                )
+                setSelectedImage(`${imgBase}/06-fis-logs-clean-windows.png`)
               }
-            >
-              <div className="flex-1">
-                <Image
-                  src="/images/ase-projects/fullincident-simulation/fis-restart-app(8).png"
-                  alt="Complete incident resolution workflow showing restart, wait time, and verification"
-                  width={1200}
-                  height={600}
-                  className="w-full h-auto group-hover:opacity-95 transition-opacity"
-                />
-              </div>
-              <figcaption className="p-3 text-sm text-muted-foreground border-t bg-background/50 min-h-[60px] flex items-center">
-                Resolution workflow: Memory leak at 20MB → Container restart →
-                Sleep 30s → Verified cleared to 0MB
-              </figcaption>
-            </figure>
+            />
           </div>
         </div>
       </section>
 
-      {/* Incident Response Commands */}
+      {/* Commands */}
       <section className="mb-10">
-        <h2 className="text-2xl font-bold mb-4">Incident Response Commands</h2>
+        <h2 className="text-2xl font-bold mb-4">Key Commands Used</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="rounded-lg border p-5">
-            <h3 className="font-semibold mb-3">Investigation & Diagnostics</h3>
-            <pre className="text-xs md:text-sm overflow-auto bg-muted p-4 rounded">
-              {`# Health check and service status
-curl http://localhost:8080/api/health
-docker compose ps
+            <h3 className="font-semibold mb-3">Repro & Evidence</h3>
+            <pre className="text-xs md:text-sm overflow-auto bg-muted p-4 rounded">{`# Baseline
+curl -i http://localhost:8080/api/users
 
-# Reproduce user issues
-curl http://localhost:8080/api/users
-curl http://localhost:8080/api/unreliable
-curl http://localhost:8080/api/slow-db
+# Introduce outage (DB rotation only)
+docker compose exec db psql -U postgres -d appdb -c \
+"ALTER USER postgres WITH PASSWORD 'WrongNow#1';"
 
-# Resource analysis
-docker stats --no-stream
-docker compose logs app --tail=20
-docker compose logs db --tail=20
-
-# Dashboard investigation
-# Grafana: http://localhost:3000
-# - Check Performance Monitoring dashboard
-# - Review Error Monitoring trends
-# - Analyze memory usage patterns
-
-# Metrics investigation
-curl http://localhost:8080/api/metrics
-curl http://localhost:8080/api/metrics | grep memory_leak_size`}
-            </pre>
+# Failure & logs (aligned by timestamp)
+curl -i http://localhost:8080/api/users      # expect 500
+docker compose logs --timestamps --tail=50 app | grep -Ei "FATAL|auth|psycopg2"`}</pre>
           </div>
-
           <div className="rounded-lg border p-5">
-            <h3 className="font-semibold mb-3">Resolution & Verification</h3>
-            <pre className="text-xs md:text-sm overflow-auto bg-muted p-4 rounded">
-              {`# Execute remediation
-docker compose restart app
+            <h3 className="font-semibold mb-3">Mitigation & Validation</h3>
+            <pre className="text-xs md:text-sm overflow-auto bg-muted p-4 rounded">{`# Fast rollback
+docker compose exec db psql -U postgres -d appdb -c \
+"ALTER USER postgres WITH PASSWORD 'postgres';"
 
-# Wait for service recovery
-sleep 30
+# OR rotate app secret to the new value, then:
+docker compose up -d --build app
 
-# Verify resolution
-curl http://localhost:8080/api/health
-curl http://localhost:8080/api/users
-curl http://localhost:8080/api/metrics
-
-# Confirm memory leak cleared
-curl http://localhost:8080/api/metrics | grep memory_leak_size
-
-# Cross-verify with dashboards
-# - Confirm error rates normalized
-# - Verify memory usage stabilized
-# - Check request patterns returned to baseline
-
-# Incident documentation
-cat > incident_report.md << EOF
-# Incident Report - Application Errors
-
-## Timeline
-- 19:12: Memory leak detected growing from 0MB to 20MB
-- 19:15: Database health verified - normal operation
-- 19:18: Identified memory leak as root cause
-- 19:20: Restarted application container
-- 19:22: Verified resolution - memory leak cleared to 0MB
-
-## Root Cause
-Memory leak in application accumulating over time through 
-repeated /memory-hog endpoint calls, reaching critical 
-threshold causing application instability
-
-## Resolution
-Restarted application container to clear accumulated memory
-
-## Prevention
-Recommended code review to identify and fix memory leak source
-Long-term: Implement memory usage alerts and auto-remediation
-EOF`}
-            </pre>
+# Validate recovery
+curl -i http://localhost:8080/api/users      # expect 200
+docker compose logs --timestamps --since=2m app`}</pre>
           </div>
         </div>
       </section>
 
-      {/* Learning Outcomes */}
-      <section className="mb-6">
-        <h2 className="text-2xl font-bold mb-4">Learning Outcomes</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <article className="rounded-lg border p-5">
-            <h3 className="font-semibold">Professional Incident Response</h3>
-            <p className="text-sm text-muted-foreground mt-1">
-              Developed systematic approach to incident management following
-              established workflows. Learned to prioritize investigation steps,
-              from basic health checks to root cause analysis, while maintaining
-              clear documentation throughout the process.
-            </p>
-          </article>
-          <article className="rounded-lg border p-5">
-            <h3 className="font-semibold">Multi-Tool Troubleshooting</h3>
-            <p className="text-sm text-muted-foreground mt-1">
-              Mastered combining CLI tools (docker stats, curl, logs) with
-              visual monitoring (Grafana) for comprehensive system analysis.
-              Practiced cross-verification between different data sources to
-              build complete understanding of system state.
-            </p>
-          </article>
-          <article className="rounded-lg border p-5">
-            <h3 className="font-semibold">Log Analysis & Correlation</h3>
-            <p className="text-sm text-muted-foreground mt-1">
-              Learned to correlate application and database logs to isolate
-              issues. Developed ability to distinguish between normal system
-              operations and abnormal patterns indicating memory leaks or
-              performance issues.
-            </p>
-          </article>
-          <article className="rounded-lg border p-5">
-            <h3 className="font-semibold">Verification Protocols</h3>
-            <p className="text-sm text-muted-foreground mt-1">
-              Established comprehensive verification procedures to ensure
-              complete incident resolution before closing tickets. Practiced
-              multiple confirmation methods including health checks, metric
-              verification, and user journey testing.
-            </p>
-          </article>
-        </div>
-      </section>
-
-      {/* Skills Demonstrated */}
+      {/* Outcomes */}
       <section className="rounded-lg border p-6 bg-muted/30">
-        <h2 className="text-xl font-bold mb-4">Skills Demonstrated</h2>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
-          <div className="flex items-center space-x-2">
-            <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-            <span>Incident Response</span>
-          </div>
-          <div className="flex items-center space-x-2">
-            <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-            <span>Root Cause Analysis</span>
-          </div>
-          <div className="flex items-center space-x-2">
-            <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-            <span>Container Management</span>
-          </div>
-          <div className="flex items-center space-x-2">
-            <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-            <span>Log Analysis</span>
-          </div>
-          <div className="flex items-center space-x-2">
-            <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-            <span>System Diagnostics</span>
-          </div>
-          <div className="flex items-center space-x-2">
-            <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-            <span>Problem Resolution</span>
-          </div>
-          <div className="flex items-center space-x-2">
-            <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-            <span>Documentation</span>
-          </div>
-          <div className="flex items-center space-x-2">
-            <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-            <span>Verification Testing</span>
-          </div>
-          <div className="flex items-center space-x-2">
-            <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-            <span>Database Health Checks</span>
-          </div>
-          <div className="flex items-center space-x-2">
-            <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-            <span>Docker Troubleshooting</span>
-          </div>
-          <div className="flex items-center space-x-2">
-            <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-            <span>API Endpoint Testing</span>
-          </div>
-          <div className="flex items-center space-x-2">
-            <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-            <span>Performance Analysis</span>
-          </div>
-        </div>
-      </section>
-
-      {/* Professional Impact */}
-      <section className="mt-10">
-        <div className="bg-card rounded-lg border p-6">
-          <h2 className="text-xl font-bold mb-4">Professional Impact</h2>
-          <div className="space-y-4">
-            <p className="text-muted-foreground">
-              This incident simulation demonstrates comprehensive Application
-              Support Engineer capabilities: systematic troubleshooting,
-              effective use of monitoring tools, clear documentation, and
-              thorough verification practices.
-            </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
-              <div>
-                <h3 className="font-semibold text-sm mb-2">
-                  Key Achievements:
-                </h3>
-                <ul className="text-sm text-muted-foreground list-disc pl-5 space-y-1">
-                  <li>
-                    Reduced mean time to resolution (MTTR) through systematic
-                    approach
-                  </li>
-                  <li>
-                    Demonstrated proficiency with log analysis and correlation
-                  </li>
-                  <li>Established reproducible incident response protocols</li>
-                </ul>
-              </div>
-              <div>
-                <h3 className="font-semibold text-sm mb-2">Business Value:</h3>
-                <ul className="text-sm text-muted-foreground list-disc pl-5 space-y-1">
-                  <li>Minimized customer impact through rapid diagnosis</li>
-                  <li>
-                    Improved system reliability with verification practices
-                  </li>
-                  <li>Enhanced team capabilities with documented procedures</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
+        <h2 className="text-xl font-bold mb-4">Outcome & Prevention</h2>
+        <ul className="text-sm text-muted-foreground list-disc pl-5 space-y-1">
+          <li>
+            Outage localized to DB credential mismatch; recovered quickly.
+          </li>
+          <li>
+            Added <strong>DB-secret rotation checklist</strong>: update app
+            secret → restart → write test → record timestamp.
+          </li>
+          <li>
+            Set a simple alert on 5xx/auth-fail spikes to catch this class of
+            issues early.
+          </li>
+        </ul>
       </section>
 
       {/* Image Modal */}
