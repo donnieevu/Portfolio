@@ -1,14 +1,33 @@
-# Donald Vu — Portfolio (Website + Projects)
+Donald Vu — Portfolio
 
-This repository powers my **portfolio website** and houses project work across two tracks:
+Tracks: Application Support / Incident Labs • Data / Ops Analytics
+Live site: https://portfolio-six-weld-82.vercel.app
 
-- **Application Support / Incident Labs** (shown on the website): practical drills for triage, logging, and recovery (e.g., Nginx 502, app 500 with DB credential rotation, performance baselining).
-- **Data / Ops Analytics** (in this repo): SQL/Python pipelines and dashboards that turn raw data into decision-ready insights.
+Projects (quick links)
 
-**Live site:** portfolio-six-weld-82.vercel.app  
-**Repo focus:** Website source under `portfolio_webpage/` and data/ops projects under `healthcare_analytics_project/` and `learning/`.  
-*(Earlier repo description referenced Python/SQL/Tableau projects — those still live here alongside the website.)*
+ASE Labs:
+/projects/ase-projects/nginx-502-triage/ · /projects/ase-projects/memory-performance/ · /projects/ase-projects/fullincident-simulation/
 
----
+Data/Ops:
+See site’s Data Analyst Projects section and repo samples in healthcare_analytics_project/
 
-## Repository Structure
+Repo Structure
+.
+├─ portfolio_webpage/             # Next.js website (source for the live portfolio)
+├─ healthcare_analytics_project/  # SQL/Python + dashboards (data/ops samples)
+├─ learning/                      # notes / experiments / scratch
+└─ README.md
+
+Quick Start
+
+Website
+
+cd portfolio_webpage
+npm install
+npm run dev   # http://localhost:3000
+
+
+(Optional) Run incident labs locally
+
+docker compose up -d --build
+curl -i http://localhost:8080/api/users   # baseline; note Date timestamp
