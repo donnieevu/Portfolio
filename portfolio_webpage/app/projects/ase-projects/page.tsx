@@ -32,6 +32,37 @@ export default function AseProjectsPage() {
 
       {/* Single column grid for all projects */}
       <div className="grid grid-cols-1 gap-8 max-w-4xl mx-auto">
+      
+      {/* Memory & Performance Monitoring */}
+        <article className="bg-card rounded-lg border shadow-sm p-6 flex flex-col justify-between h-full w-full">
+          <div>
+            <h3 className="text-2xl font-bold mb-2">
+              <Link
+                href="/projects/ase-projects/memory-performance"
+                className="hover:underline"
+              >
+                Memory & Performance Monitoring
+              </Link>
+            </h3>
+            <p className="text-muted-foreground mb-4">
+              Simulated memory leaks and high CPU usage, then built monitoring
+              dashboards to track request patterns, errors, slow requests, and
+              memory usage.
+            </p>
+            <ul className="text-sm text-muted-foreground list-disc pl-5 space-y-1">
+              <li>Memory leak simulation with /api/memory-hog</li>
+              <li>CPU load testing with /api/burncpu</li>
+              <li>Docker stats for resource monitoring</li>
+              <li>4-panel Grafana dashboard</li>
+            </ul>
+          </div>
+          <div className="flex items-center justify-between pt-4">
+            <span className="text-xs uppercase tracking-wide text-muted-foreground">
+              Status: Completed
+            </span>
+          </div>
+        </article>
+        
         {/* Nginx 502 Upstream Triage */}
         <article className="bg-card rounded-lg border shadow-sm p-6 flex flex-col justify-between h-full w-full">
           <div>
@@ -53,36 +84,6 @@ export default function AseProjectsPage() {
               <li>Nginx ↔ Flask API ↔ Postgres</li>
               <li>Loki/Promtail + Grafana dashboards</li>
               <li>Before/after proof with curl &amp; 5xx metrics</li>
-            </ul>
-          </div>
-          <div className="flex items-center justify-between pt-4">
-            <span className="text-xs uppercase tracking-wide text-muted-foreground">
-              Status: Completed
-            </span>
-          </div>
-        </article>
-
-        {/* Memory & Performance Monitoring */}
-        <article className="bg-card rounded-lg border shadow-sm p-6 flex flex-col justify-between h-full w-full">
-          <div>
-            <h3 className="text-2xl font-bold mb-2">
-              <Link
-                href="/projects/ase-projects/memory-performance"
-                className="hover:underline"
-              >
-                Memory & Performance Monitoring
-              </Link>
-            </h3>
-            <p className="text-muted-foreground mb-4">
-              Simulated memory leaks and high CPU usage, then built monitoring
-              dashboards to track request patterns, errors, slow requests, and
-              memory usage.
-            </p>
-            <ul className="text-sm text-muted-foreground list-disc pl-5 space-y-1">
-              <li>Memory leak simulation with /api/memory-hog</li>
-              <li>CPU load testing with /api/burncpu</li>
-              <li>Docker stats for resource monitoring</li>
-              <li>4-panel Grafana dashboard</li>
             </ul>
           </div>
           <div className="flex items-center justify-between pt-4">
