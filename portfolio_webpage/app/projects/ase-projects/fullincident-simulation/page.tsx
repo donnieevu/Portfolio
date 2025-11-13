@@ -18,7 +18,6 @@ function Shot({ src, alt, caption, onClick }: ShotProps) {
       className="flex h-full flex-col rounded-lg overflow-hidden border bg-background cursor-pointer group transition-all duration-200 hover:shadow-lg hover:border-blue-300"
       onClick={onClick}
     >
-      {/* Fixed 16:9 image space so both columns line up */}
       <div className="relative w-full aspect-[16/9] bg-black/5">
         <Image
           src={src}
@@ -26,11 +25,9 @@ function Shot({ src, alt, caption, onClick }: ShotProps) {
           fill
           sizes="(max-width: 768px) 100vw, 50vw"
           className="object-contain group-hover:opacity-95 transition-opacity"
-          priority={false}
         />
       </div>
-      {/* Uniform caption height + centered text */}
-      <figcaption className="p-3 text-sm text-muted-foreground border-t bg-background/50 min-h-12 flex items-center">
+      <figcaption className="p-3 text-sm text-muted-foreground border-t bg-background/50 leading-relaxed min-h-[3rem]">
         {caption}
       </figcaption>
     </figure>

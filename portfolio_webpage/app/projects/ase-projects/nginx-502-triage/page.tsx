@@ -27,7 +27,7 @@ function Shot({ src, alt, caption, onClick }: ShotProps) {
           className="object-contain group-hover:opacity-95 transition-opacity"
         />
       </div>
-      <figcaption className="p-3 text-sm text-muted-foreground border-t bg-background/50 min-h-12 flex items-center">
+      <figcaption className="p-3 text-sm text-muted-foreground border-t bg-background/50 leading-relaxed min-h-[3rem]">
         {caption}
       </figcaption>
     </figure>
@@ -150,8 +150,8 @@ export default function NginxTriagePage() {
             alt="Grafana: Nginx requests per minute"
             caption={
               <>
-                Traffic generation during testing visible in{" "}
-                <strong>requests/min</strong>.
+                Traffic generation during testing visible in
+                <strong> requests/min</strong>.
               </>
             }
             onClick={() =>

@@ -1,4 +1,4 @@
-// app/projects/memory-performance/page.tsx
+// app/projects/ase-projects/memory-performance/page.tsx
 "use client";
 import Link from "next/link";
 import Image from "next/image";
@@ -27,7 +27,7 @@ function Shot({ src, alt, caption, onClick }: ShotProps) {
           className="object-contain group-hover:opacity-95 transition-opacity"
         />
       </div>
-      <figcaption className="p-3 text-sm text-muted-foreground border-t bg-background/50 min-h-12 flex items-center">
+      <figcaption className="p-3 text-sm text-muted-foreground border-t bg-background/50 leading-relaxed min-h-[3rem]">
         {caption}
       </figcaption>
     </figure>
@@ -36,9 +36,6 @@ function Shot({ src, alt, caption, onClick }: ShotProps) {
 
 export default function MemoryPerformancePage() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
-
-  // Base path for screenshots (change if your folder differs)
-  const imgBase = "/images/ase-projects/memory-performance";
 
   return (
     <main className="container mx-auto px-4 py-10 md:py-16">
@@ -55,10 +52,13 @@ export default function MemoryPerformancePage() {
       </div>
 
       <p className="text-muted-foreground mb-8 max-w-3xl">
-        Implemented application monitoring to detect memory leaks and
-        performance issues. Created a Grafana dashboard tracking request
-        patterns, error rates, slow requests, and memory usage to identify
-        resource bottlenecks and application health issues.
+        I turned a small Flask API into a{" "}
+        <span className="font-semibold">memory leak lab</span> by adding a
+        &quot;chaos&quot; endpoint, <code>/api/memory-hog</code>. The goal was
+        to detect a silent leak using Prometheus metrics (
+        <code>app_memory_leak_size</code>, <code>app_error_count</code>), watch
+        it in Grafana, and then rerun the same scripted load test after a code
+        change to verify that the leak was removed.
       </p>
 
       {/* Quick facts */}
@@ -66,121 +66,179 @@ export default function MemoryPerformancePage() {
         <div className="bg-card rounded-lg border p-5">
           <h3 className="font-semibold mb-2">Stack</h3>
           <p className="text-sm text-muted-foreground">
-            Docker • Flask • Prometheus • Grafana
+            Docker Compose • Flask • Postgres • Nginx • Prometheus • Grafana •
+            Loki/Promtail
           </p>
         </div>
         <div className="bg-card rounded-lg border p-5">
           <h3 className="font-semibold mb-2">What I Did</h3>
           <ul className="text-sm text-muted-foreground list-disc pl-5 space-y-1">
+            <li>Added a simulated leak at `/api/memory-hog`</li>
             <li>
-              Simulated memory leaks with <code>/api/memory-hog</code>
+              Exposed custom metrics: <code>app_memory_leak_size</code> (gauge)
+              and <code>app_error_count</code> (counter)
             </li>
             <li>
-              Generated high CPU load with <code>/api/burncpu</code>
+              Reproduced the issue with a repeatable <code>curl</code>-based
+              load script
             </li>
             <li>
-              Monitored container resources with <code>docker stats</code>
+              Used Grafana to compare baseline vs. load and to validate the leak
+              fix
             </li>
-            <li>Built Grafana dashboard with 4 key metrics</li>
           </ul>
         </div>
         <div className="bg-card rounded-lg border p-5">
-          <h3 className="font-semibold mb-2">Metrics Tracked</h3>
+          <h3 className="font-semibold mb-2">Artifacts</h3>
           <ul className="text-sm text-muted-foreground list-disc pl-5 space-y-1">
-            <li>Request Count</li>
-            <li>Error Count</li>
-            <li>Slow Requests Count</li>
-            <li>Memory Leak Size</li>
+            <li>Grafana panels (leak size &amp; error rate)</li>
+            <li>Shell scripts to reproduce the leak</li>
+            <li>Notes on detection, fix, and verification</li>
           </ul>
         </div>
       </div>
 
-      {/* Monitoring Dashboard */}
+      {/* Screenshots */}
       <section className="mb-10">
-        <h2 className="text-2xl font-bold mb-4">Monitoring Dashboard</h2>
+        <h2 className="text-2xl font-bold mb-4">Evidence &amp; Screens</h2>
 
-        <div className="grid grid-cols-1 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
+          {/* 1: docker compose ps */}
           <Shot
-            src={`${imgBase}/app-monitoring-dashboard.png`}
-            alt="Grafana dashboard showing Request Count, Error Count, Slow Requests Count, and Memory Leak Size"
+            src="/images/ase-projects/memory-performance/01-mp-services-running.png"
+            alt="Docker Compose: app, db, Prometheus, Grafana, Loki, Nginx, Promtail all running"
             caption={
               <>
-                Grafana dashboard: four key metrics tracking application health
-                and performance.
+                All services healthy: app, Postgres, Prometheus, Grafana, Loki,
+                Nginx, and Promtail are up before testing (
+                <code>docker compose ps</code>).
               </>
             }
             onClick={() =>
-              setSelectedImage(`${imgBase}/app-monitoring-dashboard.png`)
+              setSelectedImage(
+                "/images/ase-projects/memory-performance/01-mp-services-running.png"
+              )
+            }
+          />
+
+          {/* 2: Baseline Grafana */}
+          <Shot
+            src="/images/ase-projects/memory-performance/02-mp-baseline-no-traffic.png"
+            alt="Grafana baseline with app_memory_leak_size and app_error_count flat at zero"
+            caption={
+              <>
+                Baseline view in Grafana: <code>app_memory_leak_size</code> and{" "}
+                <code>app_error_count</code> stay flat at 0 with no traffic
+                hitting the API.
+              </>
+            }
+            onClick={() =>
+              setSelectedImage(
+                "/images/ase-projects/memory-performance/02-mp-baseline-no-traffic.png"
+              )
+            }
+          />
+
+          {/* 3: Leak reproduced */}
+          <Shot
+            src="/images/ase-projects/memory-performance/03-mp-before-fix-memory-leak.png"
+            alt="Grafana showing app_memory_leak_size jumping and staying elevated during curl load"
+            caption={
+              <>
+                Leak reproduced: after hitting <code>/api/memory-hog</code> with
+                the load script, <code>app_memory_leak_size</code> jumps from 0
+                to ~200 and never returns to baseline, while error count stays
+                at 0 (silent leak).
+              </>
+            }
+            onClick={() =>
+              setSelectedImage(
+                "/images/ase-projects/memory-performance/03-mp-before-fix-memory-leak.png"
+              )
+            }
+          />
+
+          {/* 4: curl load loop */}
+          <Shot
+            src="/images/ase-projects/memory-performance/04-mp-after-fix-load-loop.png"
+            alt="Terminal running curl load loop against /api/memory-hog"
+            caption={
+              <>
+                Repro script: a simple <code>for</code>-loop of{" "}
+                <code>curl</code> calls to{" "}
+                <code>http://localhost:8080/api/memory-hog</code> used both
+                before and after the code change.
+              </>
+            }
+            onClick={() =>
+              setSelectedImage(
+                "/images/ase-projects/memory-performance/04-mp-after-fix-load-loop.png"
+              )
             }
           />
         </div>
       </section>
 
-      {/* Commands & Steps */}
+      {/* Commands & Queries */}
       <section className="mb-10">
-        <h2 className="text-2xl font-bold mb-4">Commands &amp; Steps</h2>
+        <h2 className="text-2xl font-bold mb-4">Commands &amp; Queries</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="rounded-lg border p-5">
-            <h3 className="font-semibold mb-2">Memory Leak Simulation</h3>
-            <pre className="text-xs md:text-sm overflow-auto bg-muted p-4 rounded">{`# Check container resource usage
-docker stats
+            <h3 className="font-semibold mb-2">Shell</h3>
+            <pre className="text-xs md:text-sm overflow-auto bg-muted p-4 rounded">{`# Start all services
+docker compose up -d
+docker compose ps
 
-# Simulate memory leak
-curl http://localhost:8080/api/memory-hog
+# (Optional) quick health check
+curl -i http://localhost:8080/api/health
 
-# Call multiple times to increase memory
-curl http://localhost:8080/api/memory-hog
-curl http://localhost:8080/api/memory-hog  
-curl http://localhost:8080/api/memory-hog
-curl http://localhost:8080/api/memory-hog
-curl http://localhost:8080/api/memory-hog
+# Reproduce the memory leak from WSL / Git Bash
+for i in {1..200}; do
+  curl -s http://localhost:8080/api/memory-hog > /dev/null
+  sleep 0.2
+done
 
-# Check memory usage snapshot
-docker stats --no-stream
-
-# Check application metrics
-curl http://localhost:8080/api/metrics`}</pre>
+# After refactoring /api/memory-hog to stop leaking,
+# rerun the same loop and compare Grafana panels.`}</pre>
           </div>
 
           <div className="rounded-lg border p-5">
-            <h3 className="font-semibold mb-2">Performance Testing</h3>
-            <pre className="text-xs md:text-sm overflow-auto bg-muted p-4 rounded">{`# Simulate high CPU usage
-curl http://localhost:8080/api/burncpu
+            <h3 className="font-semibold mb-2">
+              PromQL (Prometheus / Grafana)
+            </h3>
+            <pre className="text-xs md:text-sm overflow-auto bg-muted p-4 rounded">{`# Leak size over time (gauge)
+app_memory_leak_size
 
-# Check for performance logs
-docker compose logs app | grep -i "warning\\|slow\\|memory\\|cpu"
-
-# Grafana Dashboard Setup:
-# 1. Go to http://localhost:3000
-# 2. Add new dashboard
-# 3. Data source: Prometheus (http://prometheus:9090)
-# 4. Add panels for:
-#    - Request Count
-#    - Error Count  
-#    - Slow Requests Count
-#    - Memory Leak Size`}</pre>
+# Error rate over time (counter -> rate)
+rate(app_error_count[1m])`}</pre>
           </div>
         </div>
       </section>
 
-      {/* Learning Outcomes */}
+      {/* Documentation */}
       <section className="mb-6">
-        <h2 className="text-2xl font-bold mb-4">Learning Outcomes</h2>
+        <h2 className="text-2xl font-bold mb-4">Documentation</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <article className="rounded-lg border p-5">
-            <h3 className="font-semibold">Memory Monitoring</h3>
+            <h3 className="font-semibold">
+              Runbook: Memory Leak at /api/memory-hog
+            </h3>
             <p className="text-sm text-muted-foreground mt-1">
-              Learned to identify memory leaks using <code>docker stats</code>{" "}
-              and application metrics. Tracked memory growth patterns and
-              understood how gradual memory leaks impact application stability.
+              Detection via Grafana (leak size trending up) → Triage (confirm
+              endpoint, review recent deploys) → Remediation (fix the leaking
+              data structure in <code>app.py</code>) → Verification (rerun the
+              same curl load and confirm <code>app_memory_leak_size</code>{" "}
+              stabilizes).
             </p>
           </article>
           <article className="rounded-lg border p-5">
-            <h3 className="font-semibold">Performance Baselines</h3>
+            <h3 className="font-semibold">Mini Incident Summary</h3>
             <p className="text-sm text-muted-foreground mt-1">
-              Established performance monitoring with Grafana dashboards.
-              Created visibility into request patterns, error rates, and
-              resource usage to detect anomalies and performance degradation.
+              Root cause: a deliberately &quot;leaky&quot; implementation of{" "}
+              <code>/api/memory-hog</code> that grew an in-memory structure on
+              each call. Corrective action: refactored the handler and used
+              before/after Grafana screenshots and metrics to prove the fix
+              under the same load pattern.
             </p>
           </article>
         </div>
