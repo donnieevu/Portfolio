@@ -32,41 +32,7 @@ export default function AseProjectsPage() {
 
       {/* Single column grid for all projects */}
       <div className="grid grid-cols-1 gap-8 max-w-4xl mx-auto">
-        {/* Memory Leak Detection & Monitoring */}
-        <article className="bg-card rounded-lg border shadow-sm p-6 flex flex-col justify-between h-full w-full">
-          <div>
-            <h3 className="text-2xl font-bold mb-2">
-              <Link
-                href="/projects/ase-projects/memory-leak"
-                className="hover:underline"
-              >
-                Memory Leak Detection &amp; Monitoring
-              </Link>
-            </h3>
-            <p className="text-muted-foreground mb-4">
-              Built a small Flask “chaos” endpoint to simulate a memory leak,
-              then used custom Prometheus metrics and Grafana panels to detect
-              the leak and verify a code fix under the same load.
-            </p>
-            <ul className="text-sm text-muted-foreground list-disc pl-5 space-y-1">
-              <li>
-                Simulated leak at <code>/api/memory-hog</code>
-              </li>
-              <li>
-                Custom metrics: <code>app_memory_leak_size</code> &amp;{" "}
-                <code>app_error_count</code>
-              </li>
-              <li>Before/after Grafana views to confirm the fix</li>
-              <li>Mini runbook for detection, triage, and remediation</li>
-            </ul>
-          </div>
-          <div className="flex items-center justify-between pt-4">
-            <span className="text-xs uppercase tracking-wide text-muted-foreground">
-              Status: Completed
-            </span>
-          </div>
-        </article>
-
+        
         {/* Nginx 502 Upstream Triage */}
         <article className="bg-card rounded-lg border shadow-sm p-6 flex flex-col justify-between h-full w-full">
           <div>
@@ -88,6 +54,50 @@ export default function AseProjectsPage() {
               <li>Nginx ↔ Flask API ↔ Postgres</li>
               <li>Loki/Promtail + Grafana dashboards</li>
               <li>Before/after proof with curl &amp; 5xx metrics</li>
+            </ul>
+          </div>
+          <div className="flex items-center justify-between pt-4">
+            <span className="text-xs uppercase tracking-wide text-muted-foreground">
+              Status: Completed
+            </span>
+          </div>
+        </article>
+
+        {/* API Key Misconfiguration — 401 Auth Outage */}
+        <article className="bg-card rounded-lg border shadow-sm p-6 flex flex-col justify-between h-full w-full">
+          <div>
+            <h3 className="text-2xl font-bold mb-2">
+              <Link
+                href="/projects/ase-projects/auth-apikey-outage"
+                className="hover:underline"
+              >
+                API Key Misconfiguration — 401 Auth Outage
+              </Link>
+            </h3>
+            <p className="text-muted-foreground mb-4">
+              Added header-based API key auth to a Flask service behind Nginx,
+              then intentionally broke the key to reproduce an “everything is
+              401 now” outage. Used Prometheus metrics and Grafana to spot the
+              pattern and verify the fix.
+            </p>
+            <ul className="text-sm text-muted-foreground list-disc pl-5 space-y-1">
+              <li>
+                Protected <code>/api/users</code> with an <code>X-API-Key</code>{" "}
+                header
+              </li>
+              <li>
+                Custom metrics: <code>app_requests_total</code>,{" "}
+                <code>app_auth_success_total</code>,{" "}
+                <code>app_auth_failures_total</code>
+              </li>
+              <li>
+                Grafana panels for requests/sec, auth successes/sec, and
+                failures/sec
+              </li>
+              <li>
+                Mini runbook for diagnosing and fixing 401 storms from
+                bad/rotated API keys
+              </li>
             </ul>
           </div>
           <div className="flex items-center justify-between pt-4">
