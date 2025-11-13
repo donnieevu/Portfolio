@@ -33,27 +33,33 @@ export default function AseProjectsPage() {
       {/* Single column grid for all projects */}
       <div className="grid grid-cols-1 gap-8 max-w-4xl mx-auto">
         
-        {/* Nginx 502 Upstream Triage */}
+        {/* Database Credential Rotation Incident */}
         <article className="bg-card rounded-lg border shadow-sm p-6 flex flex-col justify-between h-full w-full">
           <div>
             <h3 className="text-2xl font-bold mb-2">
               <Link
-                href="/projects/ase-projects/nginx-502-triage"
+                href="/projects/ase-projects/db-pw-rotation"
                 className="hover:underline"
               >
-                Nginx 502 Upstream Triage
+                Database Credential Rotation Incident
               </Link>
             </h3>
             <p className="text-muted-foreground mb-4">
-              Injected an upstream misconfig to force{" "}
-              <code>502 Bad Gateway</code>, observed impact, triaged via
-              Loki/Grafana logs and metrics, and restored service with a
-              documented runbook.
+              Simulated a production outage caused by a Postgres password
+              rotation where the application still used the old secret. Traced
+              500s on the users API to DB auth failures, rolled back the
+              credential safely, and documented a rotation checklist to prevent
+              repeats.
             </p>
             <ul className="text-sm text-muted-foreground list-disc pl-5 space-y-1">
-              <li>Nginx ↔ Flask API ↔ Postgres</li>
-              <li>Loki/Promtail + Grafana dashboards</li>
-              <li>Before/after proof with curl &amp; 5xx metrics</li>
+              <li>
+                DB password rotation → 500s on <code>/api/users</code>
+              </li>
+              <li>
+                Log correlation of 5xx responses with Postgres auth failures
+              </li>
+              <li>Mitigation via rollback or app-secret update + restart</li>
+              <li>Written DB credential rotation checklist</li>
             </ul>
           </div>
           <div className="flex items-center justify-between pt-4">
@@ -107,33 +113,27 @@ export default function AseProjectsPage() {
           </div>
         </article>
 
-        {/* Database Credential Rotation Incident */}
+        {/* Nginx 502 Upstream Triage */}
         <article className="bg-card rounded-lg border shadow-sm p-6 flex flex-col justify-between h-full w-full">
           <div>
             <h3 className="text-2xl font-bold mb-2">
               <Link
-                href="/projects/ase-projects/db-pw-rotation"
+                href="/projects/ase-projects/nginx-502-triage"
                 className="hover:underline"
               >
-                Database Credential Rotation Incident
+                Nginx 502 Upstream Triage
               </Link>
             </h3>
             <p className="text-muted-foreground mb-4">
-              Simulated a production outage caused by a Postgres password
-              rotation where the application still used the old secret. Traced
-              500s on the users API to DB auth failures, rolled back the
-              credential safely, and documented a rotation checklist to prevent
-              repeats.
+              Injected an upstream misconfig to force{" "}
+              <code>502 Bad Gateway</code>, observed impact, triaged via
+              Loki/Grafana logs and metrics, and restored service with a
+              documented runbook.
             </p>
             <ul className="text-sm text-muted-foreground list-disc pl-5 space-y-1">
-              <li>
-                DB password rotation → 500s on <code>/api/users</code>
-              </li>
-              <li>
-                Log correlation of 5xx responses with Postgres auth failures
-              </li>
-              <li>Mitigation via rollback or app-secret update + restart</li>
-              <li>Written DB credential rotation checklist</li>
+              <li>Nginx ↔ Flask API ↔ Postgres</li>
+              <li>Loki/Promtail + Grafana dashboards</li>
+              <li>Before/after proof with curl &amp; 5xx metrics</li>
             </ul>
           </div>
           <div className="flex items-center justify-between pt-4">
@@ -142,6 +142,7 @@ export default function AseProjectsPage() {
             </span>
           </div>
         </article>
+
       </div>
     </main>
   );
