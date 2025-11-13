@@ -32,8 +32,7 @@ export default function AseProjectsPage() {
 
       {/* Single column grid for all projects */}
       <div className="grid grid-cols-1 gap-8 max-w-4xl mx-auto">
-      
-      {/* Memory & Performance Monitoring */}
+        {/* Memory Leak Detection & Monitoring */}
         <article className="bg-card rounded-lg border shadow-sm p-6 flex flex-col justify-between h-full w-full">
           <div>
             <h3 className="text-2xl font-bold mb-2">
@@ -41,19 +40,24 @@ export default function AseProjectsPage() {
                 href="/projects/ase-projects/memory-performance"
                 className="hover:underline"
               >
-                Memory & Performance Monitoring
+                Memory Leak Detection &amp; Monitoring
               </Link>
             </h3>
             <p className="text-muted-foreground mb-4">
-              Simulated memory leaks and high CPU usage, then built monitoring
-              dashboards to track request patterns, errors, slow requests, and
-              memory usage.
+              Built a small Flask “chaos” endpoint to simulate a memory leak,
+              then used custom Prometheus metrics and Grafana panels to detect
+              the leak and verify a code fix under the same load.
             </p>
             <ul className="text-sm text-muted-foreground list-disc pl-5 space-y-1">
-              <li>Memory leak simulation with /api/memory-hog</li>
-              <li>CPU load testing with /api/burncpu</li>
-              <li>Docker stats for resource monitoring</li>
-              <li>4-panel Grafana dashboard</li>
+              <li>
+                Simulated leak at <code>/api/memory-hog</code>
+              </li>
+              <li>
+                Custom metrics: <code>app_memory_leak_size</code> &amp;{" "}
+                <code>app_error_count</code>
+              </li>
+              <li>Before/after Grafana views to confirm the fix</li>
+              <li>Mini runbook for detection, triage, and remediation</li>
             </ul>
           </div>
           <div className="flex items-center justify-between pt-4">
@@ -62,7 +66,7 @@ export default function AseProjectsPage() {
             </span>
           </div>
         </article>
-        
+
         {/* Nginx 502 Upstream Triage */}
         <article className="bg-card rounded-lg border shadow-sm p-6 flex flex-col justify-between h-full w-full">
           <div>
@@ -93,28 +97,33 @@ export default function AseProjectsPage() {
           </div>
         </article>
 
-        {/* Full Incident Simulation */}
+        {/* Database Credential Rotation Incident */}
         <article className="bg-card rounded-lg border shadow-sm p-6 flex flex-col justify-between h-full w-full">
           <div>
             <h3 className="text-2xl font-bold mb-2">
               <Link
-                href="/projects/ase-projects/fullincident-simulation"
+                href="/projects/ase-projects/db-pw-rotation"
                 className="hover:underline"
               >
-                Full Incident Simulation
+                Database Credential Rotation Incident
               </Link>
             </h3>
             <p className="text-muted-foreground mb-4">
-              Executed complete incident response for simulated production
-              outage caused by memory leak. Followed professional
-              troubleshooting from alert through root cause identification,
-              resolution, and verification.
+              Simulated a production outage caused by a Postgres password
+              rotation where the application still used the old secret. Traced
+              500s on the users API to DB auth failures, rolled back the
+              credential safely, and documented a rotation checklist to prevent
+              repeats.
             </p>
             <ul className="text-sm text-muted-foreground list-disc pl-5 space-y-1">
-              <li>Memory leak identification & metrics analysis</li>
-              <li>Multi-tool investigation (CLI + Grafana dashboards)</li>
-              <li>Container restart & comprehensive verification</li>
-              <li>Complete incident documentation</li>
+              <li>
+                DB password rotation → 500s on <code>/api/users</code>
+              </li>
+              <li>
+                Log correlation of 5xx responses with Postgres auth failures
+              </li>
+              <li>Mitigation via rollback or app-secret update + restart</li>
+              <li>Written DB credential rotation checklist</li>
             </ul>
           </div>
           <div className="flex items-center justify-between pt-4">
@@ -123,6 +132,7 @@ export default function AseProjectsPage() {
             </span>
           </div>
         </article>
+
       </div>
     </main>
   );

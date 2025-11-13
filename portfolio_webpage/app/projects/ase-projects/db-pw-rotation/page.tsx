@@ -1,4 +1,4 @@
-// app/projects/fullincident-simulation/page.tsx
+// app/projects/ase-projects/fullincident-simulation/page.tsx
 "use client";
 import Link from "next/link";
 import Image from "next/image";
@@ -34,15 +34,15 @@ function Shot({ src, alt, caption, onClick }: ShotProps) {
   );
 }
 
-export default function FullIncidentSimulationPage() {
+export default function DatabaseCredentialRotationPage() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
-  const imgBase = "/images/ase-projects/fullincident-simulation";
+  const imgBase = "/images/ase-projects/db-pw-rotation";
 
   return (
     <main className="container mx-auto px-4 py-10 md:py-16">
       <div className="flex items-center justify-between mb-6">
         <h1 className="text-3xl md:text-4xl font-bold">
-          Full Incident Simulation
+          Database Credential Rotation Incident
         </h1>
         <Link
           href="/projects/ase-projects"
@@ -72,24 +72,28 @@ export default function FullIncidentSimulationPage() {
         <div className="bg-card rounded-lg border p-5">
           <h3 className="font-semibold mb-2">What I Did</h3>
           <ul className="text-sm text-muted-foreground list-disc pl-5 space-y-1">
-            <li>Baseline & timestamp window</li>
-            <li>Rotate DB password (simulate outage)</li>
+            <li>Captured baseline behavior & timestamp window</li>
+            <li>Rotated the DB password to simulate an outage</li>
             <li>
-              Correlate 500s with <code>FATAL auth</code> in app logs
+              Correlated 500s on <code>/api/users</code> with{" "}
+              <code>FATAL auth</code> in app logs
             </li>
-            <li>Mitigate: restore secret or update app secret + restart</li>
-            <li>Validate 200s + clean log window</li>
-            <li>Publish DB-secret rotation checklist</li>
+            <li>
+              Mitigated by restoring the secret or updating the app secret +
+              restart
+            </li>
+            <li>Validated 200s and a clean log window after recovery</li>
+            <li>Published a DB-secret rotation checklist</li>
           </ul>
         </div>
         <div className="bg-card rounded-lg border p-5">
           <h3 className="font-semibold mb-2">Incident Timeline</h3>
           <ul className="text-sm text-muted-foreground list-disc pl-5 space-y-1">
             <li>Baseline: routes 200</li>
-            <li>Rotate DB password → 500s</li>
-            <li>Logs show DB auth failures</li>
-            <li>Rollback/secret update → restart</li>
-            <li>Recovery validated; logs clean</li>
+            <li>Rotate DB password → 500s on users API</li>
+            <li>Logs show Postgres authentication failures</li>
+            <li>Rollback/secret update → app restart</li>
+            <li>Recovery validated; log window clean</li>
           </ul>
         </div>
       </div>
@@ -107,12 +111,12 @@ export default function FullIncidentSimulationPage() {
             <p className="text-sm text-muted-foreground mb-6">
               Confirm all services are healthy and take a quick baseline (
               <code>/api/users</code> 200). Note the Date header / timestamp
-              window to align evidence.
+              window to align evidence in logs and future requests.
             </p>
             <Shot
               src={`${imgBase}/01-fis-containers-up.png`}
               alt="Baseline: docker compose ps shows all services up"
-              caption="Baseline: services up before change."
+              caption="Baseline: services up before any credential changes."
               onClick={() =>
                 setSelectedImage(`${imgBase}/01-fis-containers-up.png`)
               }
@@ -126,14 +130,14 @@ export default function FullIncidentSimulationPage() {
             </h3>
             <p className="text-sm text-muted-foreground mb-6">
               Rotate the DB password in Postgres while the app still uses the
-              old secret. DB-backed routes flip to 500; capture the failure in
-              the same timestamp window.
+              old secret. DB-backed routes flip to 500; capture the failures in
+              the same timestamp window as the credential change.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
               <Shot
                 src={`${imgBase}/02-fis-rotate-db-pw.png`}
                 alt="ALTER USER postgres WITH PASSWORD — credential rotation"
-                caption="Introduced outage: DB password rotated."
+                caption="Outage introduced: Postgres password is rotated while the app still has the old secret."
                 onClick={() =>
                   setSelectedImage(`${imgBase}/02-fis-rotate-db-pw.png`)
                 }
@@ -143,8 +147,9 @@ export default function FullIncidentSimulationPage() {
                 alt="App logs: GET /users 500 and FATAL: password authentication failed"
                 caption={
                   <>
-                    Failure window: <code>GET /users</code> → 500;{" "}
-                    <code>FATAL</code> auth error in app logs.
+                    Failure window: <code>GET /api/users</code> returns 500 and
+                    app logs show <code>FATAL</code> password authentication
+                    failures from Postgres.
                   </>
                 }
                 onClick={() =>
@@ -160,24 +165,23 @@ export default function FullIncidentSimulationPage() {
               3) Mitigation
             </h3>
             <p className="text-sm text-muted-foreground mb-6">
-              Fastest mitigation is to restore the previous credential.
-              Alternatively, update the app secret to the new password and
-              restart the app.
+              The quickest mitigation is to restore the previous credential so
+              the app and DB match again. Alternatively, update the app secret
+              to the new password and restart the app to pick it up.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
               <Shot
                 src={`${imgBase}/04-fis-rollback.png`}
                 alt="Rollback command to restore credential or update app secret and restart"
-                caption="Mitigation: restore credential (or update app secret + restart)."
+                caption="Mitigation: restore the original DB password (or update the app secret and restart the app)."
                 onClick={() =>
                   setSelectedImage(`${imgBase}/04-fis-rollback.png`)
                 }
               />
-              {/* NOTE: this matches your actual filename with triple 'c' */}
               <Shot
                 src={`${imgBase}/05-fis-rollback-success.png`}
                 alt="ALTER ROLE success confirmation after rollback"
-                caption="Rollback confirmed: ALTER ROLE succeeded."
+                caption="Rollback confirmed in Postgres: ALTER ROLE completed successfully."
                 onClick={() =>
                   setSelectedImage(`${imgBase}/05-fis-rollback-success.png`)
                 }
@@ -193,12 +197,13 @@ export default function FullIncidentSimulationPage() {
             <p className="text-sm text-muted-foreground mb-6">
               Re-test <code>/api/users</code> to confirm 200s, and tail logs to
               ensure the window is clean (no new auth failures). Document the
-              incident and add the rotation checklist.
+              incident and add the rotation checklist so future password changes
+              don&apos;t cause surprise outages.
             </p>
             <Shot
               src={`${imgBase}/06-fis-logs-clean-windows.png`}
               alt="Post-fix log tail: no new authentication failures"
-              caption="Clean window after fix: no new auth failures."
+              caption="Clean window after fix: follow-up requests succeed and there are no new DB auth failures in the logs."
               onClick={() =>
                 setSelectedImage(`${imgBase}/06-fis-logs-clean-windows.png`)
               }
@@ -212,7 +217,7 @@ export default function FullIncidentSimulationPage() {
         <h2 className="text-2xl font-bold mb-4">Key Commands Used</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="rounded-lg border p-5">
-            <h3 className="font-semibold mb-3">Repro & Evidence</h3>
+            <h3 className="font-semibold mb-3">Repro &amp; Evidence</h3>
             <pre className="text-xs md:text-sm overflow-auto bg-muted p-4 rounded">{`# Baseline
 curl -i http://localhost:8080/api/users
 
@@ -225,7 +230,7 @@ curl -i http://localhost:8080/api/users      # expect 500
 docker compose logs --timestamps --tail=50 app | grep -Ei "FATAL|auth|psycopg2"`}</pre>
           </div>
           <div className="rounded-lg border p-5">
-            <h3 className="font-semibold mb-3">Mitigation & Validation</h3>
+            <h3 className="font-semibold mb-3">Mitigation &amp; Validation</h3>
             <pre className="text-xs md:text-sm overflow-auto bg-muted p-4 rounded">{`# Fast rollback
 docker compose exec db psql -U postgres -d appdb -c \
 "ALTER USER postgres WITH PASSWORD 'postgres';"
@@ -242,18 +247,19 @@ docker compose logs --timestamps --since=2m app`}</pre>
 
       {/* Outcomes */}
       <section className="rounded-lg border p-6 bg-muted/30">
-        <h2 className="text-xl font-bold mb-4">Outcome & Prevention</h2>
+        <h2 className="text-xl font-bold mb-4">Outcome &amp; Prevention</h2>
         <ul className="text-sm text-muted-foreground list-disc pl-5 space-y-1">
           <li>
-            Outage localized to DB credential mismatch; recovered quickly.
+            Outage localized to a DB credential mismatch between app and
+            Postgres; recovered quickly once secrets were aligned.
           </li>
           <li>
-            Added <strong>DB-secret rotation checklist</strong>: update app
-            secret → restart → write test → record timestamp.
+            Added a <strong>DB-secret rotation checklist</strong>: update app
+            secret → restart → smoke test → record timestamp.
           </li>
           <li>
             Set a simple alert on 5xx/auth-fail spikes to catch this class of
-            issues early.
+            issues early in production.
           </li>
         </ul>
       </section>
