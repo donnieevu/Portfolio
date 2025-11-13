@@ -1,4 +1,4 @@
-// app/projects/ase-projects/memory-performance/page.tsx
+// app/projects/ase-projects/memory-leak/page.tsx
 "use client";
 import Link from "next/link";
 import Image from "next/image";
@@ -34,7 +34,7 @@ function Shot({ src, alt, caption, onClick }: ShotProps) {
   );
 }
 
-export default function MemoryPerformancePage() {
+export default function MemoryLeakPage() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   return (
@@ -120,7 +120,7 @@ export default function MemoryPerformancePage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
           {/* 1: docker compose ps */}
           <Shot
-            src="/images/ase-projects/memory-performance/01-mp-services-running.png"
+            src="/images/ase-projects/memory-leak/01-mp-services-running.png"
             alt="Docker Compose: app, db, Prometheus, Grafana, Loki, Nginx, Promtail all running"
             caption={
               <>
@@ -132,14 +132,14 @@ export default function MemoryPerformancePage() {
             }
             onClick={() =>
               setSelectedImage(
-                "/images/ase-projects/memory-performance/01-mp-services-running.png"
+                "/images/ase-projects/memory-leak/01-mp-services-running.png"
               )
             }
           />
 
           {/* 2: Baseline Grafana */}
           <Shot
-            src="/images/ase-projects/memory-performance/02-mp-baseline-no-traffic.png"
+            src="/images/ase-projects/memory-leak/02-mp-baseline-no-traffic.png"
             alt="Grafana baseline with app_memory_leak_size and app_error_count flat at zero"
             caption={
               <>
@@ -151,14 +151,14 @@ export default function MemoryPerformancePage() {
             }
             onClick={() =>
               setSelectedImage(
-                "/images/ase-projects/memory-performance/02-mp-baseline-no-traffic.png"
+                "/images/ase-projects/memory-leak/02-mp-baseline-no-traffic.png"
               )
             }
           />
 
           {/* 3: Leak reproduced */}
           <Shot
-            src="/images/ase-projects/memory-performance/03-mp-before-fix-memory-leak.png"
+            src="/images/ase-projects/memory-leak/03-mp-before-fix-memory-leak.png"
             alt="Grafana showing app_memory_leak_size jumping and staying elevated during curl load"
             caption={
               <>
@@ -172,14 +172,14 @@ export default function MemoryPerformancePage() {
             }
             onClick={() =>
               setSelectedImage(
-                "/images/ase-projects/memory-performance/03-mp-before-fix-memory-leak.png"
+                "/images/ase-projects/memory-leak/03-mp-before-fix-memory-leak.png"
               )
             }
           />
 
           {/* 4: curl load loop */}
           <Shot
-            src="/images/ase-projects/memory-performance/04-mp-after-fix-load-loop.png"
+            src="/images/ase-projects/memory-leak/04-mp-after-fix-load-loop.png"
             alt="Terminal running curl load loop against /api/memory-hog"
             caption={
               <>
@@ -192,7 +192,7 @@ export default function MemoryPerformancePage() {
             }
             onClick={() =>
               setSelectedImage(
-                "/images/ase-projects/memory-performance/04-mp-after-fix-load-loop.png"
+                "/images/ase-projects/memory-leak/04-mp-after-fix-load-loop.png"
               )
             }
           />
