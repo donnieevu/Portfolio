@@ -37,7 +37,7 @@ export default function AseProjectsPage() {
           <div>
             <h3 className="text-2xl font-bold mb-2">
               <Link
-                href="/projects/ase-projects/memory-performance"
+                href="/projects/ase-projects/memory-leak"
                 className="hover:underline"
               >
                 Memory Leak Detection &amp; Monitoring
@@ -132,7 +132,6 @@ export default function AseProjectsPage() {
             </span>
           </div>
         </article>
-
       </div>
     </main>
   );
