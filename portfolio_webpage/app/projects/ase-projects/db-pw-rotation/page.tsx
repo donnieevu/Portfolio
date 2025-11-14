@@ -166,14 +166,13 @@ export default function DatabaseCredentialRotationPage() {
             </h3>
             <p className="text-sm text-muted-foreground mb-6">
               The quickest mitigation is to restore the previous credential so
-              the app and DB match again. Alternatively, update the app secret
-              to the new password and restart the app to pick it up.
+              the app and DB match again.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
               <Shot
                 src={`${imgBase}/04-fis-rollback.png`}
-                alt="Rollback command to restore credential or update app secret and restart"
-                caption="Mitigation: restore the original DB password (or update the app secret and restart the app)."
+                alt="Rollback command to restore credential"
+                caption="Mitigation: restore the original DB password"
                 onClick={() =>
                   setSelectedImage(`${imgBase}/04-fis-rollback.png`)
                 }
