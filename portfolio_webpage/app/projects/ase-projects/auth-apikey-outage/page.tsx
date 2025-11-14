@@ -89,7 +89,7 @@ export default function AuthApiKeyOutagePage() {
               <span className="italic">auth successes/sec</span>.
             </li>
             <li>
-              Baseline: valid key (<code>apikey-v1</code>) → 200s on{" "}
+              Baseline: valid key (<code>apikey-v2</code>) → 200s on{" "}
               <code>/api/users</code>, successes increment, failures stay 0.
             </li>
             <li>
@@ -138,7 +138,7 @@ export default function AuthApiKeyOutagePage() {
             <p className="text-sm text-muted-foreground mb-6">
               First I confirmed the lab stack was healthy and that auth behaved
               correctly with a known-good key. Requests to{" "}
-              <code>/api/users</code> with <code>apikey-v1</code> returned 200
+              <code>/api/users</code> with <code>apikey-v2</code> returned 200
               OK, <code>/health</code> was green, and the <code>/metrics</code>{" "}
               endpoint showed auth successes increasing with failures still at
               0. This gave me a clean baseline for both the API and the
@@ -167,10 +167,10 @@ export default function AuthApiKeyOutagePage() {
                 alt="Terminal showing app_auth_success_total incrementing and failures at zero"
                 caption={
                   <>
-                    Metrics baseline: hitting <code>/metrics</code> and grepping
-                    for <code>app_auth_*</code> shows{" "}
-                    <code>app_auth_success_total</code> increasing while{" "}
-                    <code>app_auth_failures_total</code> remains 0.
+                    Baseline auth: calling <code>/api/users</code> with{" "}
+                    <code>X-API-Key: apikey-v1</code> returns{" "}
+                    <code>200 OK</code> and the JSON list of users. This proves
+                    the original key works end-to-end before we rotate anything.
                   </>
                 }
                 onClick={() =>
@@ -207,7 +207,7 @@ export default function AuthApiKeyOutagePage() {
             <p className="text-sm text-muted-foreground mb-6">
               To simulate a real-world auth break, I rotated the app&apos;s
               expected API key in <code>docker-compose.yml</code> to a new value
-              (for example <code>apikey-broken</code>) and rebuilt only the app
+              (for example <code>apikey-v2</code>) and rebuilt only the app
               container. The caller still used the original{" "}
               <code>apikey-v1</code> header, so the app started rejecting every
               request with 401 Unauthorized.
@@ -362,7 +362,7 @@ curl -i -H "X-API-Key: apikey-v1" http://localhost:8080/api/users
 curl -s http://localhost:8080/metrics | grep app_auth_
 
 # Introduce auth outage (rotate app key only)
-# 1) Edit docker-compose.yml -> APP_API_KEY=apikey-broken
+# 1) Edit docker-compose.yml -> APP_API_KEY=apikey-v2
 # 2) Redeploy app container:
 docker compose up -d --build app
 
